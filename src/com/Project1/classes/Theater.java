@@ -1,4 +1,7 @@
 package com.Project1.classes;
 
-public class Theater {
+import java.io.Serializable;
+
+public class Theater implements Serializable{
+    CustomerList customerList= new CustomerList();
 }
