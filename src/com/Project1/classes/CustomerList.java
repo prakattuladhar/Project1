@@ -9,4 +9,11 @@ public class CustomerList {
     public ArrayList<Customer> getList(){
         return list;
     }
+
+    public void append(Customer customer){
+        list.add(customer);
+    }
+    public void remove(int id){
+
+    }
 }
