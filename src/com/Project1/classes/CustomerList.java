@@ -1,19 +1,39 @@
 package com.Project1.classes;
 
-import java.util.ArrayList;
+import java.util.*;
+import java.io.*;
 
 //make it singleton
-public class CustomerList {
-    private ArrayList<Customer> list=new ArrayList<Customer>();
+public class CustomerList implements Iterable<Customer>, Serializable {
+	private static final long serialVersionUID = 1L;
+    private TreeMap<Integer, Customer> map = new TreeMap<Integer, Customer>();
+    private static CustomerList customerList;
 
-    public ArrayList<Customer> getList(){
-        return list;
+    private CustomerList() {
+    }
+    
+    /**
+     * Supports the singleton pattern
+     * 
+     * @return the singleton object
+     */
+    public static CustomerList instance() {
+      if (customerList == null) {
+        return (customerList = new CustomerList());
+      } else {
+        return customerList;
+      }
     }
 
-    public void append(Customer customer){
-        list.add(customer);
+    public void add(Customer customer){
+        map.put(customer.getId(), customer);
     }
+    
     public void remove(int id){
-
+    	map.remove(id);
+    }
+    
+    public Iterator<Customer> iterator() {
+    	return map.values().iterator();
     }
 }
