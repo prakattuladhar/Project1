@@ -1,10 +1,13 @@
 package com.Project1.classes;
 
-public class Customer extends Member{
-    private CreditCard[] creditCards=new CreditCard[5];
+import java.io.*;
 
-    public Customer(int id, String name, String address, int phone) {
-        super(id, name, address, phone);
+public class Customer extends Member implements Serializable {
+	private static final long serialVersionUID = 1L;
+    private CreditCard[] creditCards = new CreditCard[5];
+
+    public Customer(String name, String address, int phone) {
+        super(name, address, phone);
     }
 
 
@@ -12,13 +15,10 @@ public class Customer extends Member{
     public void addCreditcard(int cardNumber,String expDate,int csv){
 
     }
-
     public void removeCreditcard(int cardNumber){
 
     }
-
     public CreditCard[] getCreditCards() {
         return creditCards;
     }
-
 }
