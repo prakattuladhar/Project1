@@ -3,6 +3,8 @@ package com.Project1.classes;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+
+//made singleton
 public class Theater implements Serializable{
    private CustomerList customerList= new CustomerList();
    private ClientList clientList=new ClientList();
@@ -23,14 +25,19 @@ public class Theater implements Serializable{
    }
 
 
-   public void addClient(String name,String address, int phone){
+   //true if successful
+   public boolean addClient(String name,String address, int phone){
     //client id can automatically be added as the length of the array increases. Map array.length to client id
+
+       //existence checking need to be done. if phone and address matches list: donot append
        Client client= new Client(clientList.getList().size(),name,address,phone);
        clientList.append(client);
+       return true;
 
    }
-   public void removeClient(int id){
-
+   public boolean removeClient(int id){
+       //true if successful
+        return false;
    }
 
    //returns back an list of customers(array)
@@ -43,17 +50,25 @@ public class Theater implements Serializable{
        return clientList.getList();
    }
 
-   public void addCustomer(String name,String address, int phone, int cardNumber, String expirationDate){
-
+    //true if successful
+   public boolean addCustomer(String name,String address, int phone, int cardNumber, String expirationDate){
+       //customer id can automatically be added as the length of the array increases. Map array.length to client id
+       //existence checking need to be done. if phone and address matches list: donot append
+       return false;
    }
-   public void removeCustomer(int id) {
-
+   public boolean removeCustomer(int id) {
+       //true if success full
+       return false;
    }
-   public void addShow(){
-
+   public void addShow(String name,String date,int clientId){
+    //show id can automatically be added as the length of the array increases. Map array.length to client id
    }
+
+   //returns array
    public ArrayList<Show> geShows(){
        return showList.getList();
    }
+
+
 
 }

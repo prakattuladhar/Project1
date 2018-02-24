@@ -12,10 +12,13 @@ public class Customer extends Member{
     public void addCreditcard(int cardNumber,String expDate,int csv){
 
     }
+
     public void removeCreditcard(int cardNumber){
 
     }
+
     public CreditCard[] getCreditCards() {
         return creditCards;
     }
+
 }
