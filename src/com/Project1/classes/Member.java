@@ -35,6 +35,10 @@ public abstract class Member implements Serializable {
         return phone;
     }
 
-
+    @Override
+    public String toString() {
+    	return "ID: " + id + ", Name: " + name + ", Address: " + address +
+    			"Phone: " + phone;
+    }
 
 }

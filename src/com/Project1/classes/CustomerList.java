@@ -18,15 +18,23 @@ public class CustomerList implements Iterable<Customer>, Serializable {
      * @return the singleton object
      */
     public static CustomerList instance() {
-      if (customerList == null) {
-        return (customerList = new CustomerList());
-      } else {
-        return customerList;
-      }
+    	if (customerList == null) {
+    		return (customerList = new CustomerList());
+    	} else {
+    		return customerList;
+    	}
     }
 
     public void add(Customer customer){
         map.put(customer.getId(), customer);
+    }
+    /**
+     * 
+     * @param id
+     * @return customer associated with id, or null if no such customer
+     */
+    public Customer getCustomer(int id) {
+    	return map.get(id);
     }
     
     public void remove(int id){
