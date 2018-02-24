@@ -43,7 +43,7 @@ public class Theater implements Serializable{
        return clientList.getList();
    }
 
-   public void addCustomer(String name,String address, int phone, int cardNumber, int expirationDate,int csv){
+   public void addCustomer(String name,String address, int phone, int cardNumber, String expirationDate){
 
    }
    public void removeCustomer(int id) {
