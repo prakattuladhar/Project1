@@ -49,11 +49,13 @@ public class Theater implements Serializable{
    public void removeCustomer(int id) {
 
    }
-   public void addShow(){
-
+   public void addShow(String name,String date,int clientId){
+//show id can automatically be added as the length of the array increases. Map array.length to client id
    }
    public ArrayList<Show> geShows(){
        return showList.getList();
    }
+
+
 
 }

@@ -173,14 +173,32 @@ public class Driver {
     }
 
     private void removeCustomer() {
+        System.out.print("Enter customer id: ");
+        int id=keyboard.nextInt();
+        theater.removeCustomer(id);
 
     }
 
     private void addCreditCard() {
+        System.out.print("Enter customer id: ");
+        int id=keyboard.nextInt();
+
+        System.out.print("Enter credit card numebr : ");
+        int number=keyboard.nextInt();
+
+        System.out.print("Enter expiration date : ");
+        String date=keyboard.next();
+
+
 
     }
 
     private void removeCreditCard() {
+        System.out.print("Enter customer id: ");
+        int id=keyboard.nextInt();
+
+        System.out.print("Enter credit card numebr : ");
+        int number=keyboard.nextInt();
 
     }
 
