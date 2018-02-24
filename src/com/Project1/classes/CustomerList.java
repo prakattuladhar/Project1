@@ -5,4 +5,8 @@ import java.util.ArrayList;
 //make it singleton
 public class CustomerList {
     private ArrayList<Customer> list=new ArrayList<Customer>();
+
+    public ArrayList<Customer> getList(){
+        return list;
+    }
 }

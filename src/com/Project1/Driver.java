@@ -1,12 +1,14 @@
 package com.Project1;
 
+import com.Project1.classes.Client;
+import com.Project1.classes.ClientList;
 import com.Project1.classes.Theater;
 
 import java.util.Scanner;
 
 public class Driver {
     private Scanner keyboard=new Scanner(System.in);
-    private Theater theater=new Theater();
+    private Theater theater=Theater.getInstance();
     public void start(){
         int option;
         do{
@@ -18,39 +20,50 @@ public class Driver {
                 case 1: {
                     System.out.println("Thayou for using");
                     System.exit(100);
+                    break;
                 }
                 case 2:{
-
+                    theater.addClient("asd","asd",123);
+                    break;
                 }
                 case 3:{
-
+                    break;
                 }
                 case 4:{
-
+                    for (Client client:theater.getAllClient()){
+                            System.out.println("\n-------------------------------------");
+                            System.out.println("Id:"+client.getId());
+                            System.out.println("Name:"+client.getName());
+                             System.out.println("Phone:"+client.getPhone());
+                            System.out.println("Address: "+client.getAddress());
+                             System.out.println("Balance:"+client.getBalance());
+                            System.out.print("-------------------------------------");
+                    }
+                    break;
                 }
                 case 5:{
-
+                    break;
                 }
                 case 6:{
-
+                    break;
                 }
                 case 7:{
-
+                    break;
                 }
                 case 8:{
-
+                    break;
                 }
                 case 9:{
-
+                    break;
                 }
                 case 10:{
-
+                    break;
                 }
                 case 11:{
-
+                    break;
                 }
                 case 13:{
-
+                    break;
                 }
                 case 14: {
                     printHelp();
