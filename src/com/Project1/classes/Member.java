@@ -5,10 +5,6 @@ import java.util.concurrent.atomic.*;
 
 public abstract class Member implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
-	// used to create unique id numbers
-	private static AtomicInteger idCounter = new AtomicInteger();
-	
     protected int id;
     protected String name;
     protected String address;
@@ -20,7 +16,7 @@ public abstract class Member implements Serializable {
         this.phone = phone;
         
         //creates unique id number
-        this.id = idCounter.getAndIncrement();
+        this.id = MemberIdFactory.instance().createId();
     }
 
     public int getId() {
