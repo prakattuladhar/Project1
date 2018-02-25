@@ -3,11 +3,11 @@ package com.Project1.classes;
 import java.util.*;
 import java.io.*;
 
-//make it singleton
 public class CustomerList implements Iterable<Customer>, Serializable {
 	private static final long serialVersionUID = 1L;
 	// allows for search, add, and remove in O(lg(n)) time
     private TreeMap<Integer, Customer> map = new TreeMap<Integer, Customer>();
+    
     private static CustomerList customerList;
 
     private CustomerList() {

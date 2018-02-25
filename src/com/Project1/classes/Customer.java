@@ -11,9 +11,13 @@ public class Customer extends Member implements Serializable {
         super(name, address, phone);
         creditCards.add(card);
     }
-
-    //takes in cardnumber, expiration date and csv and adds credit car to customer
-    public boolean addCreditcard(int cardNumber, String expDate){
+    /**
+     * adds a credit card associated with customer
+     * @param cardNumber
+     * @param expDate
+     * @return true if credit card added, false if credit card already exists
+     */
+    public boolean addCreditCard(int cardNumber, String expDate){
     	for (CreditCard card : creditCards) {
     		if (card.getNumber() == cardNumber) {
     			return false;
@@ -22,7 +26,11 @@ public class Customer extends Member implements Serializable {
     	creditCards.add( new CreditCard(cardNumber, expDate) );
     	return true;
     }
-    
+    /**
+     * removes a credit card associated with customer
+     * @param cardNumber
+     * @return
+     */
     public boolean removeCreditcard(int cardNumber){
     	int i = 0;
     	for (CreditCard card : creditCards) {

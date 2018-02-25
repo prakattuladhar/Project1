@@ -121,7 +121,7 @@ public class Driver {
                 "\n\n14.Help: Display help\n");
     }
     /**
-     * Allows clerk to add a client
+     * Adds a client
      */
     private void addClient() {
         System.out.println("Input name: ");
@@ -160,7 +160,9 @@ public class Driver {
             System.out.print("-------------------------------------\n");
         }
     }
-
+    /**
+     * Adds a customer
+     */
     private void addCustomer() {
         System.out.print("Input name: ");
         String name = keyboard.nextLine();
@@ -173,18 +175,35 @@ public class Driver {
         int phone = keyboard.nextInt();
 
         System.out.print("Input creditcard number: ");
-        int cardNumber=keyboard.nextInt();
+        int cardNumber = keyboard.nextInt();
 
         System.out.print("Input expiration date: ");
-        String expDate=keyboard.nextLine();
+        String expDate = keyboard.nextLine();
 
-        theater.addCustomer(name, address, phone,cardNumber, expDate);
+        boolean customerExists = theater.addCustomer(
+        		name, address, phone, cardNumber, expDate);
+        
+        if (customerExists) {
+        	System.out.println("Add failed: customer already exists");
+        } else {
+        	System.out.println("Customer added");
+        }
+        
     }
-
+    /**
+     * Deletes a customer
+     */
     private void removeCustomer() {
         System.out.print("Enter customer id: ");
-        int id=keyboard.nextInt();
-        theater.removeCustomer(id);
+        int id = keyboard.nextInt();
+        
+        String deleted = theater.removeCustomer(id);
+        
+        if (deleted == null) {
+        	System.out.print("No customer exists for ID: " + id);
+        } else {
+        	System.out.print("Deleted customer: " + deleted);
+        }
 
     }
 

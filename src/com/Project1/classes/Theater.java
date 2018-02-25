@@ -51,16 +51,32 @@ public class Theater implements Serializable{
    public ArrayList<Client> getAllClient(){
        return clientList.getList();
    }
-
-    //true if successful
-   public boolean addCustomer(String name,String address, int phone, int cardNumber, String expirationDate){
-       //customer id can automatically be added as the length of the array increases. Map array.length to client id
-       //existence checking need to be done. if phone and address matches list: donot append
-       return false;
+    /**
+     * Adds a new customer
+     * @param name
+     * @param address
+     * @param phone
+     * @param cardNumber
+     * @param expirationDate
+     * @return true if customer added, false if customer already exists
+     */
+   public boolean addCustomer(String name, String address, int phone, int cardNumber, String expirationDate){
+	   CreditCard card = new CreditCard(cardNumber, expirationDate);
+	   Customer customer = new Customer(name, address, phone, card);
+       return customerList.add(customer);
    }
-   public boolean removeCustomer(int id) {
-       //true if success full
-       return false;
+   /**
+    * Deletes a customer
+    * @param id
+    * @return true if customer deleted, false if no customer existed for that id
+    */
+   public String removeCustomer(int id) {
+       Customer customer = customerList.remove(id);
+       if (customer != null) {
+    	   String customerInfo = customer.getId() + " " + customer.getName();
+    	   return customerInfo;
+       }
+       return null;
    }
    public void addShow(String name,String date,int clientId){
     //show id can automatically be added as the length of the array increases. Map array.length to client id
