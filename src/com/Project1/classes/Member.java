@@ -34,6 +34,16 @@ public abstract class Member implements Serializable {
     public int getPhone() {
         return phone;
     }
+    
+    public boolean equals(Member member) {
+    	if (
+    			name.equals( member.getName() ) &&
+    			address.equals( member.getAddress() )
+    		) {
+    		return true;
+    	}
+    	return false;
+    }
 
     @Override
     public String toString() {

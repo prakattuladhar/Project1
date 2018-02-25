@@ -120,19 +120,27 @@ public class Driver {
                 "that session." +
                 "\n\n14.Help: Display help\n");
     }
-
+    /**
+     * Allows clerk to add a client
+     */
     private void addClient() {
-        System.out.print("Input name: ");
+        System.out.println("Input name: ");
         String name = keyboard.nextLine();
         keyboard.nextLine();
 
-        System.out.print("Input Address: ");
+        System.out.println("Input Address: ");
         String address = keyboard.nextLine();
 
-        System.out.print("Input Phone: ");
+        System.out.println("Input Phone: ");
         int phone = keyboard.nextInt();
 
-        theater.addClient(name, address, phone);
+        boolean clientExists = theater.addClient(name, address, phone);
+        
+        if (clientExists) {
+        	System.out.println("Add failed: client already exists");
+        } else {
+        	System.out.println("Client added");
+        }
     }
 
     private void removeClient() {
@@ -182,13 +190,13 @@ public class Driver {
 
     private void addCreditCard() {
         System.out.print("Enter customer id: ");
-        int id=keyboard.nextInt();
+        int id = keyboard.nextInt();
 
         System.out.print("Enter credit card numebr : ");
-        int number=keyboard.nextInt();
+        int number = keyboard.nextInt();
 
         System.out.print("Enter expiration date : ");
-        String date=keyboard.next();
+        String date = keyboard.next();
 
 
 

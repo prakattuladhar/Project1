@@ -6,33 +6,35 @@ import java.util.ArrayList;
 
 //made singleton
 public class Theater implements Serializable{
-   private CustomerList customerList= new CustomerList();
-   private ClientList clientList=new ClientList();
-   private ShowList showList=new ShowList();
+   private CustomerList customerList = CustomerList.instance();
+   private ClientList clientList = new ClientList();
+   private ShowList showList = new ShowList();
 
-   public int[] x=new int[10];
+   public int[] x = new int[10];
    private static Theater theater;
    private Theater(){
 
    }
    public static Theater getInstance(){
-       if(theater==null)
-           theater=new Theater();
+       if(theater == null)
+           theater = new Theater();
        return theater;
    }
    public void setTheater(Theater object){
-       this.theater=object;
+       this.theater = object;
    }
 
 
-   //true if successful
+   /**
+    * adds a new client
+    * @param name
+    * @param address
+    * @param phone
+    * @return true if client was added, false if client already exists
+    */
    public boolean addClient(String name,String address, int phone){
-    //client id can automatically be added as the length of the array increases. Map array.length to client id
-
-       //existence checking need to be done. if phone and address matches list: donot append
-       Client client= new Client(clientList.getList().size(),name,address,phone);
-       clientList.append(client);
-       return true;
+	   Client client = new Client(name , address, phone);
+       return clientList.add(client);
 
    }
    public boolean removeClient(int id){
