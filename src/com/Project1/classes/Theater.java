@@ -1,7 +1,7 @@
 package com.Project1.classes;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 
 
 //made singleton
@@ -43,13 +43,13 @@ public class Theater implements Serializable{
    }
 
    //returns back an list of customers(array)
-   public ArrayList<Customer> getAllCustomer(){
-       return customerList.getList();
+   public Iterator<Customer> getCustomerIterator(){
+       return customerList.iterator();
    }
 
    //returns back an list of clients(array)
-   public ArrayList<Client> getAllClient(){
-       return clientList.getList();
+   public Iterator<Client> getClientIterator(){
+       return clientList.iterator();
    }
     /**
      * Adds a new customer

@@ -2,10 +2,11 @@ package com.Project1;
 
 import com.Project1.classes.Client;
 import com.Project1.classes.ClientList;
+import com.Project1.classes.CreditCard;
 import com.Project1.classes.Customer;
 import com.Project1.classes.Theater;
 
-import java.util.Scanner;
+import java.util.*;
 
 //prakat will code this
 public class Driver {
@@ -150,7 +151,9 @@ public class Driver {
     }
 
     private void listClient() {
-        for (Client client : theater.getAllClient()) {
+    	Iterator<Client> iterator = theater.getClientIterator();
+        while ( iterator.hasNext() ) {
+        	Client client = iterator.next();
             System.out.println("\n-------------------------------------");
             System.out.println("Id:" + client.getId());
             System.out.println("Name:" + client.getName());
@@ -211,7 +214,7 @@ public class Driver {
         System.out.print("Enter customer id: ");
         int id = keyboard.nextInt();
 
-        System.out.print("Enter credit card numebr : ");
+        System.out.print("Enter credit card number : ");
         int number = keyboard.nextInt();
 
         System.out.print("Enter expiration date : ");
@@ -231,13 +234,20 @@ public class Driver {
     }
 
     private void listCustomers() {
-        for (Customer customer : theater.getAllCustomer()) {
+    	Iterator<Customer> iterator = theater.getCustomerIterator();
+        while ( iterator.hasNext() ) {
+        	Customer customer = iterator.next();
             System.out.println("\n-------------------------------------");
-            System.out.println("Id:" + customer.getId());
-            System.out.println("Name:" + customer.getName());
-            System.out.println("Phone:" + customer.getPhone());
+            System.out.println("Id: " + customer.getId());
+            System.out.println("Name: " + customer.getName());
+            System.out.println("Phone: " + customer.getPhone());
             System.out.println("Address: " + customer.getAddress());
-            System.out.println("Credit cards:" + customer.getCreditCards().length);
+            ArrayList<CreditCard> cards = customer.getCreditCards();
+            System.out.println("Credit cards:" + cards.size());
+            for (CreditCard card : cards) {
+            	System.out.println( "\tNumber: " + card.getNumber() );
+            	System.out.println( "\tExpiration date: " + card.getExpirationDate() );
+            }
             System.out.print("-------------------------------------\n");
         }
     }

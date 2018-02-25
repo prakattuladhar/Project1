@@ -22,4 +22,10 @@ public class CreditCard implements Serializable {
     public boolean equals(CreditCard otherCard) {
     	return this.cardNumber == otherCard.getNumber();
     }
+    
+    @Override
+    public String toString() {
+    	return "Credit Card Number: " + cardNumber + 
+    			"\nExpiration Date: " + expirationDate + "\n";
+    }
 }

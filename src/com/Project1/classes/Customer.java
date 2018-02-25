@@ -48,13 +48,11 @@ public class Customer extends Member implements Serializable {
     
     @Override
     public String toString() {
+    	// Formats credit card information
     	StringBuilder cardInformation = new StringBuilder();
     	cardInformation.append("\n\tCredit Card Info:\n");
     	for (CreditCard card : creditCards) {
-    		cardInformation.append(
-    			"\tCredit Card Number: " + card.getNumber() + 
-    			", Expiration Date: " + card.getExpirationDate() + "\n"
-    		);
+    		cardInformation.append(card);
     	}
     	
     	return "Customer{ " + super.toString() + cardInformation + "\n}";
