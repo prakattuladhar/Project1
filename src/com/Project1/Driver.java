@@ -121,6 +121,8 @@ public class Driver {
                 "that session." +
                 "\n\n14.Help: Display help\n");
     }
+    
+    // Client methods
     /**
      * Adds a client
      */
@@ -143,13 +145,18 @@ public class Driver {
         	System.out.println("Client added");
         }
     }
-
+    /**
+     * Removes a client based on member id
+     */
+    // needs to check collection of shows to ensure client has no shows
     private void removeClient() {
         System.out.print("Input Client number: ");
         int id=keyboard.nextInt();
         theater.removeClient(id);
     }
-
+    /**
+     * Lists information for every client
+     */
     private void listClient() {
     	Iterator<Client> iterator = theater.getClientIterator();
         while ( iterator.hasNext() ) {
@@ -160,9 +167,11 @@ public class Driver {
             System.out.println("Phone:" + client.getPhone());
             System.out.println("Address: " + client.getAddress());
             System.out.println("Balance:" + client.getBalance());
-            System.out.print("-------------------------------------\n");
+            System.out.println("-------------------------------------\n");
         }
     }
+    
+    // Customer methods
     /**
      * Adds a customer
      */
@@ -194,7 +203,7 @@ public class Driver {
         
     }
     /**
-     * Deletes a customer
+     * Deletes a customer based on member id
      */
     private void removeCustomer() {
         System.out.print("Enter customer id: ");
@@ -209,7 +218,33 @@ public class Driver {
         }
 
     }
+    /**
+     * Lists information for every customer
+     */
+    private void listCustomers() {
+    	Iterator<Customer> iterator = theater.getCustomerIterator();
+        while ( iterator.hasNext() ) {
+        	Customer customer = iterator.next();
+            System.out.println("\n-------------------------------------");
+            System.out.println( "Id: " + customer.getId() );
+            System.out.println( "Name: " + customer.getName() );
+            System.out.println( "Phone: " + customer.getPhone() );
+            System.out.println( "Address: " + customer.getAddress() );
+            Iterator<CreditCard> cards = customer.getCreditCardIterator();
+            System.out.println("Credit cards:" + customer.getCreditCardCount() );
+            while ( cards.hasNext() ) {
+            	CreditCard card = cards.next();
+            	System.out.println( "\tNumber: " + card.getNumber() );
+            	System.out.println( "\tExpiration date: " + card.getExpirationDate() );
+            }
+            System.out.print("-------------------------------------\n");
+        }
+    }
 
+    // Credit card methods
+    /**
+     * Adds a credit card to a specific customer
+     */
     private void addCreditCard() {
         System.out.print("Enter customer id: ");
         int id = keyboard.nextInt();
@@ -219,37 +254,29 @@ public class Driver {
 
         System.out.print("Enter expiration date : ");
         String date = keyboard.next();
-
-
-
+        
+        try {
+        	theater.addCreditCard(id, number, date);
+        } catch (RuntimeException exception) {
+        	System.out.println( exception.getMessage() );
+        }
     }
-
+    /**
+     * Delete a credit card for a specific customer
+     */
     private void removeCreditCard() {
         System.out.print("Enter customer id: ");
-        int id=keyboard.nextInt();
+        int id = keyboard.nextInt();
 
         System.out.print("Enter credit card numebr : ");
-        int number=keyboard.nextInt();
-
-    }
-
-    private void listCustomers() {
-    	Iterator<Customer> iterator = theater.getCustomerIterator();
-        while ( iterator.hasNext() ) {
-        	Customer customer = iterator.next();
-            System.out.println("\n-------------------------------------");
-            System.out.println("Id: " + customer.getId());
-            System.out.println("Name: " + customer.getName());
-            System.out.println("Phone: " + customer.getPhone());
-            System.out.println("Address: " + customer.getAddress());
-            ArrayList<CreditCard> cards = customer.getCreditCards();
-            System.out.println("Credit cards:" + cards.size());
-            for (CreditCard card : cards) {
-            	System.out.println( "\tNumber: " + card.getNumber() );
-            	System.out.println( "\tExpiration date: " + card.getExpirationDate() );
-            }
-            System.out.print("-------------------------------------\n");
+        int number = keyboard.nextInt();
+        
+        try {
+        	theater.removeCreditCard(id, number);
+        } catch (RuntimeException exception) {
+        	System.out.println( exception.getMessage() );
         }
+
     }
 
     private void addShow() {

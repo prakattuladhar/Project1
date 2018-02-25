@@ -24,7 +24,7 @@ public class Theater implements Serializable{
        this.theater = object;
    }
 
-
+   // Client methods
    /**
     * adds a new client
     * @param name
@@ -41,16 +41,15 @@ public class Theater implements Serializable{
        //true if successful
         return false;
    }
-
-   //returns back an list of customers(array)
-   public Iterator<Customer> getCustomerIterator(){
-       return customerList.iterator();
-   }
-
-   //returns back an list of clients(array)
+   /**
+    * 
+    * @return iterator of clients
+    */
    public Iterator<Client> getClientIterator(){
        return clientList.iterator();
    }
+   
+   // Customer methods
     /**
      * Adds a new customer
      * @param name
@@ -78,6 +77,43 @@ public class Theater implements Serializable{
        }
        return null;
    }
+   /**
+    * 
+    * @return iterator of customers
+    */
+   public Iterator<Customer> getCustomerIterator(){
+       return customerList.iterator();
+   }
+   
+   // CreditCard methods
+   /**
+    * 
+    * @param customerId
+    * @param cardNumber
+    * @param date
+    */
+   public void addCreditCard(int customerId, int cardNumber, String date) {
+	   Customer customer = customerList.getCustomer(customerId);
+	   if (customer == null) {
+		   throw new RuntimeException("No customer exists with ID: " + customerId);
+	   }
+	   CreditCard card = new CreditCard(cardNumber, date);
+	   customer.addCreditCard(card);
+   }
+   
+   public void removeCreditCard(int customerId, int cardNumber) {
+	   Customer customer = customerList.getCustomer(customerId);
+	   if (customer == null) {
+		   throw new RuntimeException("No customer exists with ID: " + customerId);
+	   }
+	   try {
+		   customer.removeCreditCard(cardNumber);
+	   } catch (RuntimeException exception) {
+		   throw exception;
+	   }
+   }
+   
+   
    public void addShow(String name,String date,int clientId){
     //show id can automatically be added as the length of the array increases. Map array.length to client id
    }
