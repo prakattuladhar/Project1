@@ -59,7 +59,7 @@ public class Theater implements Serializable{
      * @param expirationDate
      * @return true if customer added, false if customer already exists
      */
-   public boolean addCustomer(String name, String address, int phone, int cardNumber, String expirationDate){
+   public boolean addCustomer(String name, String address, int phone, int cardNumber, Calendar expirationDate){
 	   CreditCard card = new CreditCard(cardNumber, expirationDate);
 	   Customer customer = new Customer(name, address, phone, card);
        return customerList.add(customer);
@@ -92,7 +92,7 @@ public class Theater implements Serializable{
     * @param cardNumber
     * @param date
     */
-   public void addCreditCard(int customerId, int cardNumber, String date) {
+   public void addCreditCard(int customerId, int cardNumber, Calendar date) {
 	   Customer customer = customerList.getCustomer(customerId);
 	   if (customer == null) {
 		   throw new RuntimeException("No customer exists with ID: " + customerId);
