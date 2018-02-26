@@ -3,15 +3,12 @@ package com.Project1;
 import com.Project1.classes.*;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
-<<<<<<< HEAD
 import java.io.File;
 import java.io.IOException;
-=======
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
->>>>>>> refs/heads/getDates
 import java.util.*;
 import java.time.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 //prakat will code this
 public class Driver {
@@ -75,15 +72,11 @@ public class Driver {
                     break;
                 }
                 case 11: {
-                    listShow();
-                    break;
-                }
-                case 12: {
-                    save();
+                    removeShow();
                     break;
                 }
                 case 13: {
-                    load();
+                    listShow();
                     break;
                 }
                 case 14: {
@@ -217,15 +210,9 @@ public class Driver {
         System.out.println("Input Phone: ");
         int phone = Integer.parseInt( keyboard.nextLine() );
 
-        boolean clientExists=theater.addClient(name, address, phone);
+        theater.addClient(name, address, phone);
         
-
-        if (!clientExists) {
-        	System.out.println("Client add failed");
-        } else {
-        	System.out.println("Client added");
-        }
-
+        System.out.println("Client added");
     }
     /**
      * Removes a client based on member id
