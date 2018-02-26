@@ -3,9 +3,15 @@ package com.Project1;
 import com.Project1.classes.*;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
+<<<<<<< HEAD
 import java.io.File;
 import java.io.IOException;
+=======
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+>>>>>>> refs/heads/getDates
 import java.util.*;
+import java.time.*;
 
 //prakat will code this
 public class Driver {
@@ -132,6 +138,71 @@ public class Driver {
                 "\n\n14.Help: Display help\n");
     }
     
+    // User input methods
+    /**
+     * gets integer entered by user
+     * @return integer
+     */
+    private int getInt() {
+    	int response = -1;
+    	String line;
+    	
+    	do {
+    		line = keyboard.nextLine();
+    		try {
+    			response = Integer.parseInt( line );
+    		} catch (Exception exception) {
+    			System.out.println("Invalid Input: Please enter a number");
+    		}
+    		// Allow user to return to menu
+//    		if ( line.equalsIgnoreCase("q") ) {
+//    			throw new RuntimeException();
+//    		}
+    	} while (response == -1);
+    	return response;
+    }
+    /**
+     * Gets a date based on format passed to it
+     * @param format
+     * @return
+     * @throws Exception
+     */
+    private Calendar getDate(String format) throws Exception {
+    	String line;
+    	Calendar date = new GregorianCalendar();
+        SimpleDateFormat formatter = new SimpleDateFormat(format);
+        
+    	try {
+    		line = keyboard.nextLine();
+    		// Allow user to return to menu
+//    		if ( line.equalsIgnoreCase("q") ) {
+//    			
+//    		}
+    	    date.setTime( formatter.parse(line) );
+    	    return date;
+    	} catch (Exception fe) {
+    	    throw fe;
+    	}
+    }
+    private Calendar getShowDate() {
+    	do {
+    		try {
+    			return getDate("mm/dd/yyyy");
+    		} catch (Exception e) {
+    			System.out.println("Invalid Date: Please use format mm/dd/yyy");
+    		}
+    	} while (true);
+    }
+    private Calendar getExpirationDate() {
+    	do {
+    		try {
+    			return getDate("mm/dd");
+    		} catch (Exception e) {
+    			System.out.println("Invalid Date: Please use format mm/dd");
+    		}
+    	} while (true);
+    }
+    
     // Client methods
     /**
      * Adds a client
@@ -173,11 +244,11 @@ public class Driver {
         while ( iterator.hasNext() ) {
         	Client client = iterator.next();
             System.out.println("\n-------------------------------------");
-            System.out.println( "Id:" + client.getId() );
-            System.out.println( "Name:" + client.getName() );
-            System.out.println( "Phone:" + client.getPhone() );
+            System.out.println( "Id: " + client.getId() );
+            System.out.println( "Name: " + client.getName() );
+            System.out.println( "Phone: " + client.getPhone() );
             System.out.println( "Address: " + client.getAddress() );
-            System.out.println( "Balance:" + client.getBalance() );
+            System.out.println( "Balance: " + client.getBalance() );
             System.out.println("-------------------------------------\n");
         }
     }
@@ -200,10 +271,10 @@ public class Driver {
         int cardNumber = Integer.parseInt( keyboard.nextLine() );
 
         System.out.print("Input expiration date: ");
-        String expDate = keyboard.nextLine();
+        Calendar expirationDate = getExpirationDate();
 
         theater.addCustomer(
-        		name, address, phone, cardNumber, expDate);
+        		name, address, phone, cardNumber, expirationDate);
         
         System.out.println("Customer added");
         
@@ -228,6 +299,8 @@ public class Driver {
      * Lists information for every customer
      */
     private void listCustomers() {
+    	SimpleDateFormat formatter = new SimpleDateFormat("mm/dd");
+    	
     	Iterator<Customer> iterator = theater.getCustomerIterator();
         while ( iterator.hasNext() ) {
         	Customer customer = iterator.next();
@@ -241,7 +314,8 @@ public class Driver {
             while ( cards.hasNext() ) {
             	CreditCard card = cards.next();
             	System.out.println( "\tNumber: " + card.getNumber() );
-            	System.out.println( "\tExpiration date: " + card.getExpirationDate() );
+            	System.out.println( "\tExpiration date: " +
+            			formatter.format( card.getExpirationDate().getTime() ) );
             }
             System.out.print("-------------------------------------\n");
         }
@@ -259,7 +333,7 @@ public class Driver {
         int number = Integer.parseInt( keyboard.nextLine() );
 
         System.out.print("Enter expiration date : ");
-        String date = keyboard.nextLine();
+        Calendar date = getExpirationDate();
         
         try {
         	theater.addCreditCard(id, number, date);
@@ -334,24 +408,6 @@ public class Driver {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
-    
-    private int getInt() {
-    	int response = -1;
-    	String line;
-    	
-    	do {
-    		line = keyboard.nextLine();
-    		try {
-    			response = Integer.parseInt( line );
-    		} catch (Exception exception) {
-    			System.out.println("Invalid Input: Please enter a number");
-    		}
-    		if ( line.equals("q") ) {
-    			throw new RuntimeException();
-    		}
-    	} while (response == -1);
-    	return response;
     }
 
 }
