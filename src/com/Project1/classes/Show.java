@@ -1,8 +1,9 @@
 package com.Project1.classes;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Show {
+public class Show implements Serializable {
     private int id;
     private String name;
     private String date;

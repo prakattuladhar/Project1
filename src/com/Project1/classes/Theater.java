@@ -114,8 +114,14 @@ public class Theater implements Serializable{
    }
    
    
-   public void addShow(String name,String date,int clientId){
+   public boolean addShow(String name,String date,int clientId){
     //show id can automatically be added as the length of the array increases. Map array.length to client id
+       Show show=new Show(showList.getList().size(),name,date,clientId);
+       boolean flag=showList.append(show);
+       if(flag)
+           return true;
+       else
+           return false;
    }
 
    //returns array

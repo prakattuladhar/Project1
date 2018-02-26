@@ -1,11 +1,10 @@
 package com.Project1;
 
-import com.Project1.classes.Client;
-import com.Project1.classes.ClientList;
-import com.Project1.classes.CreditCard;
-import com.Project1.classes.Customer;
-import com.Project1.classes.Theater;
+import com.Project1.classes.*;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 //prakat will code this
@@ -70,11 +69,15 @@ public class Driver {
                     break;
                 }
                 case 11: {
-                    removeShow();
+                    listShow();
+                    break;
+                }
+                case 12: {
+                    save();
                     break;
                 }
                 case 13: {
-                    listShow();
+                    load();
                     break;
                 }
                 case 14: {
@@ -284,26 +287,53 @@ public class Driver {
 
     private void addShow() {
         System.out.print("Enter date for show: ");
-
+        String date=keyboard.nextLine();
         System.out.print("Enter client id: ");
-
+        int clientId = Integer.parseInt( keyboard.nextLine() );
         System.out.print("Enter name of the show: ");
+        String name=keyboard.nextLine();
+
+
+        if(theater.addShow(name,date,clientId))
+            System.out.println("successfully added");
+        else
+            System.out.println("Adding show falined");
 
     }
 
     private void listShow() {
 
+        for(Show show:theater.geShows()){
+            System.out.println("\n---------------------------------------");
+            System.out.println("Id:"+show.getId() );
+            System.out.println("Date:"+ show.getDate());
+            System.out.println("Name:"+ show.getName());
+            System.out.println("Client:"+ show.getClientId());
+           // System.out.println("Customers: "+show.getCustomerId());
+        }
+        System.out.println("\n---------------------------------------");
     }
     private void removeShow() {
+
     }
 
 
     private void save() {
-
+        try {
+            FileHandler.writeToFile(theater);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void load() {
-
+        try {
+            theater= FileHandler.readFromFile("output.dat");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
     
     private int getInt() {
