@@ -18,9 +18,6 @@ public class ClientList implements Iterable<Client>, Serializable {
      * @return true if added, false if client already in list
      */
     public boolean add(Client client){
-    	if ( map.containsValue(client) ) {
-    		return false;
-    	}
         map.put(client.getId(), client);
         return true;
     }

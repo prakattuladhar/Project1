@@ -17,13 +17,8 @@ public class Customer extends Member implements Serializable {
      * @param expDate
      * @return true if credit card added, false if credit card already exists
      */
-    public boolean addCreditCard(int cardNumber, String expDate){
-    	for (CreditCard card : creditCards) {
-    		if (card.getNumber() == cardNumber) {
-    			return false;
-    		}
-    	}
-    	creditCards.add( new CreditCard(cardNumber, expDate) );
+    public boolean addCreditCard(CreditCard card){
+    	creditCards.add(card);
     	return true;
     }
     /**
@@ -31,19 +26,26 @@ public class Customer extends Member implements Serializable {
      * @param cardNumber
      * @return
      */
-    public boolean removeCreditcard(int cardNumber){
+    public void removeCreditCard (int cardNumber){
+    	if (creditCards.size() > 1) {
+    		String message = "Customer must have at least one credit card";
+    		throw new RuntimeException(message);
+    	}
     	int i = 0;
     	for (CreditCard card : creditCards) {
     		if (card.getNumber() == cardNumber) {
     			creditCards.remove(i);
-    			return true;
     		}
     		i++;
     	}
-    	return false;
+    	throw new RuntimeException("Credit card " + cardNumber +
+    			" not on file for customer");
     }
-    public ArrayList<CreditCard> getCreditCards() {
-        return creditCards;
+    public int getCreditCardCount() {
+    	return creditCards.size();
+    }
+    public Iterator<CreditCard> getCreditCardIterator() {
+        return creditCards.iterator();
     }
     
     @Override

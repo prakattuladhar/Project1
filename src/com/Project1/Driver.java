@@ -16,13 +16,20 @@ public class Driver {
     public void start() {
         int option;
         do {
+        	option = -1;		// Sentinel value for invalid input
             printOptions();
             System.out.print("Please Select a Option: ");
-            option = keyboard.nextInt();
+
+            try {
+            	// Allows better error checking and doesn't leave dangling "\n"
+            	option = Integer.parseInt( keyboard.nextLine() );
+            } catch (Exception exception) {
+            	;
+            }
 
             switch (option) {
                 case 1: {
-                    System.out.println("Thayou for using");
+                    System.out.println("Thank you for using");
                     System.exit(100);
                     break;
                 }
@@ -75,7 +82,7 @@ public class Driver {
                     break;
                 }
                 default: {
-                    System.out.println("Invalid Input\n");
+                    System.out.println("Invalid Input:  Please enter a number from 0 to 14\n");
                     break;
                 }
             }
@@ -121,84 +128,89 @@ public class Driver {
                 "that session." +
                 "\n\n14.Help: Display help\n");
     }
+    
+    // Client methods
     /**
      * Adds a client
      */
     private void addClient() {
         System.out.println("Input name: ");
         String name = keyboard.nextLine();
-        keyboard.nextLine();
 
         System.out.println("Input Address: ");
         String address = keyboard.nextLine();
 
         System.out.println("Input Phone: ");
-        int phone = keyboard.nextInt();
+        int phone = Integer.parseInt( keyboard.nextLine() );
 
-        boolean clientExists = theater.addClient(name, address, phone);
+        boolean clientExists=theater.addClient(name, address, phone);
         
-        if (clientExists) {
+
+        if (!clientExists) {
         	System.out.println("Client add failed");
         } else {
         	System.out.println("Client added");
         }
-    }
 
+    }
+    /**
+     * Removes a client based on member id
+     */
+    // needs to check collection of shows to ensure client has no shows
     private void removeClient() {
         System.out.print("Input Client number: ");
-        int id=keyboard.nextInt();
+        int id = Integer.parseInt( keyboard.nextLine() );
         theater.removeClient(id);
     }
-
+    /**
+     * Lists information for every client
+     */
     private void listClient() {
     	Iterator<Client> iterator = theater.getClientIterator();
         while ( iterator.hasNext() ) {
         	Client client = iterator.next();
             System.out.println("\n-------------------------------------");
-            System.out.println("Id:" + client.getId());
-            System.out.println("Name:" + client.getName());
-            System.out.println("Phone:" + client.getPhone());
-            System.out.println("Address: " + client.getAddress());
-            System.out.println("Balance:" + client.getBalance());
-            System.out.print("-------------------------------------\n");
+            System.out.println( "Id:" + client.getId() );
+            System.out.println( "Name:" + client.getName() );
+            System.out.println( "Phone:" + client.getPhone() );
+            System.out.println( "Address: " + client.getAddress() );
+            System.out.println( "Balance:" + client.getBalance() );
+            System.out.println("-------------------------------------\n");
         }
     }
+    
+    // Customer methods
     /**
      * Adds a customer
      */
     private void addCustomer() {
         System.out.print("Input name: ");
         String name = keyboard.nextLine();
-        keyboard.nextLine();
 
         System.out.print("Input Address: ");
         String address = keyboard.nextLine();
 
         System.out.print("Input Phone: ");
-        int phone = keyboard.nextInt();
+        int phone = Integer.parseInt( keyboard.nextLine() );
 
         System.out.print("Input creditcard number: ");
-        int cardNumber = keyboard.nextInt();
+        int cardNumber = Integer.parseInt( keyboard.nextLine() );
 
         System.out.print("Input expiration date: ");
         String expDate = keyboard.nextLine();
 
-        boolean customerExists = theater.addCustomer(
+        theater.addCustomer(
         		name, address, phone, cardNumber, expDate);
         
-        if (customerExists) {
-        	System.out.println("Add failed: customer already exists");
-        } else {
-        	System.out.println("Customer added");
-        }
+        System.out.println("Customer added");
         
     }
     /**
-     * Deletes a customer
+     * Deletes a customer based on member id
      */
     private void removeCustomer() {
         System.out.print("Enter customer id: ");
-        int id = keyboard.nextInt();
+        int id = Integer.parseInt( keyboard.nextLine() );
         
         String deleted = theater.removeCustomer(id);
         
@@ -209,47 +221,65 @@ public class Driver {
         }
 
     }
-
-    private void addCreditCard() {
-        System.out.print("Enter customer id: ");
-        int id = keyboard.nextInt();
-
-        System.out.print("Enter credit card number : ");
-        int number = keyboard.nextInt();
-
-        System.out.print("Enter expiration date : ");
-        String date = keyboard.next();
-
-
-
-    }
-
-    private void removeCreditCard() {
-        System.out.print("Enter customer id: ");
-        int id=keyboard.nextInt();
-
-        System.out.print("Enter credit card numebr : ");
-        int number=keyboard.nextInt();
-
-    }
-
+    /**
+     * Lists information for every customer
+     */
     private void listCustomers() {
     	Iterator<Customer> iterator = theater.getCustomerIterator();
         while ( iterator.hasNext() ) {
         	Customer customer = iterator.next();
             System.out.println("\n-------------------------------------");
-            System.out.println("Id: " + customer.getId());
-            System.out.println("Name: " + customer.getName());
-            System.out.println("Phone: " + customer.getPhone());
-            System.out.println("Address: " + customer.getAddress());
-            ArrayList<CreditCard> cards = customer.getCreditCards();
-            System.out.println("Credit cards:" + cards.size());
-            for (CreditCard card : cards) {
+            System.out.println( "Id: " + customer.getId() );
+            System.out.println( "Name: " + customer.getName() );
+            System.out.println( "Phone: " + customer.getPhone() );
+            System.out.println( "Address: " + customer.getAddress() );
+            Iterator<CreditCard> cards = customer.getCreditCardIterator();
+            System.out.println("Credit cards:" + customer.getCreditCardCount() );
+            while ( cards.hasNext() ) {
+            	CreditCard card = cards.next();
             	System.out.println( "\tNumber: " + card.getNumber() );
             	System.out.println( "\tExpiration date: " + card.getExpirationDate() );
             }
             System.out.print("-------------------------------------\n");
         }
+    }
+
+    // Credit card methods
+    /**
+     * Adds a credit card to a specific customer
+     */
+    private void addCreditCard() {
+        System.out.print("Enter customer id: ");
+        int id = Integer.parseInt( keyboard.nextLine() );
+
+        System.out.print("Enter credit card number : ");
+        int number = Integer.parseInt( keyboard.nextLine() );
+
+        System.out.print("Enter expiration date : ");
+        String date = keyboard.nextLine();
+        
+        try {
+        	theater.addCreditCard(id, number, date);
+        } catch (RuntimeException exception) {
+        	System.out.println( exception.getMessage() );
+        }
+    }
+    /**
+     * Delete a credit card for a specific customer
+     */
+    private void removeCreditCard() {
+        System.out.print("Enter customer id: ");
+        int id = Integer.parseInt( keyboard.nextLine() );
+
+        System.out.print("Enter credit card numebr : ");
+        int number = Integer.parseInt( keyboard.nextLine() );
+        
+        try {
+        	theater.removeCreditCard(id, number);
+        } catch (RuntimeException exception) {
+        	System.out.println( exception.getMessage() );
+        }
+
     }
 
     private void addShow() {
@@ -274,6 +304,24 @@ public class Driver {
 
     private void load() {
 
+    }
+    
+    private int getInt() {
+    	int response = -1;
+    	String line;
+    	
+    	do {
+    		line = keyboard.nextLine();
+    		try {
+    			response = Integer.parseInt( line );
+    		} catch (Exception exception) {
+    			System.out.println("Invalid Input: Please enter a number");
+    		}
+    		if ( line.equals("q") ) {
+    			throw new RuntimeException();
+    		}
+    	} while (response == -1);
+    	return response;
     }
 
 }

@@ -1,7 +1,6 @@
 package com.Project1.classes;
 
 import java.io.*;
-import java.util.concurrent.atomic.*;
 
 public abstract class Member implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -10,10 +9,10 @@ public abstract class Member implements Serializable {
     protected String address;
     protected int phone;
 
-    public Member(String name, String address, int phone) {
-        this.address = address;
-        this.name = name;
-        this.phone = phone;
+    public Member(String aName, String aAddress, int aPhone) {
+    	name = aName;
+        address = aAddress;
+        phone = aPhone;
         
         //creates unique id number
         this.id = MemberIdFactory.instance().createId();
