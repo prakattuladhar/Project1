@@ -138,7 +138,7 @@ public class Driver {
         boolean clientExists = theater.addClient(name, address, phone);
         
         if (clientExists) {
-        	System.out.println("Add failed: client already exists");
+        	System.out.println("Client add failed");
         } else {
         	System.out.println("Client added");
         }
@@ -253,6 +253,11 @@ public class Driver {
     }
 
     private void addShow() {
+        System.out.print("Enter date for show: ");
+
+        System.out.print("Enter client id: ");
+
+        System.out.print("Enter name of the show: ");
 
     }
 
