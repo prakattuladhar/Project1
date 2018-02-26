@@ -33,7 +33,7 @@ public class Theater implements Serializable{
     * @return true if client was added, false if client already exists
     */
    public boolean addClient(String name,String address, int phone){
-	   Client client = new Client(name , address, phone);
+	   Client client = new Client(name, address, phone);
        return clientList.add(client);
 
    }

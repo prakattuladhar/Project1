@@ -25,11 +25,11 @@ public class CustomerList implements Iterable<Customer>, Serializable {
     		return customerList;
     	}
     }
-
+    /**
+     * 
+     * @param customer
+     */
     public boolean add(Customer customer){
-    	if ( map.containsValue(customer) ) {
-    		return false;
-    	}
         map.put(customer.getId(), customer);
         return true;
     }

@@ -17,8 +17,9 @@ public class Customer extends Member implements Serializable {
      * @param expDate
      * @return true if credit card added, false if credit card already exists
      */
-    public void addCreditCard(CreditCard card){
+    public boolean addCreditCard(CreditCard card){
     	creditCards.add(card);
+    	return true;
     }
     /**
      * removes a credit card associated with customer
