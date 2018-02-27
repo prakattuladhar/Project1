@@ -54,14 +54,7 @@ public class ShowList implements Serializable, Iterable<Show> {
     	
         return available;
     }
-    /**
-     * 
-     * @param id
-     */
-    public void remove(int id){
-    	
-    }
-    
+
     private class SortByStartDate implements Comparator<Show> {
     	public int compare(Show a, Show b) {
     		return a.getStartDate().compareTo( b.getStartDate() );

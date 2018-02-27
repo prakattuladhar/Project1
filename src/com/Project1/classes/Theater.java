@@ -131,7 +131,7 @@ public class Theater implements Serializable{
 	   Show show = new Show(clientId, name, startDate, endDate);
        try {
     	   showList.add(show);
-       } catch (ShowConflictException se) {
+       } catch (Exception se) {
     	   throw se;
        } 
        return true;

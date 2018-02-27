@@ -1,18 +1,17 @@
 package com.Project1;/*
 @aurthor: Prakat Tuladhar
-Class to read and write Drawing object to file.
+Class to read and write Theater object to file.
 * */
 
 import com.Project1.classes.Theater;
 
 import java.io.*;
-import java.util.ArrayList;
 
 public class FileHandler  {
 
 
     //writes object to file
-    //@params: (Object: Drawings)
+    //@params: (Object: Theater)
     public static void writeToFile(Theater object) throws IOException {
         FileOutputStream fileOut=new FileOutputStream("output.dat");//output file name output.dat
         ObjectOutputStream objectOut=new ObjectOutputStream(fileOut);
@@ -24,7 +23,7 @@ public class FileHandler  {
     }
 
     //reads object form file
-    //return Drawing object
+    //return Theater object
     public static Theater readFromFile(String fileName) throws FileNotFoundException, IOException, ClassNotFoundException {
         FileInputStream fileIn=new FileInputStream("output.dat");//input file name output.dat
         ObjectInputStream objectIn=new ObjectInputStream(fileIn);
