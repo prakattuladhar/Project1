@@ -102,9 +102,9 @@ public class Driver {
 
     private void printOptions() {
         System.out.print("----------------------------------------------");
-        System.out.println("\n1. Exit Application\n2. Add Client\n3. Remove Client\n4.List all CLients\n" +
-                "5. Add Customer\n6. Remove customer\n7.Add credit card\n8. Remove Credit card\n9. List all customers" +
-                "\n10. Add a show/play\n11. List all shows\n12. Store Data\n13. Retrive data\n14.Help");
+        System.out.println("\n1. Exit Application\n2. Add Client\n3. Remove Client\n4. List all CLients\n" +
+                "5. Add Customer\n6. Remove customer\n7. Add credit card\n8. Remove Credit card\n9. List all customers" +
+                "\n10. Add a show/play\n11. List all shows\n12. Store Data\n13. Retrive data\n14. Help");
     }
 
     private void printHelp() {
@@ -114,7 +114,7 @@ public class Driver {
                 "generates a unique id and sets the balance to 0. (The balance will remain 0 in this iteration.)" +
                 "\n\n3. Remove Client. Remove a client with the given id. If a show is scheduled for the current or a\n" +
                 "future date for this client, the client cannot be removed." +
-                "\n\n4.. List all Clients. Print information about every client." +
+                "\n\n4. List all Clients. Print information about every client." +
                 "\n\n" +
                 "5. Add Customer. The system accepts the name, address, phone number, and the number and\n" +
                 "expiry date of exactly one credit card. The system generates a unique id for the customer." +
@@ -125,8 +125,8 @@ public class Driver {
                 "\n\n8. Remove a Credit Card. The system accepts the credit card number and removes the information\n" +
                 "related to the credit card. If this is the only credit card for the customer, it refuses to delete the\n" +
                 "credit card information." +
-                "\n\n9.List all Customers. Print information about every client, including credit card information." +
-                "\n\n10.Add a Show/Play. Add a new show for a client. The values accepted are the name of the show,\n" +
+                "\n\n9. List all Customers. Print information about every client, including credit card information." +
+                "\n\n10. Add a Show/Play. Add a new show for a client. The values accepted are the name of the show,\n" +
                 "the client id, and the period for which the client wants the theater for this play. The entire range\n" +
                 "of dates should be available, or the process fails." +
                 "\n\n11.List all Shows. List the names and dates of all shows" +
@@ -136,7 +136,7 @@ public class Driver {
                 "any session. If stored data is found, the user has the option to use it. The user may also invoke\n" +
                 "a command to load data, provided he/she has not yet issued any data-related commands in\n" +
                 "that session." +
-                "\n\n14.Help: Display help\n");
+                "\n\n14. Help: Display help\n");
     }
     
     // User input methods

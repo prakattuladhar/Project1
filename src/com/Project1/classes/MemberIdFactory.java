@@ -3,6 +3,14 @@ package com.Project1.classes;
 import java.io.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * @version 1.0
+ * 
+ * This class is used to create unique IDs for members
+ * 
+ * @author Colin Quinn
+ *
+ */
 public class MemberIdFactory implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private static AtomicInteger idCounter;
@@ -24,7 +32,10 @@ public class MemberIdFactory implements Serializable {
     		return factory;
     	}
     }
-    
+    /**
+     * Create a unique member ID
+     * @return member ID
+     */
     public int createId() {
     	return idCounter.getAndIncrement();
     }

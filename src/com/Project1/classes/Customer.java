@@ -3,24 +3,32 @@ package com.Project1.classes;
 import java.io.*;
 import java.util.*;
 
+/**
+ * @version 1.0
+ * 
+ * This class represents a customer
+ * 
+ * @author Colin Quinn
+ *
+ */
 public class Customer extends Member implements Serializable {
 	private static final long serialVersionUID = 1L;
     private ArrayList<CreditCard> creditCards = new ArrayList<CreditCard>(5);
     /**
-     * 
-     * @param name
-     * @param address
-     * @param phone
-     * @param card
+     * Constructor
+     * @param name		name of customer
+     * @param address	customer's address
+     * @param phone		customer's phone number
+     * @param card		customer's credit card
      */
     public Customer(String name, String address, int phone, CreditCard card) {
         super(name, address, phone);
         creditCards.add(card);
     }
     /**
-     * adds a credit card associated with customer
-     * @param cardNumber
-     * @param expDate
+     * Adds a credit card associated with customer
+     * @param cardNumber	credit card number
+     * @param expDate		credit card expiration date
      * @return true if credit card added, false if credit card already exists
      */
     public boolean addCreditCard(CreditCard card){
@@ -28,10 +36,10 @@ public class Customer extends Member implements Serializable {
     	return true;
     }
     /**
-     * removes a credit card associated with customer
-     * if customer only has one card, it may not be removed
-     * @param cardNumber
-     * @RuntimeException if try to delete last card
+     * Removes a credit card associated with customer
+     * If customer only has one card, it may not be removed
+     * @param cardNumber	number of credit card to be deleted
+     * @RuntimeException	on attempt to delete last card
      */
     public void removeCreditCard (int cardNumber){
     	if (creditCards.size() <= 1) {
@@ -50,20 +58,22 @@ public class Customer extends Member implements Serializable {
     			" not on file for customer");
     }
     /**
-     * 
-     * @return
+     * Gets number of credit cards associated with customer
+     * @return count of credit cards customer owns
      */
     public int getCreditCardCount() {
     	return creditCards.size();
     }
     /**
-     * 
-     * @return
+     * Gets an iterator for the customer's credit cards
+     * @return iterator<CreditCard>
      */
     public Iterator<CreditCard> getCreditCardIterator() {
         return creditCards.iterator();
     }
-    
+    /**
+     * String representation of customer's fields and credit cards
+     */
     @Override
     public String toString() {
     	// Formats credit card information
