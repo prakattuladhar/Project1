@@ -1,45 +1,42 @@
 package com.Project1.classes;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.*;
+import java.time.*;
 
 public class Show implements Serializable {
-    private int id;
-    private String name;
-    private String date;
     private int clientId;
-    private ArrayList<Integer> customerId=new ArrayList<Integer>();
+    private String name;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private ArrayList<Integer> customerIds = new ArrayList<Integer>();
 
-    public Show(int id, String name, String date, int clientId) {
-        this.id = id;
+    public Show(int clientId, String name, LocalDate startDate, LocalDate endDate) {   	
+    	this.clientId = clientId;
         this.name = name;
-        this.date = date;
-        this.clientId = clientId;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        
     }
-
-
-    public void addCustomer(int id){
-
-    }
-
-    public int getId() {
-        return id;
+    
+    public int getClientId() {
+        return clientId;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getDate() {
-        return date;
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+    
+    public LocalDate getEndDate() {
+    	return endDate;
     }
 
-    public int getClientId() {
-        return clientId;
-    }
-
-    public ArrayList<Integer> getCustomerId() {
-        return customerId;
+    public ArrayList<Integer> getCustomerIds() {
+        return customerIds;
     }
 
 }

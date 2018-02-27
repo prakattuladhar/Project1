@@ -27,8 +27,8 @@ public class Customer extends Member implements Serializable {
      * @return
      */
     public void removeCreditCard (int cardNumber){
-    	if (creditCards.size() > 1) {
-    		String message = "Customer must have at least one credit card";
+    	if (creditCards.size() <= 1) {
+    		String message = "Remove failed: Customer must have at least one credit card";
     		throw new RuntimeException(message);
     	}
     	int i = 0;
