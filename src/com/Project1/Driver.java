@@ -9,7 +9,6 @@ import java.util.*;
 import java.time.*;
 import java.time.format.*;
 
-//prakat will code this
 public class Driver {
 	
     private Scanner keyboard = new Scanner(System.in);
@@ -31,8 +30,13 @@ public class Driver {
 
             switch (option) {
                 case 1: {
-                    System.out.println("Thank you for using");
-                    System.exit(100);
+                    System.out.print("Confirm exit program? Enter Y for yes: ");
+                    String opt=keyboard.next();
+                    if(opt.toLowerCase().equals('y')) {
+                        save();
+                        System.out.println("Thank you for using");
+                        System.exit(100);
+                    }
                     break;
                 }
                 case 2: {
@@ -72,14 +76,18 @@ public class Driver {
                     break;
                 }
                 case 11: {
-                    removeShow();
-                    break;
-                }
-                case 13: {
                     listShow();
                     break;
                 }
-                case 14: {
+                case 12: {
+                    save();
+                    break;
+                }
+                case 13: {
+                    load();
+                    break;
+                }
+                case 14:{
                     printHelp();
                     break;
                 }
@@ -390,6 +398,8 @@ public class Driver {
         System.out.println("Show added");
     }
 
+
+    //prints all the shows
     private void listShow() {
     	Iterator<Show> iterator = theater.getShowIterator();
         while ( iterator.hasNext() ) {
@@ -403,9 +413,6 @@ public class Driver {
            // System.out.println("Customers: "+show.getCustomerId());
         }
         System.out.println("\n---------------------------------------");
-    }
-    private void removeShow() {
-
     }
 
 
