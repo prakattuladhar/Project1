@@ -25,9 +25,12 @@ public class ClientList implements Iterable<Client>, Serializable {
      * 
      * @param id
      * @return client that was removed, or null if client did not exist
+     * @RuntimeException if client has at least one show scheduled
      */
-    public Client remove(int id){
-    	// needs logic for searching show list for associated client
+    public Client remove(int id, ShowList list){
+    	if ( list.ClientHasShow(id) ) {
+    		throw new RuntimeException("Cannot remove a client with a show scheduled");
+    	}
     	return map.remove(id);
     }
     /**

@@ -36,12 +36,24 @@ public class Theater implements Serializable{
     */
    public boolean addClient(String name,String address, int phone){
 	   Client client = new Client(name, address, phone);
-       return clientList.add(client);
+	   try {
+		   return clientList.add(client);
+	   } catch (RuntimeException re) {
+		   throw re;
+	   }
 
    }
-   public boolean removeClient(int id){
-       //true if successful
-        return false;
+   /**
+    * removes a client
+    * @param id
+    * @return
+    */
+   public Client removeClient(int id){
+       try {
+    	   return clientList.remove(id, showList);
+       } catch (RuntimeException re) {
+    	   throw re;
+       }
    }
    /**
     * 

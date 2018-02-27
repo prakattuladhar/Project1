@@ -6,7 +6,7 @@ import java.time.*;
 
 public class ShowList implements Serializable, Iterable<Show> {
 	private static final long serialVersionUID = 1L;
-    private TreeMap<Show, Integer> map = new TreeMap<Show, Integer>( new SortByStartDate() );
+	private TreeMap<Show, Integer> map = new TreeMap<Show, Integer>( new SortByStartDate() );
     /**
      * 
      * @param show
@@ -50,9 +50,17 @@ public class ShowList implements Serializable, Iterable<Show> {
     		throw new ShowConflictException(conflictingShows);
     	}
     	
-    	map.put(show, null);
+    	map.put(show, show.getClientId() );
     	
         return available;
+    }
+    /**
+     * check if client has at least one show scheduled
+     * @param clientId
+     * @return
+     */
+    public boolean ClientHasShow(int clientId) {
+    	return map.containsValue(clientId);
     }
 
     private class SortByStartDate implements Comparator<Show> {

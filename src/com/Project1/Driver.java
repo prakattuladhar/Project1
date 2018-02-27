@@ -141,7 +141,8 @@ public class Driver {
     
     // User input methods
     /**
-     * gets integer entered by user
+     * Gets integer entered by user
+     * repeats until integer is successfully entered
      * @return integer
      */
     private int getInt() {
@@ -163,7 +164,8 @@ public class Driver {
     	return response;
     }
     /**
-     * Gets a date based on format passed to it
+     * Gets a show date entered by user
+     * repeats until date is successfully entered
      * @param format
      * @return
      * @throws Exception
@@ -184,6 +186,11 @@ public class Driver {
         	}
     	} while (true);
     }
+    /**
+     * Gets an expiration date entered by user
+     * repeats until date successfully entered
+     * @return
+     */
     private YearMonth getExpirationDate() {
     	do {
     		try {
@@ -214,19 +221,37 @@ public class Driver {
 
         System.out.println("Input Phone: ");
         int phone = Integer.parseInt( keyboard.nextLine() );
-
-        theater.addClient(name, address, phone);
+        
+        try {
+        	theater.addClient(name, address, phone);
+        } catch (RuntimeException re) {
+        	System.out.println( re.getMessage() );
+        }
+        
         
         System.out.println("Client added");
     }
     /**
      * Removes a client based on member id
+     * client may only be removed if there are no shows scheduled
+     * for that client
      */
-    // needs to check collection of shows to ensure client has no shows
     private void removeClient() {
+    	Client removedClient = null;
         System.out.print("Input client number: ");
         int id = Integer.parseInt( keyboard.nextLine() );
-        theater.removeClient(id);
+        try {
+        	removedClient = theater.removeClient(id);
+        } catch(RuntimeException re) {
+        	// Can't remove client if client has a show scheduled
+        	System.out.println( re.getMessage() );
+        	return;
+        }
+        // Can't remove client if client does not exist
+        if (removedClient == null) {
+        	System.out.println("Remove failed: No client exists for ID: " + id);
+        }
+        
     }
     /**
      * Lists information for every client
@@ -247,7 +272,7 @@ public class Driver {
     
     // Customer methods
     /**
-     * Adds a customer
+     * Adds a customer and a credit card associated with that customer
      */
     private void addCustomer() {
         System.out.print("Input name: ");
@@ -272,7 +297,8 @@ public class Driver {
         
     }
     /**
-     * Deletes a customer based on member id
+     * Deletes a customer based on member id and all credit cards associated with
+     * customer
      */
     private void removeCustomer() {
         System.out.print("Enter customer id: ");
@@ -281,14 +307,14 @@ public class Driver {
         String deleted = theater.removeCustomer(id);
         
         if (deleted == null) {
-        	System.out.print("No customer exists for ID: " + id);
+        	System.out.print("Remove failed: No customer exists for ID: " + id);
         } else {
         	System.out.print("Deleted customer: " + deleted);
         }
 
     }
     /**
-     * Lists information for every customer
+     * Lists information for every customer including credit card information
      */
     private void listCustomers() {
     	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
@@ -319,10 +345,10 @@ public class Driver {
      */
     private void addCreditCard() {
         System.out.print("Enter customer id: ");
-        int id = Integer.parseInt( keyboard.nextLine() );
+        int id = getInt();
 
         System.out.print("Enter credit card number : ");
-        int number = Integer.parseInt( keyboard.nextLine() );
+        int number = getInt();
 
         System.out.print("Enter expiration date : ");
         YearMonth date = getExpirationDate();
@@ -330,11 +356,13 @@ public class Driver {
         try {
         	theater.addCreditCard(id, number, date);
         } catch (RuntimeException exception) {
+        	// message if customer does not exist
         	System.out.println( exception.getMessage() );
         }
     }
     /**
      * Delete a credit card for a specific customer
+     * Can't delete if customer only has one credit card
      */
     private void removeCreditCard() {
         System.out.print("Enter customer id: ");
@@ -346,6 +374,7 @@ public class Driver {
         try {
         	theater.removeCreditCard(id, number);
         } catch (RuntimeException exception) {
+        	// message if customer only has one card
         	System.out.println( exception.getMessage() );
         }
 
