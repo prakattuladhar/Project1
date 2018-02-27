@@ -3,6 +3,7 @@ package com.Project1;/*
 Class to read and write Theater object to file.
 * */
 
+import com.Project1.classes.MemberIdFactory;
 import com.Project1.classes.Theater;
 
 import java.io.*;
@@ -17,6 +18,7 @@ public class FileHandler  {
         ObjectOutputStream objectOut=new ObjectOutputStream(fileOut);
 
         objectOut.writeObject(object);
+        objectOut.writeObject( MemberIdFactory.instance() );
         objectOut.close();
         fileOut.close();
 
@@ -27,7 +29,8 @@ public class FileHandler  {
     public static Theater readFromFile(String fileName) throws FileNotFoundException, IOException, ClassNotFoundException {
         FileInputStream fileIn=new FileInputStream("output.dat");//input file name output.dat
         ObjectInputStream objectIn=new ObjectInputStream(fileIn);
-        Theater object= (Theater) objectIn.readObject();
+        Theater object = (Theater) objectIn.readObject();
+        MemberIdFactory.retrieve(objectIn);
         objectIn.close();
         fileIn.close();
         return object;

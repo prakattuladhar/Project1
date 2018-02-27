@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class MemberIdFactory implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private static AtomicInteger idCounter;
+	private AtomicInteger idCounter;
 	private static MemberIdFactory factory;
 	
 	private MemberIdFactory() {
@@ -38,5 +38,19 @@ public class MemberIdFactory implements Serializable {
      */
     public int createId() {
     	return idCounter.getAndIncrement();
+    }
+    /**
+     * Retrieves the factory
+     * 
+     * @param input inputstream for deserialization
+     */
+    public static void retrieve(ObjectInputStream input) {
+      try {
+        factory = (MemberIdFactory) input.readObject();
+      } catch(IOException ioe) {
+        ioe.printStackTrace();
+      } catch(Exception cnfe) {
+        cnfe.printStackTrace();
+      }
     }
 }

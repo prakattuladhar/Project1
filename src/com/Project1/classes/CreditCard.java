@@ -2,7 +2,6 @@ package com.Project1.classes;
 
 import java.io.*;
 import java.time.*;
-import java.time.format.DateTimeFormatter;
 
 /**
  * @version 1.0
@@ -16,8 +15,7 @@ public class CreditCard implements Serializable {
 	private static final long serialVersionUID = 1L;
     protected int cardNumber;
     protected YearMonth expirationDate;
-    protected DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
-    
+
     /**
      * Constructor
      * @param cardNumber		credit card number
@@ -48,13 +46,5 @@ public class CreditCard implements Serializable {
      */
     public boolean equals(CreditCard otherCard) {
     	return this.cardNumber == otherCard.getNumber();
-    }
-    /**
-     * String representation of credit card's fields
-     */
-    @Override
-    public String toString() {
-    	return "Credit Card Number: " + cardNumber + 
-    			"\nExpiration Date: " + expirationDate.format(formatter) + "\n";
     }
 }
