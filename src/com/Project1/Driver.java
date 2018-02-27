@@ -293,9 +293,13 @@ public class Driver {
         System.out.print("Input expiration date: ");
         YearMonth expirationDate = getExpirationDate();
 
-        theater.addCustomer(
-        		name, address, phone, cardNumber, expirationDate);
-        
+        try {
+        	theater.addCustomer(
+            		name, address, phone, cardNumber, expirationDate);
+        } catch (RuntimeException re) {
+        	System.out.println( re.getMessage() );
+        	return;
+        }
         System.out.println("Customer added");
         
     }

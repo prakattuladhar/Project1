@@ -84,7 +84,8 @@ public class ShowList implements Serializable, Iterable<Show> {
      * Allows map of shows to be sorted by start date
      * @author Colin Quinn
      */
-    private class SortByStartDate implements Comparator<Show> {
+    private class SortByStartDate implements Comparator<Show>, Serializable {
+    	private static final long serialVersionUID = 1L;
     	public int compare(Show a, Show b) {
     		return a.getStartDate().compareTo( b.getStartDate() );
     	}
@@ -94,7 +95,8 @@ public class ShowList implements Serializable, Iterable<Show> {
      * Allows map of shows to be sorted by end date
      * @author Colin Quinn
      */
-    private class SortByEndDate implements Comparator<Show> {
+    private class SortByEndDate implements Comparator<Show>, Serializable {
+    	private static final long serialVersionUID = 1L;
     	public int compare(Show a, Show b) {
     		return a.getEndDate().compareTo( b.getEndDate() );
     	}

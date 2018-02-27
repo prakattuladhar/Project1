@@ -11,6 +11,7 @@ public class Theater implements Serializable{
    private CustomerList customerList = CustomerList.instance();
    private ClientList clientList = new ClientList();
    private ShowList showList = new ShowList();
+   private CardNumberMap cardNumbers = new CardNumberMap();
 
    public int[] x = new int[10];
    private static Theater theater;
@@ -75,8 +76,12 @@ public class Theater implements Serializable{
      * @return true if customer added, false if customer already exists
      */
    public boolean addCustomer(String name, String address, int phone, int cardNumber, YearMonth expirationDate){
+	   if ( cardNumbers.containsCard(cardNumber) ) {
+		   throw new RuntimeException("Add failed: Credit card " + cardNumber + "already exists");
+	   }
 	   CreditCard card = new CreditCard(cardNumber, expirationDate);
 	   Customer customer = new Customer(name, address, phone, card);
+	   cardNumbers.addCard(cardNumber, card);
        return customerList.add(customer);
    }
    /**
@@ -87,6 +92,11 @@ public class Theater implements Serializable{
    public String removeCustomer(int id) {
        Customer customer = customerList.remove(id);
        if (customer != null) {
+    	   Iterator<CreditCard> cardIterator = customer.getCreditCardIterator();
+    	   while ( cardIterator.hasNext() ) {
+    		   CreditCard card = cardIterator.next();
+    		   cardNumbers.removeCard( card.getNumber() );
+    	   }
     	   String customerInfo = customer.getId() + " " + customer.getName();
     	   return customerInfo;
        }
@@ -112,8 +122,12 @@ public class Theater implements Serializable{
 	   if (customer == null) {
 		   throw new RuntimeException("No customer exists with ID: " + customerId);
 	   }
+	   if ( cardNumbers.containsCard(cardNumber) ) {
+		   throw new RuntimeException("Add failed: Credit card " + cardNumber + " already exists");
+	   }
 	   CreditCard card = new CreditCard(cardNumber, date);
 	   customer.addCreditCard(card);
+	   cardNumbers.addCard(cardNumber, card);
    }
    /**
     * 
@@ -127,6 +141,7 @@ public class Theater implements Serializable{
 	   }
 	   try {
 		   customer.removeCreditCard(cardNumber);
+		   cardNumbers.removeCard(cardNumber);
 	   } catch (RuntimeException exception) {
 		   throw exception;
 	   }
