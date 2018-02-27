@@ -113,7 +113,7 @@ public class Theater implements Serializable{
 	   }
    }
    
-   
+   //adds show to showlist
    public boolean addShow(String name,String date,int clientId){
     //show id can automatically be added as the length of the array increases. Map array.length to client id
        Show show=new Show(showList.getList().size(),name,date,clientId);
@@ -124,7 +124,7 @@ public class Theater implements Serializable{
            return false;
    }
 
-   //returns array
+   //returns array of showlist
    public ArrayList<Show> geShows(){
        return showList.getList();
    }
