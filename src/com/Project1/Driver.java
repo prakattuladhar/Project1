@@ -29,9 +29,9 @@ public class Driver {
             }
 
             switch (option) {
-                case 1: {
+                case 0: {
                     System.out.print("Confirm exit program? Enter Y for yes: ");
-                    String opt=keyboard.next();
+                    String opt = keyboard.next();
                     if(opt.toLowerCase().equals('y')) {
                         save();
                         System.out.println("Thank you for using");
@@ -39,55 +39,55 @@ public class Driver {
                     }
                     break;
                 }
-                case 2: {
+                case 1: {
                     addClient();
                     break;
                 }
-                case 3: {
+                case 2: {
                     removeClient();
                     break;
                 }
-                case 4: {
+                case 3: {
                     listClient();
                     break;
                 }
-                case 5: {
+                case 4: {
                     addCustomer();
                     break;
                 }
-                case 6: {
+                case 5: {
                     removeCustomer();
                     break;
                 }
-                case 7: {
+                case 6: {
                     addCreditCard();
                     break;
                 }
-                case 8: {
+                case 7: {
                     removeCreditCard();
                     break;
                 }
-                case 9: {
+                case 8: {
                     listCustomers();
                     break;
                 }
-                case 10: {
+                case 9: {
                     addShow();
                     break;
                 }
-                case 11: {
+                case 10: {
                     listShow();
                     break;
                 }
-                case 12: {
+                case 11: {
                     save();
                     break;
                 }
-                case 13: {
+                case 12: {
                     load();
                     break;
                 }
-                case 14:{
+                case 13:{
                     printHelp();
                     break;
                 }
@@ -96,47 +96,47 @@ public class Driver {
                     break;
                 }
             }
-        } while (option != 1);
+        } while (true);
     }
 
 
     private void printOptions() {
         System.out.print("----------------------------------------------");
-        System.out.println("\n1. Exit Application\n2. Add Client\n3. Remove Client\n4. List all CLients\n" +
-                "5. Add Customer\n6. Remove customer\n7. Add credit card\n8. Remove Credit card\n9. List all customers" +
-                "\n10. Add a show/play\n11. List all shows\n12. Store Data\n13. Retrive data\n14. Help");
+        System.out.println("\n0. Exit Application\n1. Add Client\n2. Remove Client\n3. List all CLients\n" +
+                "4. Add Customer\n5. Remove customer\n6. Add credit card\n7. Remove Credit card\n8. List all customers" +
+                "\n9. Add a show/play\n10. List all shows\n11. Store Data\n12. Retrive data\n13. Help");
     }
 
     private void printHelp() {
         System.out.print("----------------------------------------------");
-        System.out.println("\n1. Exit the Application. Store the data on disk and quit the application." +
-                " \n\n2. Add Client. The system accepts the name, address, and phone number of the client. The system\n" +
+        System.out.println("\n0. Exit the Application. Store the data on disk and quit the application." +
+                " \n\n1. Add Client. The system accepts the name, address, and phone number of the client. The system\n" +
                 "generates a unique id and sets the balance to 0. (The balance will remain 0 in this iteration.)" +
-                "\n\n3. Remove Client. Remove a client with the given id. If a show is scheduled for the current or a\n" +
+                "\n\n2. Remove Client. Remove a client with the given id. If a show is scheduled for the current or a\n" +
                 "future date for this client, the client cannot be removed." +
-                "\n\n4. List all Clients. Print information about every client." +
+                "\n\n3. List all Clients. Print information about every client." +
                 "\n\n" +
-                "5. Add Customer. The system accepts the name, address, phone number, and the number and\n" +
+                "4. Add Customer. The system accepts the name, address, phone number, and the number and\n" +
                 "expiry date of exactly one credit card. The system generates a unique id for the customer." +
-                "\n\n6. Remove Customer. Remove a customer with the given id. All credit cards related to the\n" +
+                "\n\n5. Remove Customer. Remove a customer with the given id. All credit cards related to the\n" +
                 "customer are also deleted." +
-                "\n\n7. Add a Credit Card. The system accepts the customer id, credit card number, and expiry date and\n" +
+                "\n\n6. Add a Credit Card. The system accepts the customer id, credit card number, and expiry date and\n" +
                 "remembers that the credit card belongs to this customer." +
-                "\n\n8. Remove a Credit Card. The system accepts the credit card number and removes the information\n" +
+                "\n\n7. Remove a Credit Card. The system accepts the credit card number and removes the information\n" +
                 "related to the credit card. If this is the only credit card for the customer, it refuses to delete the\n" +
                 "credit card information." +
-                "\n\n9. List all Customers. Print information about every client, including credit card information." +
-                "\n\n10. Add a Show/Play. Add a new show for a client. The values accepted are the name of the show,\n" +
+                "\n\n8. List all Customers. Print information about every client, including credit card information." +
+                "\n\n9. Add a Show/Play. Add a new show for a client. The values accepted are the name of the show,\n" +
                 "the client id, and the period for which the client wants the theater for this play. The entire range\n" +
                 "of dates should be available, or the process fails." +
-                "\n\n11.List all Shows. List the names and dates of all shows" +
-                "\n\n12. Store Data. Store all data related to the theater (everything, including customers, shows,\n" +
+                "\n\n10.List all Shows. List the names and dates of all shows" +
+                "\n\n11. Store Data. Store all data related to the theater (everything, including customers, shows,\n" +
                 "clients, etc.) on disk." +
-                "\n\n13. Retrieve Data. Retrieve all information related to the theater. This may be done at the start of\n" +
+                "\n\n12. Retrieve Data. Retrieve all information related to the theater. This may be done at the start of\n" +
                 "any session. If stored data is found, the user has the option to use it. The user may also invoke\n" +
                 "a command to load data, provided he/she has not yet issued any data-related commands in\n" +
                 "that session." +
-                "\n\n14. Help: Display help\n");
+                "\n\n13. Help: Display help\n");
     }
     
     // User input methods
