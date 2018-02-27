@@ -54,6 +54,7 @@ public class CustomerList implements Iterable<Customer>, Serializable {
     	return map.size();
     }
     
+    @Override
     public Iterator<Customer> iterator() {
     	return map.values().iterator();
     }

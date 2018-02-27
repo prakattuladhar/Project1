@@ -7,11 +7,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.time.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.time.format.*;
 
 //prakat will code this
 public class Driver {
+	
     private Scanner keyboard = new Scanner(System.in);
     private Theater theater = Theater.getInstance();
 
@@ -160,39 +160,36 @@ public class Driver {
      * @return
      * @throws Exception
      */
-    private Calendar getDate(String format) throws Exception {
-    	String line;
-    	Calendar date = new GregorianCalendar();
-        SimpleDateFormat formatter = new SimpleDateFormat(format);
-        
-    	try {
-    		line = keyboard.nextLine();
-    		// Allow user to return to menu
-//    		if ( line.equalsIgnoreCase("q") ) {
-//    			
-//    		}
-    	    date.setTime( formatter.parse(line) );
-    	    return date;
-    	} catch (Exception fe) {
-    	    throw fe;
-    	}
-    }
-    private Calendar getShowDate() {
+    private LocalDate getShowDate() {
     	do {
     		try {
-    			return getDate("mm/dd/yyyy");
-    		} catch (Exception e) {
-    			System.out.println("Invalid Date: Please use format mm/dd/yyy");
-    		}
+        		String line = keyboard.nextLine();
+        		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy");
+        		// Allow user to return to menu
+//        		if ( line.equalsIgnoreCase("q") ) {
+//        			
+//        		}
+        	    LocalDate date = LocalDate.parse(line, formatter);
+        	    return date;
+        	} catch (Exception fe) {
+        		System.out.println("Invalid Date: Please use format mm/dd/yyyy");
+        	}
     	} while (true);
     }
-    private Calendar getExpirationDate() {
+    private YearMonth getExpirationDate() {
     	do {
     		try {
-    			return getDate("mm/dd");
-    		} catch (Exception e) {
-    			System.out.println("Invalid Date: Please use format mm/dd");
-    		}
+        		String line = keyboard.nextLine();
+        		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/yyyy");
+        		// Allow user to return to menu
+//        		if ( line.equalsIgnoreCase("q") ) {
+//        			
+//        		}
+        	    YearMonth date = YearMonth.parse(line, formatter);
+        	    return date;
+        	} catch (Exception fe) {
+        		System.out.println("Invalid Date: Please use format mm/yyyy");
+        	}
     	} while (true);
     }
     
@@ -219,7 +216,7 @@ public class Driver {
      */
     // needs to check collection of shows to ensure client has no shows
     private void removeClient() {
-        System.out.print("Input Client number: ");
+        System.out.print("Input client number: ");
         int id = Integer.parseInt( keyboard.nextLine() );
         theater.removeClient(id);
     }
@@ -258,7 +255,7 @@ public class Driver {
         int cardNumber = Integer.parseInt( keyboard.nextLine() );
 
         System.out.print("Input expiration date: ");
-        Calendar expirationDate = getExpirationDate();
+        YearMonth expirationDate = getExpirationDate();
 
         theater.addCustomer(
         		name, address, phone, cardNumber, expirationDate);
@@ -286,7 +283,7 @@ public class Driver {
      * Lists information for every customer
      */
     private void listCustomers() {
-    	SimpleDateFormat formatter = new SimpleDateFormat("mm/dd");
+    	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
     	
     	Iterator<Customer> iterator = theater.getCustomerIterator();
         while ( iterator.hasNext() ) {
@@ -302,7 +299,7 @@ public class Driver {
             	CreditCard card = cards.next();
             	System.out.println( "\tNumber: " + card.getNumber() );
             	System.out.println( "\tExpiration date: " +
-            			formatter.format( card.getExpirationDate().getTime() ) );
+            			card.getExpirationDate().format(formatter) );
             }
             System.out.print("-------------------------------------\n");
         }
@@ -320,7 +317,7 @@ public class Driver {
         int number = Integer.parseInt( keyboard.nextLine() );
 
         System.out.print("Enter expiration date : ");
-        Calendar date = getExpirationDate();
+        YearMonth date = getExpirationDate();
         
         try {
         	theater.addCreditCard(id, number, date);
@@ -335,7 +332,7 @@ public class Driver {
         System.out.print("Enter customer id: ");
         int id = Integer.parseInt( keyboard.nextLine() );
 
-        System.out.print("Enter credit card numebr : ");
+        System.out.print("Enter credit card number: ");
         int number = Integer.parseInt( keyboard.nextLine() );
         
         try {
@@ -345,31 +342,64 @@ public class Driver {
         }
 
     }
-
+    /**
+     * 
+     */
     private void addShow() {
-        System.out.print("Enter date for show: ");
-        String date=keyboard.nextLine();
-        System.out.print("Enter client id: ");
+    	System.out.print("Enter client id: ");
         int clientId = Integer.parseInt( keyboard.nextLine() );
+        
         System.out.print("Enter name of the show: ");
-        String name=keyboard.nextLine();
-
-
-        if(theater.addShow(name,date,clientId))
-            System.out.println("successfully added");
-        else
-            System.out.println("Adding show falined");
-
+        String name = keyboard.nextLine();
+        
+        System.out.print("Enter start date for show: ");
+        LocalDate startDate = getShowDate();
+        
+        System.out.print("Enter end date for show: ");
+        LocalDate endDate = getShowDate();
+        
+        LocalDate currentDate = LocalDate.now();
+        if (startDate.compareTo(currentDate) <= 0) {
+        	System.out.println("Show must start on or after current date");
+        	return;
+        }
+        
+        if (startDate.compareTo(endDate) > 0) {
+        	System.out.println("End date must be on or after start date");
+        	return;
+        }
+        
+        try {
+        	theater.addShow(clientId, name, startDate, endDate);
+        } catch (ShowConflictException se) {
+        	System.out.println("Add Failed: ");
+        	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        	if (se.conflictingShows[0] != null) {
+        		Show previous = se.conflictingShows[0];
+        		String date = previous.getEndDate().format(formatter);
+        		System.out.println("New show must start after previous show ends at " + date);
+        	}
+        	if (se.conflictingShows[1] != null) {
+        		Show next = se.conflictingShows[1];
+        		String date = next.getEndDate().format(formatter);
+        		System.out.println("New show must end before next show starts at " + date);
+        	}
+        } catch (RuntimeException re) {
+        	System.out.println("Add failed: show must be scheduled after current date");
+        }
+        System.out.println("Show added");
     }
 
     private void listShow() {
-
-        for(Show show:theater.geShows()){
+    	Iterator<Show> iterator = theater.getShowIterator();
+        while ( iterator.hasNext() ) {
+        	Show show = iterator.next();
+        	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
             System.out.println("\n---------------------------------------");
-            System.out.println("Id:"+show.getId() );
-            System.out.println("Date:"+ show.getDate());
-            System.out.println("Name:"+ show.getName());
-            System.out.println("Client:"+ show.getClientId());
+            System.out.println("Id: " + show.getClientId() );
+            System.out.println("Name: " + show.getName() );
+            System.out.println("Start date: " + show.getStartDate().format(formatter) );
+            System.out.println("End date: " + show.getEndDate().format(formatter) + "\n");
            // System.out.println("Customers: "+show.getCustomerId());
         }
         System.out.println("\n---------------------------------------");

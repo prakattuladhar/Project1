@@ -2,10 +2,12 @@ package com.Project1.classes;
 
 import java.io.*;
 import java.util.*;
+import java.time.*;
 
 
 //made singleton
 public class Theater implements Serializable{
+	
    private CustomerList customerList = CustomerList.instance();
    private ClientList clientList = new ClientList();
    private ShowList showList = new ShowList();
@@ -59,7 +61,7 @@ public class Theater implements Serializable{
      * @param expirationDate
      * @return true if customer added, false if customer already exists
      */
-   public boolean addCustomer(String name, String address, int phone, int cardNumber, Calendar expirationDate){
+   public boolean addCustomer(String name, String address, int phone, int cardNumber, YearMonth expirationDate){
 	   CreditCard card = new CreditCard(cardNumber, expirationDate);
 	   Customer customer = new Customer(name, address, phone, card);
        return customerList.add(customer);
@@ -92,7 +94,7 @@ public class Theater implements Serializable{
     * @param cardNumber
     * @param date
     */
-   public void addCreditCard(int customerId, int cardNumber, Calendar date) {
+   public void addCreditCard(int customerId, int cardNumber, YearMonth date) {
 	   Customer customer = customerList.getCustomer(customerId);
 	   if (customer == null) {
 		   throw new RuntimeException("No customer exists with ID: " + customerId);
@@ -100,7 +102,11 @@ public class Theater implements Serializable{
 	   CreditCard card = new CreditCard(cardNumber, date);
 	   customer.addCreditCard(card);
    }
-   
+   /**
+    * 
+    * @param customerId
+    * @param cardNumber
+    */
    public void removeCreditCard(int customerId, int cardNumber) {
 	   Customer customer = customerList.getCustomer(customerId);
 	   if (customer == null) {
@@ -112,21 +118,30 @@ public class Theater implements Serializable{
 		   throw exception;
 	   }
    }
-   
-   
-   public boolean addShow(String name,String date,int clientId){
-    //show id can automatically be added as the length of the array increases. Map array.length to client id
-       Show show=new Show(showList.getList().size(),name,date,clientId);
-       boolean flag=showList.append(show);
-       if(flag)
-           return true;
-       else
-           return false;
+   // Show methods
+   /**
+    * 
+    * @param clientId
+    * @param name
+    * @param startDate
+    * @param endDate
+    * @return
+    */
+   public boolean addShow(int clientId, String name, LocalDate startDate, LocalDate endDate){
+	   Show show = new Show(clientId, name, startDate, endDate);
+       try {
+    	   showList.add(show);
+       } catch (ShowConflictException se) {
+    	   throw se;
+       } 
+       return true;
    }
-
-   //returns array
-   public ArrayList<Show> geShows(){
-       return showList.getList();
+   /**
+    * 
+    * @return
+    */
+   public Iterator<Show> getShowIterator(){
+       return showList.iterator();
    }
 
 

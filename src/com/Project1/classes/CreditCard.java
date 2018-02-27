@@ -1,14 +1,16 @@
 package com.Project1.classes;
 
 import java.io.*;
-import java.util.*;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 
 public class CreditCard implements Serializable {
 	private static final long serialVersionUID = 1L;
     protected int cardNumber;
-    protected Calendar expirationDate;
+    protected YearMonth expirationDate;
+    protected DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
 
-    public CreditCard(int cardNumber, Calendar expirationDate) {
+    public CreditCard(int cardNumber, YearMonth expirationDate) {
         this.cardNumber = cardNumber;
         this.expirationDate = expirationDate;
     }
@@ -16,7 +18,7 @@ public class CreditCard implements Serializable {
     public int getNumber() {
     	return cardNumber;
     }
-    public Calendar getExpirationDate() {
+    public YearMonth getExpirationDate() {
     	return expirationDate;
     }
     
@@ -27,6 +29,6 @@ public class CreditCard implements Serializable {
     @Override
     public String toString() {
     	return "Credit Card Number: " + cardNumber + 
-    			"\nExpiration Date: " + expirationDate + "\n";
+    			"\nExpiration Date: " + expirationDate.format(formatter) + "\n";
     }
 }
