@@ -227,8 +227,7 @@ public class Driver {
         } catch (RuntimeException re) {
         	System.out.println( re.getMessage() );
         }
-        
-        
+
         System.out.println("Client added");
     }
     /**
@@ -239,7 +238,7 @@ public class Driver {
     private void removeClient() {
     	Client removedClient = null;
         System.out.print("Input client number: ");
-        int id = Integer.parseInt( keyboard.nextLine() );
+        int id = getInt();
         try {
         	removedClient = theater.removeClient(id);
         } catch(RuntimeException re) {
@@ -250,14 +249,18 @@ public class Driver {
         // Can't remove client if client does not exist
         if (removedClient == null) {
         	System.out.println("Remove failed: No client exists for ID: " + id);
+        } else {
+        	System.out.println("Client removed");
         }
-        
     }
     /**
      * Lists information for every client
      */
     private void listClient() {
     	Iterator<Client> iterator = theater.getClientIterator();
+    	if ( !iterator.hasNext() ) {
+    		System.out.println("No clients to display");
+    	}
         while ( iterator.hasNext() ) {
         	Client client = iterator.next();
             System.out.println("\n-------------------------------------");
@@ -282,10 +285,10 @@ public class Driver {
         String address = keyboard.nextLine();
 
         System.out.print("Input Phone: ");
-        int phone = Integer.parseInt( keyboard.nextLine() );
+        int phone = getInt();
 
         System.out.print("Input creditcard number: ");
-        int cardNumber = Integer.parseInt( keyboard.nextLine() );
+        int cardNumber = getInt();
 
         System.out.print("Input expiration date: ");
         YearMonth expirationDate = getExpirationDate();
@@ -302,7 +305,7 @@ public class Driver {
      */
     private void removeCustomer() {
         System.out.print("Enter customer id: ");
-        int id = Integer.parseInt( keyboard.nextLine() );
+        int id = getInt();
         
         String deleted = theater.removeCustomer(id);
         
@@ -320,6 +323,9 @@ public class Driver {
     	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
     	
     	Iterator<Customer> iterator = theater.getCustomerIterator();
+    	if ( !iterator.hasNext() ) {
+    		System.out.println("No customers to display");
+    	}
         while ( iterator.hasNext() ) {
         	Customer customer = iterator.next();
             System.out.println("\n-------------------------------------");
@@ -366,10 +372,10 @@ public class Driver {
      */
     private void removeCreditCard() {
         System.out.print("Enter customer id: ");
-        int id = Integer.parseInt( keyboard.nextLine() );
+        int id = getInt();
 
         System.out.print("Enter credit card number: ");
-        int number = Integer.parseInt( keyboard.nextLine() );
+        int number = getInt();
         
         try {
         	theater.removeCreditCard(id, number);
@@ -377,14 +383,14 @@ public class Driver {
         	// message if customer only has one card
         	System.out.println( exception.getMessage() );
         }
-
+        System.out.println("Credit card removed");
     }
     /**
      * 
      */
     private void addShow() {
     	System.out.print("Enter client id: ");
-        int clientId = Integer.parseInt( keyboard.nextLine() );
+        int clientId = getInt();
         
         System.out.print("Enter name of the show: ");
         String name = keyboard.nextLine();
@@ -433,6 +439,9 @@ public class Driver {
     //prints all the shows
     private void listShow() {
     	Iterator<Show> iterator = theater.getShowIterator();
+    	if ( !iterator.hasNext() ) {
+    		System.out.println("No shows to display");
+    	}
         while ( iterator.hasNext() ) {
         	Show show = iterator.next();
         	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
@@ -453,6 +462,7 @@ public class Driver {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println("Save succesful");
     }
 
     private void load() {
@@ -463,6 +473,7 @@ public class Driver {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        System.out.println("Loaded file successfully");
     }
 
 }
