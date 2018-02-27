@@ -34,6 +34,14 @@ public class ClientList implements Iterable<Client>, Serializable {
     	return map.remove(id);
     }
     /**
+     * Returns  client associated with ID, or null if no such client
+     * @param clientId
+     * @return
+     */
+    public Client getClient(int clientId) {
+    	return map.get(clientId);
+    }
+    /**
      * 
      * @return count of clients in list
      */

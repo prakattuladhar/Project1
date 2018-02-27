@@ -220,7 +220,7 @@ public class Driver {
         String address = keyboard.nextLine();
 
         System.out.println("Input Phone: ");
-        int phone = Integer.parseInt( keyboard.nextLine() );
+        int phone = getInt();
         
         try {
         	theater.addClient(name, address, phone);
@@ -421,8 +421,10 @@ public class Driver {
         		String date = next.getEndDate().format(formatter);
         		System.out.println("New show must end before next show starts at " + date);
         	}
+        	return;
         } catch (RuntimeException re) {
-        	System.out.println("Add failed: show must be scheduled after current date");
+        	System.out.println( re.getMessage() );
+        	return;
         }
         System.out.println("Show added");
     }

@@ -12,7 +12,12 @@ public class ShowList implements Serializable, Iterable<Show> {
      * @param show
      * @return
      */
-    public boolean add(Show show){
+    public boolean add(Show show, ClientList list){
+
+    	if (list.getClient( show.getClientId() ) == null) {
+    		throw new RuntimeException("Add failed: No client exists for ID: " + show.getClientId() );
+    	}
+    	
     	boolean available = true;
     	// Holds potentially conflicting shows
     	Show[] conflictingShows = {null, null};

@@ -49,6 +49,7 @@ public class Theater implements Serializable{
     * @return
     */
    public Client removeClient(int id){
+	   
        try {
     	   return clientList.remove(id, showList);
        } catch (RuntimeException re) {
@@ -142,10 +143,12 @@ public class Theater implements Serializable{
    public boolean addShow(int clientId, String name, LocalDate startDate, LocalDate endDate){
 	   Show show = new Show(clientId, name, startDate, endDate);
        try {
-    	   showList.add(show);
-       } catch (Exception se) {
+    	   showList.add(show, clientList);
+       } catch (ShowConflictException se) {
     	   throw se;
-       } 
+       } catch (RuntimeException re) {
+    	   throw re;
+       }
        return true;
    }
    /**
