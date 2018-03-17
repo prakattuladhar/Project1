@@ -24,4 +24,7 @@ public class Ticket implements Serializable {
 	}
 	
 	// add get/set methods
+	public LocalDate getDate() {
+		return date;
+	}
 }
