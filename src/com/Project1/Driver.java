@@ -548,11 +548,12 @@ public class Driver {
     private void printAllTicket() {
     }
 
+
     private void payclient() {
         System.out.print("How many tickets do you need?: ");
         int clientNumber=keyboard.nextInt();
         System.out.print("How much do you want to pay? :");
-        double amount=keyboard.nextDouble();
+        int amount=keyboard.nextInt();
 
         theater.payClient(clientNumber,amount);
     }

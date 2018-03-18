@@ -27,7 +27,7 @@ public class ClientList implements Iterable<Client>, Serializable {
      * Removes a client from the list
      * Client may not be removed if they have a show in the show list
      * @param id			ID number of client for the show
-     * @param showList		list of shows for theater
+     * @param:showList		list of shows for theater
      * @return client that was removed, or null if client did not exist
      * @RuntimeException if client has at least one show scheduled
      */

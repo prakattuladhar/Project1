@@ -31,4 +31,7 @@ public class Client extends Member implements Serializable {
     public int getBalance() {
         return balance;
     }
+    public void payBalance(int amount){
+        balance-=amount;
+    }
 }

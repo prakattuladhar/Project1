@@ -15,7 +15,6 @@ public class Theater implements Serializable{
   private TicketList ticketList= new TicketList();
   private TicketFactory ticketFactory=TicketFactory.instance();
 
-//   public int[] x = new int[10];
    private static Theater theater;
    private Theater(){
 
@@ -176,8 +175,13 @@ public class Theater implements Serializable{
        return showList.iterator();
    }
 
-   //accepts customers in for and type of ticket
+
+   //accepts customers info and type of ticket
    public void addTicket(int ticketType, int quant, int cusNum, int cardNum,LocalDate date){
+
+       //check if cardNumber and  existsbefor this function can return anything
+
+
         if(ticketType==Ticket.REGULAR){
             for(int i=0;i<quant;i++) {
                 Ticket ticket = ticketFactory.createTicket(cusNum, date, Ticket.REGULAR);
@@ -206,7 +210,9 @@ public class Theater implements Serializable{
         return ticketList;
     }
 
-    public void payClient(int clientNumber, double amount) {
-
+    //takes in client number and amount and pay the client. Throws exception if client not found or balance amount is greater than balance
+    public void payClient(int clientNumber, int amount) {
+       Client client=clientList.getClient(clientNumber);
+       client.payBalance(amount);
     }
 }
