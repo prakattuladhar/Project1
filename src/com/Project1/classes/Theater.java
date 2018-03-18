@@ -3,7 +3,7 @@ package com.Project1.classes;
 import java.io.*;
 import java.util.*;
 import java.time.*;
-
+import com.Project1.classes.Ticket;
 
 //made singleton
 public class Theater implements Serializable{
@@ -12,8 +12,9 @@ public class Theater implements Serializable{
    private ClientList clientList = new ClientList();
    private ShowList showList = new ShowList();
    private CardNumberMap cardNumbers = new CardNumberMap();
+  private TicketList ticketList= new TicketList();
+  private TicketFactory ticketFactory=TicketFactory.instance();
 
-   public int[] x = new int[10];
    private static Theater theater;
    private Theater(){
 
@@ -175,5 +176,43 @@ public class Theater implements Serializable{
    }
 
 
+   //accepts customers info and type of ticket
+   public void addTicket(int ticketType, int quant, int cusNum, int cardNum,LocalDate date){
 
+       //check if cardNumber and  existsbefor this function can return anything
+
+
+        if(ticketType==Ticket.REGULAR){
+            for(int i=0;i<quant;i++) {
+                Ticket ticket = ticketFactory.createTicket(cusNum, date, Ticket.REGULAR);
+                ticketList.add(ticket);
+            }
+        }
+       else if(ticketType==Ticket.ADVANCE){
+           for(int i=0;i<quant;i++) {
+               Ticket ticket = ticketFactory.createTicket(cusNum, date, Ticket.REGULAR);
+               ticketList.add(ticket);
+           }
+       }
+       else if(ticketType==Ticket.STUDENT_ADVANCE){
+           for(int i=0;i<quant;i++) {
+               Ticket ticket = ticketFactory.createTicket(cusNum, date, Ticket.REGULAR);
+               ticketList.add(ticket);
+           }
+       }else {
+            System.out.print("Ticket type not found.");
+        }
+   }
+
+
+   //should return array of ticket list
+    public TicketList getTicketList() {
+        return ticketList;
+    }
+
+    //takes in client number and amount and pay the client. Throws exception if client not found or balance amount is greater than balance
+    public void payClient(int clientNumber, int amount) {
+       Client client=clientList.getClient(clientNumber);
+       client.payBalance(amount);
+    }
 }

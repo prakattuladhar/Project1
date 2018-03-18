@@ -31,11 +31,14 @@ public class Driver {
             switch (option) {
                 case 0: {
                     System.out.print("Confirm exit program? Enter Y for yes: ");
-                    String opt = keyboard.next();
-                    if(opt.toLowerCase().equals('y')) {
+                    String opt;
+                    opt= keyboard.nextLine();
+                    if(opt.equalsIgnoreCase("Y")) {
                         save();
                         System.out.println("Thank you for using");
                         System.exit(100);
+                    }else{
+                        System.out.println("Exit not confirmed");
                     }
                     break;
                 }
@@ -88,6 +91,25 @@ public class Driver {
                     break;
                 }
                 case 13:{
+                    sellRegularTickets();
+                    break;
+                }
+                case 14:{
+                    sellAdvanceTickets();
+                    break;
+                }case 15:{
+                    sellStudentTicket();
+                    break;
+                }
+                case 16:{
+                    payclient();
+                    break;
+                }
+                case 17:{
+                    printAllTicket();
+                    break;
+                }
+                case 18:{
                     printHelp();
                     break;
                 }
@@ -100,11 +122,14 @@ public class Driver {
     }
 
 
+
     private void printOptions() {
         System.out.print("----------------------------------------------");
         System.out.println("\n0. Exit Application\n1. Add Client\n2. Remove Client\n3. List all CLients\n" +
                 "4. Add Customer\n5. Remove customer\n6. Add credit card\n7. Remove Credit card\n8. List all customers" +
-                "\n9. Add a show/play\n10. List all shows\n11. Store Data\n12. Retrive data\n13. Help");
+                "\n9. Add a show/play\n10. List all shows\n11. Store Data\n12. Retrive data"+"\n13. Sell regular ticket." +
+                "\n14. Sell advance ticekts.\n15. Sell student tickets.\n16. Pay client." +
+                "\n17. List all tickets.\n18. Print help.");
     }
 
     private void printHelp() {
@@ -136,7 +161,12 @@ public class Driver {
                 "any session. If stored data is found, the user has the option to use it. The user may also invoke\n" +
                 "a command to load data, provided he/she has not yet issued any data-related commands in\n" +
                 "that session." +
-                "\n\n13. Help: Display help\n");
+                "\n13.3. (This was “Help” in Iteration 1.) Sell regular tickets. Accept the quantity, customer id, credit" +
+                " card number, and the date of the show. " +
+                "\n14.  Sell advance tickets. Accept the quantity, customer id, credit card number, and the date of the show." +
+                "\n15. 5. Sell student advance tickets. Accept the quantity, customer id, credit card number, and the date of the show." +
+                "\n16. Pay client." + "\n17. List all tickets. \n Print help.");
+
     }
     
     // User input methods
@@ -166,7 +196,7 @@ public class Driver {
     /**
      * Gets a show date entered by user
      * repeats until date is successfully entered
-     * @param format
+     * @param: format
      * @return
      * @throws Exception
      */
@@ -175,10 +205,6 @@ public class Driver {
     		try {
         		String line = keyboard.nextLine();
         		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy");
-        		// Allow user to return to menu
-//        		if ( line.equalsIgnoreCase("q") ) {
-//        			
-//        		}
         	    LocalDate date = LocalDate.parse(line, formatter);
         	    return date;
         	} catch (Exception fe) {
@@ -479,5 +505,59 @@ public class Driver {
         }
         System.out.println("Loaded file successfully");
     }
+
+    private void sellRegularTickets() {
+        System.out.print("How many tickets do you need?: ");
+        int quant=keyboard.nextInt();
+        System.out.print("Enter customer id: ");
+        int cusNum=keyboard.nextInt();
+        System.out.print("Credit card number: ");
+        int cardNum=keyboard.nextInt();
+        System.out.print("Enter date of the show:");
+        LocalDate date = getShowDate();
+
+        theater.addTicket(Ticket.REGULAR, quant,cusNum,cardNum,date);
+
+    }
+    private void sellStudentTicket() {
+        System.out.print("How many tickets do you need?: ");
+        int quant=keyboard.nextInt();
+        System.out.print("Enter customer id: ");
+        int cusNum=keyboard.nextInt();
+        System.out.print("Credit card number: ");
+        int cardNum=keyboard.nextInt();
+        System.out.print("Enter date of the show:");
+        LocalDate date = getShowDate();
+
+        theater.addTicket(Ticket.ADVANCE, quant,cusNum,cardNum,date);
+    }
+
+    private void sellAdvanceTickets() {
+        System.out.print("How many tickets do you need?: ");
+        int quant=keyboard.nextInt();
+        System.out.print("Enter customer id: ");
+        int cusNum=keyboard.nextInt();
+        System.out.print("Credit card number: ");
+        int cardNum=keyboard.nextInt();
+        System.out.print("Enter date of the show:");
+        LocalDate date = getShowDate();
+
+        theater.addTicket(Ticket.STUDENT_ADVANCE, quant,cusNum,cardNum,date);
+    }
+
+    private void printAllTicket() {
+    }
+
+
+    private void payclient() {
+        System.out.print("How many tickets do you need?: ");
+        int clientNumber=keyboard.nextInt();
+        System.out.print("How much do you want to pay? :");
+        int amount=keyboard.nextInt();
+
+        theater.payClient(clientNumber,amount);
+    }
+
+
 
 }
