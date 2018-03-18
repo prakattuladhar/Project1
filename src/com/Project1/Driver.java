@@ -520,15 +520,41 @@ public class Driver {
 
     }
     private void sellStudentTicket() {
+        System.out.print("How many tickets do you need?: ");
+        int quant=keyboard.nextInt();
+        System.out.print("Enter customer id: ");
+        int cusNum=keyboard.nextInt();
+        System.out.print("Credit card number: ");
+        int cardNum=keyboard.nextInt();
+        System.out.print("Enter date of the show:");
+        LocalDate date = getShowDate();
+
+        theater.addTicket(Ticket.ADVANCE, quant,cusNum,cardNum,date);
     }
 
     private void sellAdvanceTickets() {
+        System.out.print("How many tickets do you need?: ");
+        int quant=keyboard.nextInt();
+        System.out.print("Enter customer id: ");
+        int cusNum=keyboard.nextInt();
+        System.out.print("Credit card number: ");
+        int cardNum=keyboard.nextInt();
+        System.out.print("Enter date of the show:");
+        LocalDate date = getShowDate();
+
+        theater.addTicket(Ticket.STUDENT_ADVANCE, quant,cusNum,cardNum,date);
     }
 
     private void printAllTicket() {
     }
 
     private void payclient() {
+        System.out.print("How many tickets do you need?: ");
+        int clientNumber=keyboard.nextInt();
+        System.out.print("How much do you want to pay? :");
+        double amount=keyboard.nextDouble();
+
+        theater.payClient(clientNumber,amount);
     }
 
 

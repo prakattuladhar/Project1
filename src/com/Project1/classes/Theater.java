@@ -184,8 +184,29 @@ public class Theater implements Serializable{
                 ticketList.add(ticket);
             }
         }
+       else if(ticketType==Ticket.ADVANCE){
+           for(int i=0;i<quant;i++) {
+               Ticket ticket = ticketFactory.createTicket(cusNum, date, Ticket.REGULAR);
+               ticketList.add(ticket);
+           }
+       }
+       else if(ticketType==Ticket.STUDENT_ADVANCE){
+           for(int i=0;i<quant;i++) {
+               Ticket ticket = ticketFactory.createTicket(cusNum, date, Ticket.REGULAR);
+               ticketList.add(ticket);
+           }
+       }else {
+            System.out.print("Ticket type not found.");
+        }
    }
 
 
+   //should return array of ticket list
+    public TicketList getTicketList() {
+        return ticketList;
+    }
 
+    public void payClient(int clientNumber, double amount) {
+
+    }
 }
