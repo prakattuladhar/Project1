@@ -546,6 +546,20 @@ public class Driver {
     }
 
     private void printAllTicket() {
+        System.out.print("Enter date of the show:");
+        LocalDate date = getShowDate();
+        Iterator<Ticket> iterator = theater.getTicketList(date);
+        if ( !iterator.hasNext() ) {
+            System.out.println("No tickets to display");
+        }
+        while ( iterator.hasNext() ) {
+            Ticket ticket = iterator.next();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+            System.out.print(ticket.toString());
+            System.out.println("\n---------------------------------------");
+
+        }
+        System.out.println("\n---------------------------------------");
     }
 
 

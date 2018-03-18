@@ -27,4 +27,9 @@ public class Ticket implements Serializable {
 	public LocalDate getDate() {
 		return date;
 	}
+
+	@Override
+	public String toString() {
+		return "Customer id:"+customerId+"\nType:"+type+"Price:"+price;
+	}
 }

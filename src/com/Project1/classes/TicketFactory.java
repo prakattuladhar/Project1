@@ -1,8 +1,9 @@
 package com.Project1.classes;
 
+import java.io.Serializable;
 import java.time.*;
 
-public class TicketFactory {
+public class TicketFactory implements Serializable{
 	private static TicketFactory factory;
 	
 	private TicketFactory() {

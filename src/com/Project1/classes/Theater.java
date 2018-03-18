@@ -206,8 +206,8 @@ public class Theater implements Serializable{
 
 
    //should return array of ticket list
-    public TicketList getTicketList() {
-        return ticketList;
+    public Iterator<Ticket> getTicketList(LocalDate date) {
+        return ticketList.getTicketsByDate(date);
     }
 
     //takes in client number and amount and pay the client. Throws exception if client not found or balance amount is greater than balance
