@@ -161,7 +161,7 @@ public class Driver {
                 "any session. If stored data is found, the user has the option to use it. The user may also invoke\n" +
                 "a command to load data, provided he/she has not yet issued any data-related commands in\n" +
                 "that session." +
-                "\n13.3. (This was “Help” in Iteration 1.) Sell regular tickets. Accept the quantity, customer id, credit" +
+                "\n13.3. (This was “Help� in Iteration 1.) Sell regular tickets. Accept the quantity, customer id, credit" +
                 " card number, and the date of the show. " +
                 "\n14.  Sell advance tickets. Accept the quantity, customer id, credit card number, and the date of the show." +
                 "\n15. 5. Sell student advance tickets. Accept the quantity, customer id, credit card number, and the date of the show." +
@@ -564,12 +564,10 @@ public class Driver {
 
 
     private void payclient() {
-        System.out.print("How many tickets do you need?: ");
+    	
+        System.out.print("Please enter the Client ID: ");
         int clientNumber=keyboard.nextInt();
-        System.out.print("How much do you want to pay? :");
-        int amount=keyboard.nextInt();
-
-        theater.payClient(clientNumber,amount);
+        theater.getClientBalance(clientNumber);
     }
 
 

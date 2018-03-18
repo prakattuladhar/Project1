@@ -215,4 +215,7 @@ public class Theater implements Serializable{
        Client client=clientList.getClient(clientNumber);
        client.payBalance(amount);
     }
+    public int getClientBalance(int clientNumber) {
+    	return clientList.getClient(clientNumber).getBalance();
+    }
 }
