@@ -3,7 +3,7 @@ package com.Project1.classes;
 import java.io.*;
 import java.util.*;
 import java.time.*;
-
+import com.Project1.classes.Ticket;
 
 //made singleton
 public class Theater implements Serializable{
@@ -12,8 +12,10 @@ public class Theater implements Serializable{
    private ClientList clientList = new ClientList();
    private ShowList showList = new ShowList();
    private CardNumberMap cardNumbers = new CardNumberMap();
+  private TicketList ticketList= new TicketList();
+  private TicketFactory ticketFactory=TicketFactory.instance();
 
-   public int[] x = new int[10];
+//   public int[] x = new int[10];
    private static Theater theater;
    private Theater(){
 
@@ -172,6 +174,16 @@ public class Theater implements Serializable{
     */
    public Iterator<Show> getShowIterator(){
        return showList.iterator();
+   }
+
+   //accepts customers in for and type of ticket
+   public void addTicket(int ticketType, int quant, int cusNum, int cardNum,LocalDate date){
+        if(ticketType==Ticket.REGULAR){
+            for(int i=0;i<quant;i++) {
+                Ticket ticket = ticketFactory.createTicket(cusNum, date, Ticket.REGULAR);
+                ticketList.add(ticket);
+            }
+        }
    }
 
 

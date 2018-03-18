@@ -27,8 +27,8 @@ public class Customer extends Member implements Serializable {
     }
     /**
      * Adds a credit card associated with customer
-     * @param cardNumber	credit card number
-     * @param expDate		credit card expiration date
+     * @param:cardNumber	credit card number
+     * @param:expDate		credit card expiration date
      * @return true if credit card added, false if credit card already exists
      */
     public boolean addCreditCard(CreditCard card){
