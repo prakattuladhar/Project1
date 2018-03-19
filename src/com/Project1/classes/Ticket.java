@@ -32,6 +32,6 @@ public class Ticket implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Customer id:"+customerId+"\nType:"+type+"Price:"+price;
+		return "Customer id:" + customerId + "\nType:" + type + "Price:" + price;
 	}
 }

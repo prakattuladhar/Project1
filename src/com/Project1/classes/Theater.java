@@ -5,25 +5,41 @@ import java.util.*;
 import java.time.*;
 import com.Project1.classes.Ticket;
 
-//made singleton
-public class Theater implements Serializable{
+/**
+ * 
+ * @author Prakat Tuladhar
+ *
+ */
+public class Theater implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
    private CustomerList customerList = CustomerList.instance();
    private ClientList clientList = new ClientList();
    private ShowList showList = new ShowList();
    private CardNumberMap cardNumbers = new CardNumberMap();
-  private TicketList ticketList= new TicketList();
-  private TicketFactory ticketFactory=TicketFactory.instance();
+   private TicketList ticketList = new TicketList();
+   private TicketFactory ticketFactory = TicketFactory.instance();
 
    private static Theater theater;
+   /**
+    * Support singleton pattern
+    */
    private Theater(){
 
    }
+   /**
+    * Gets instance of Theater object
+    * @return
+    */
    public static Theater getInstance(){
        if(theater == null)
            theater = new Theater();
        return theater;
    }
+   /**
+    * 
+    * @param object
+    */
    public void setTheater(Theater object){
        this.theater = object;
    }
@@ -43,7 +59,14 @@ public class Theater implements Serializable{
 	   } catch (RuntimeException re) {
 		   throw re;
 	   }
-
+   }
+   /**
+    * checks to see if client exist for given ID number
+    * @param clientId
+    * @return true if clientList contains client, false otherwise
+    */
+   public boolean hasClient(int clientId) {
+	   return clientList.contains(clientId);
    }
    /**
     * removes a client
@@ -84,6 +107,14 @@ public class Theater implements Serializable{
 	   Customer customer = new Customer(name, address, phone, card);
 	   cardNumbers.addCard(cardNumber, card);
        return customerList.add(customer);
+   }
+   /**
+    * checks to see if customer exists for given ID number
+    * @param customerId
+    * @return true if list contains customer, false otherwise
+    */
+   public boolean hasCustomer(int customerId) {
+	   return customerList.contains(customerId);
    }
    /**
     * Deletes a customer
@@ -157,13 +188,14 @@ public class Theater implements Serializable{
     * @return
     */
    public boolean addShow(int clientId, String name, LocalDate startDate, LocalDate endDate){
+	   if ( !clientList.contains(clientId) ) {
+		   throw new RuntimeException("Client ID: " + clientId + " does not exist");
+	   }
 	   Show show = new Show(clientId, name, startDate, endDate);
        try {
-    	   showList.add(show, clientList);
+    	   showList.add(show);
        } catch (ShowConflictException se) {
     	   throw se;
-       } catch (RuntimeException re) {
-    	   throw re;
        }
        return true;
    }

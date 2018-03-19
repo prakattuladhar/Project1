@@ -23,7 +23,6 @@ public class CustomerList implements Iterable<Customer>, Serializable {
      */
     private CustomerList() {
     }
-    
     /**
      * Supports the singleton pattern
      * @return the singleton object
@@ -50,6 +49,9 @@ public class CustomerList implements Iterable<Customer>, Serializable {
      */
     public Customer getCustomer(int id) {
     	return map.get(id);
+    }
+    public boolean contains(int customerId) {
+    	return map.containsKey(customerId);
     }
     /**
      * Removes a customer from the list based on ID number

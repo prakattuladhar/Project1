@@ -15,30 +15,30 @@ import java.time.*;
 public class ShowList implements Serializable, Iterable<Show> {
 	private static final long serialVersionUID = 1L;
 	// Allows searching for start date in O(log(n)) time
-	private TreeMap<Show, Integer> map = new TreeMap<Show, Integer>( new SortByStartDate() );
+	private TreeMap<LocalDate, Show> map = new TreeMap<LocalDate, Show>();
     /**
      * Adds a show to the list of shows
-     * Fails if there are conflicting dates, or if the client of the show not in
-     * client list
+     * Fails if there are conflicting dates
      * @param show		show to be added
      * @return true if show dates available, false if not
      * @exception ShowConflictException if date range is not free
      */
-    public boolean add(Show show, ClientList list){
+    public boolean add(Show show){
 
-    	if (list.getClient( show.getClientId() ) == null) {
-    		throw new RuntimeException("Add failed: No client exists for ID: " + show.getClientId() );
-    	}
-    	
     	boolean available = true;
     	// Holds potentially conflicting shows
     	Show[] conflictingShows = {null, null};
     	
     	/*
     	 * Check that show starts after previous show ends
-    	 * floorKey returns show with greatest start time <= show's start time
+    	 * floorEntry().getValue() returns show with greatest start time <= show's start time
     	 */
-    	Show previous = map.floorKey(show);
+    	Show previous = null;
+    	try {
+    		previous = map.floorEntry( show.getStartDate() ).getValue();
+    	} catch (RuntimeException e) {
+    		;
+    	}
     	if (
     		previous == null ||					// Is there a previous show?
     		(show.getStartDate().compareTo( previous.getEndDate() ) > 0)
@@ -50,9 +50,15 @@ public class ShowList implements Serializable, Iterable<Show> {
     	}
     	/*
     	 * Check that show ends before next show starts
-    	 * ceilingKey returns show with lowest start time >= show's start time
+    	 * ceilingEntry().getValue() returns show with lowest start time >= show's start time
     	 */
-    	Show next = map.ceilingKey(show);
+    	Show next = null;
+    	try {
+    		next = map.ceilingEntry( show.getStartDate() ).getValue();
+    	} catch (RuntimeException e) {
+    		;
+    	}
+    	
     	if (
     		next == null ||						// Is there a next show?
     		(show.getEndDate().compareTo( next.getStartDate() ) < 0)
@@ -67,7 +73,7 @@ public class ShowList implements Serializable, Iterable<Show> {
     		throw new ShowConflictException(conflictingShows);
     	}
     	
-    	map.put(show, show.getClientId() );
+    	map.put(show.getStartDate(), show);
     	
         return available;
     }
@@ -77,36 +83,55 @@ public class ShowList implements Serializable, Iterable<Show> {
      * @return	true if client has at least one show, false if no shows
      */
     public boolean ClientHasShow(int clientId) {
-    	return map.containsValue(clientId);
+    	for ( Show show : map.values() ) {
+    		if (show.getClientId() == clientId) {
+    			return true;
+    		}
+    	}
+    	return false;
     }
     /**
-     * @version 1.0
-     * Allows map of shows to be sorted by start date
-     * @author Colin Quinn
+     * Retrieves the show that is playing on a specific date
+     * @param date
+     * @return show playing on that date, null if no show playing
      */
-    private class SortByStartDate implements Comparator<Show>, Serializable {
-    	private static final long serialVersionUID = 1L;
-    	public int compare(Show a, Show b) {
-    		return a.getStartDate().compareTo( b.getStartDate() );
+    public Show getShowByDate(LocalDate date) {
+    	// find show with greatest start date <= date
+    	Show show = map.floorEntry(date).getValue();
+    	// make sure show end date is >= date
+    	if (show.getEndDate().compareTo(date) >= 0) {
+    		return show;
     	}
+    	return null;
     }
-    /**
-     * @version 1.0
-     * Allows map of shows to be sorted by end date
-     * @author Colin Quinn
-     */
-    private class SortByEndDate implements Comparator<Show>, Serializable {
-    	private static final long serialVersionUID = 1L;
-    	public int compare(Show a, Show b) {
-    		return a.getEndDate().compareTo( b.getEndDate() );
-    	}
-    }
+//    /**
+//     * @version 1.0
+//     * Allows map of shows to be sorted by start date
+//     * @author Colin Quinn
+//     */
+//    private class SortByStartDate implements Comparator<Show>, Serializable {
+//    	private static final long serialVersionUID = 1L;
+//    	public int compare(Show a, Show b) {
+//    		return a.getStartDate().compareTo( b.getStartDate() );
+//    	}
+//    }
+//    /**
+//     * @version 1.0
+//     * Allows map of shows to be sorted by end date
+//     * @author Colin Quinn
+//     */
+//    private class SortByEndDate implements Comparator<Show>, Serializable {
+//    	private static final long serialVersionUID = 1L;
+//    	public int compare(Show a, Show b) {
+//    		return a.getEndDate().compareTo( b.getEndDate() );
+//    	}
+//    }
     /**
      * Gets iterator for shows
      * @return Iterator<Show>
      */
     @Override
     public Iterator<Show> iterator() {
-    	return map.keySet().iterator();
+    	return map.values().iterator();
     }
 }
