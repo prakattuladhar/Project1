@@ -216,6 +216,7 @@ public class Theater implements Serializable{
     public void payClient(int clientNumber, int amount) throws Exception {
        if(false){
            throw new Exception("Not found");
+
        }
        Client client=clientList.getClient(clientNumber);
        client.payBalance(amount);
