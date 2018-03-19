@@ -421,6 +421,10 @@ public class Driver {
     private void addShow() {
     	System.out.print("Enter client id: ");
         int clientId = getInt();
+        if ( !theater.hasClient(clientId) ) {
+        	System.out.println("Client ID: " + clientId + " does not exist");
+        	return;
+        }
         
         System.out.print("Enter name of the show: ");
         String name = keyboard.nextLine();
