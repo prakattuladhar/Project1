@@ -177,10 +177,12 @@ public class Theater implements Serializable{
 
 
    //accepts customers info and type of ticket
-   public void addTicket(int ticketType, int quant, int cusNum, int cardNum,LocalDate date){
+   public void addTicket(int ticketType, int quant, int cusNum, int cardNum,LocalDate date) throws Exception{
 
        //check if cardNumber and  existsbefor this function can return anything
-
+        if(false){
+            throw new Exception("Not found");
+        }
 
         if(ticketType==Ticket.REGULAR){
             for(int i=0;i<quant;i++) {
@@ -211,7 +213,10 @@ public class Theater implements Serializable{
     }
 
     //takes in client number and amount and pay the client. Throws exception if client not found or balance amount is greater than balance
-    public void payClient(int clientNumber, int amount) {
+    public void payClient(int clientNumber, int amount) throws Exception {
+       if(false){
+           throw new Exception("Not found");
+       }
        Client client=clientList.getClient(clientNumber);
        client.payBalance(amount);
     }

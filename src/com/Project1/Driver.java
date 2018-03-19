@@ -161,7 +161,7 @@ public class Driver {
                 "any session. If stored data is found, the user has the option to use it. The user may also invoke\n" +
                 "a command to load data, provided he/she has not yet issued any data-related commands in\n" +
                 "that session." +
-                "\n13.3. (This was “Help� in Iteration 1.) Sell regular tickets. Accept the quantity, customer id, credit" +
+                "\n13.3. (This was “Help� in Iteration 1.) Sell regular tickets. Accept the quantity, customer id, credit" +
                 " card number, and the date of the show. " +
                 "\n14.  Sell advance tickets. Accept the quantity, customer id, credit card number, and the date of the show." +
                 "\n15. 5. Sell student advance tickets. Accept the quantity, customer id, credit card number, and the date of the show." +
@@ -507,20 +507,26 @@ public class Driver {
     }
 
     private void sellRegularTickets() {
-        System.out.print("How many tickets do you need?: ");
-        int quant=keyboard.nextInt();
-        System.out.print("Enter customer id: ");
-        int cusNum=keyboard.nextInt();
-        System.out.print("Credit card number: ");
-        int cardNum=keyboard.nextInt();
-        System.out.print("Enter date of the show:");
-        LocalDate date = getShowDate();
+       try {
+           System.out.print("How many tickets do you need?: ");
 
-        theater.addTicket(Ticket.REGULAR, quant,cusNum,cardNum,date);
+           int quant = keyboard.nextInt();
+           System.out.print("Enter customer id: ");
+           int cusNum = keyboard.nextInt();
+           System.out.print("Credit card number: ");
+           int cardNum = keyboard.nextInt();
+           System.out.print("Enter date of the show:");
+           LocalDate date = getShowDate();
+
+           theater.addTicket(Ticket.REGULAR, quant, cusNum, cardNum, date);
+       }catch (Exception e){
+           System.out.print("Something weng wrong.");
+       }
 
     }
     private void sellStudentTicket() {
-        System.out.print("How many tickets do you need?: ");
+        try{
+            System.out.print("How many tickets do you need?: ");
         int quant=keyboard.nextInt();
         System.out.print("Enter customer id: ");
         int cusNum=keyboard.nextInt();
@@ -530,19 +536,26 @@ public class Driver {
         LocalDate date = getShowDate();
 
         theater.addTicket(Ticket.ADVANCE, quant,cusNum,cardNum,date);
+    }catch (Exception e){
+        System.out.print("Something weng wrong.");
+    }
     }
 
     private void sellAdvanceTickets() {
-        System.out.print("How many tickets do you need?: ");
-        int quant=keyboard.nextInt();
-        System.out.print("Enter customer id: ");
-        int cusNum=keyboard.nextInt();
-        System.out.print("Credit card number: ");
-        int cardNum=keyboard.nextInt();
-        System.out.print("Enter date of the show:");
-        LocalDate date = getShowDate();
+       try {
+           System.out.print("How many tickets do you need?: ");
+           int quant = keyboard.nextInt();
+           System.out.print("Enter customer id: ");
+           int cusNum = keyboard.nextInt();
+           System.out.print("Credit card number: ");
+           int cardNum = keyboard.nextInt();
+           System.out.print("Enter date of the show:");
+           LocalDate date = getShowDate();
 
-        theater.addTicket(Ticket.STUDENT_ADVANCE, quant,cusNum,cardNum,date);
+           theater.addTicket(Ticket.STUDENT_ADVANCE, quant, cusNum, cardNum, date);
+       }catch (Exception e){
+           System.out.print("Something weng wrong.");
+       }
     }
 
     private void printAllTicket() {
