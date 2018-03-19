@@ -10,13 +10,15 @@ public class Ticket implements Serializable {
 	public static final int ADVANCE = 2;
 	public static final int STUDENT_ADVANCE = 3;
 	
+	protected int serialNumber;
 	protected int customerId;
 	protected double price;
 	protected int type;
 	protected String showName;
 	protected LocalDate date;
 	
-	public Ticket(int customerId, LocalDate date, double price, int type) {
+	public Ticket(int serialNumber, int customerId, LocalDate date, double price, int type) {
+		this.serialNumber = serialNumber;
 		this.customerId = customerId;
 		this.date = date;
 		this.price = price;
