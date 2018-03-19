@@ -36,6 +36,19 @@ public class Customer extends Member implements Serializable {
     	return true;
     }
     /**
+     * See if customer has card with specific card number
+     * @param cardNumber
+     * @return true if customer has credit card with same number, false if not
+     */
+    public boolean hasCreditCard(int cardNumber) {
+    	for(CreditCard card : creditCards) {
+    		if (card.getNumber() == cardNumber) {
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+    /**
      * Removes a credit card associated with customer
      * If customer only has one card, it may not be removed
      * @param cardNumber	number of credit card to be deleted

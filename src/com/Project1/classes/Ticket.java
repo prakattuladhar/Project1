@@ -3,6 +3,7 @@ package com.Project1.classes;
 import java.io.Serializable;
 import java.util.*;
 import java.time.*;
+import java.math.*;
 
 public class Ticket implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -12,12 +13,12 @@ public class Ticket implements Serializable {
 	
 	protected int serialNumber;
 	protected int customerId;
-	protected double price;
+	protected BigDecimal price;
 	protected int type;
 	protected String showName;
 	protected LocalDate date;
 	
-	public Ticket(int serialNumber, int customerId, LocalDate date, double price, int type) {
+	public Ticket(int serialNumber, int customerId, LocalDate date, BigDecimal price, int type) {
 		this.serialNumber = serialNumber;
 		this.customerId = customerId;
 		this.date = date;
@@ -28,6 +29,10 @@ public class Ticket implements Serializable {
 	// add get/set methods
 	public LocalDate getDate() {
 		return date;
+	}
+	
+	public BigDecimal getPrice() {
+		return price;
 	}
 
 	@Override

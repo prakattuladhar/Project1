@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.*;
 import java.time.*;
 import java.time.format.*;
+import java.math.*;
 
 public class Driver {
 	
@@ -191,6 +192,24 @@ public class Driver {
 //    			throw new RuntimeException();
 //    		}
     	} while (response == -1);
+    	return response;
+    }
+    private BigDecimal getPrice() {
+    	String line;
+    	BigDecimal response = null;
+    	
+    	do {
+    		line = keyboard.nextLine();
+    		try {
+    			response = new BigDecimal(line).setScale(2, RoundingMode.HALF_UP);
+    		} catch (NumberFormatException | ArithmeticException e) {
+    			System.out.println("Invalid Input: Please enter a valid price in format 0.00");
+    		}
+    		// Allow user to return to menu
+//    		if ( line.equalsIgnoreCase("q") ) {
+//    			throw new RuntimeException();
+//    		}
+    	} while (response != null);
     	return response;
     }
     /**
@@ -435,6 +454,9 @@ public class Driver {
         System.out.print("Enter end date for show: ");
         LocalDate endDate = getShowDate();
         
+        System.out.print("Enter ticket price: ");
+        BigDecimal price = getPrice();
+        
         LocalDate currentDate = LocalDate.now();
         if (startDate.compareTo(currentDate) <= 0) {
         	System.out.println("Show must start on or after current date");
@@ -447,7 +469,7 @@ public class Driver {
         }
         
         try {
-        	theater.addShow(clientId, name, startDate, endDate);
+        	theater.addShow(clientId, name, startDate, endDate, price);
         } catch (ShowConflictException se) {
         	System.out.println("Add Failed: ");
         	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
@@ -501,7 +523,7 @@ public class Driver {
 
     private void load() {
         try {
-            theater= FileHandler.readFromFile("output.dat");
+            theater = FileHandler.readFromFile("output.dat");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

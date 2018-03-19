@@ -3,6 +3,7 @@ package com.Project1.classes;
 import java.io.Serializable;
 import java.util.*;
 import java.time.*;
+import java.math.*;
 
 /**
  * @version 1.0
@@ -19,6 +20,7 @@ public class Show implements Serializable {
     private String name;
     private LocalDate startDate;
     private LocalDate endDate;
+    private BigDecimal baseTicketPrice;
     // holds ids of customers attending show
     private ArrayList<Integer> customerIds = new ArrayList<Integer>();
     
@@ -29,11 +31,12 @@ public class Show implements Serializable {
      * @param startDate		first date of show run
      * @param endDate		last date of show run
      */
-    public Show(int clientId, String name, LocalDate startDate, LocalDate endDate) {   	
+    public Show(int clientId, String name, LocalDate startDate, LocalDate endDate, BigDecimal ticketPrice) {   	
     	this.clientId = clientId;
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.baseTicketPrice = ticketPrice;
     }
     /**
      * Gets ID of client sponsoring show
@@ -62,6 +65,13 @@ public class Show implements Serializable {
      */
     public LocalDate getEndDate() {
     	return endDate;
+    }
+    /**
+     * Gets the base ticket price for the show
+     * @return base ticket price
+     */
+    public BigDecimal getBaseTicketPrice() {
+    	return baseTicketPrice;
     }
     /**
      * Gets ArrayList of customer ids of show attendants
