@@ -621,8 +621,12 @@ public class Driver {
 	        System.out.println("The current balance is: " + clientBalance + ".");
 	        System.out.print("How much do you want to pay?");
 	        payment=keyboard.nextInt();
-	        if(payment<=clientBalance) {
+	        if(payment<=clientBalance && payment>=0) {
 	        	client.payBalance(payment);
+	        	System.out.println("Client has been paid. Current balance is: " + clientBalance + ".");
+	        }
+	        else {
+	        	System.out.println("Incorrect payment entered. Returning to Menu.");
 	        }
 	    }
     }
