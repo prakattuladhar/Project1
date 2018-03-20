@@ -66,7 +66,7 @@ public class Theater implements Serializable {
     * @param clientId
     * @return true if clientList contains client, false otherwise
     */
-   public boolean hasClient(int clientId) {
+   public boolean hasClient(int clientId){
 	   return clientList.contains(clientId);
    }
    /**

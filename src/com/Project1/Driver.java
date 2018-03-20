@@ -608,7 +608,12 @@ public class Driver {
     	while(client==null && clientNumber != 0) {
         System.out.print("Please enter the Client ID or enter 0 to cancel: ");
         clientNumber=keyboard.nextInt();
-        client = theater.getClient(clientNumber);
+	        if(theater.hasClient(clientNumber)) {
+	        	client = theater.getClient(clientNumber);
+	        }
+	        else {
+	        	clientNumber=0;
+	        }
     	}
     	if(clientNumber!=0) {
     		int clientBalance = client.getBalance();
