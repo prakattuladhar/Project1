@@ -263,7 +263,7 @@ public class Theater implements Serializable {
         }
         int clientId = show.getClientId();
         Client client = clientList.getClient(clientId);
-        client.updateBalance(revenue);
+        client.updateBalance( revenue.divide( new BigDecimal("2.00") ).setScale(2, RoundingMode.HALF_UP) );
    }
 
 

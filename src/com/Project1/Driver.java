@@ -478,7 +478,7 @@ public class Driver {
         BigDecimal price = getPrice();
         
         LocalDate currentDate = LocalDate.now();
-        if (startDate.compareTo(currentDate) <= 0) {
+        if (startDate.compareTo(currentDate) < 0) {
         	System.out.println("Show must start on or after current date");
         	return;
         }
@@ -618,6 +618,13 @@ public class Driver {
            int cardNumber = getInt();
            System.out.print("Enter date of the show:");
            LocalDate date = getShowDate();
+           
+           LocalDate currentDate = LocalDate.now();
+           if (date.compareTo(currentDate) <= 0) {
+           	System.out.println("Advance tickets must be bought at least 1 day in advance");
+           	return;
+           }
+           
            System.out.print("How many tickets do you need?: ");
            int quantity = getInt();
 
@@ -637,7 +644,8 @@ public class Driver {
         while ( iterator.hasNext() ) {
             Ticket ticket = iterator.next();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-            System.out.print(ticket.toString());
+            System.out.println(ticket.toString());
+            System.out.println( ticket.getDate().format(formatter) );
             System.out.println("\n---------------------------------------");
 
         }

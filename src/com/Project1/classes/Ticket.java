@@ -38,6 +38,25 @@ public class Ticket implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Customer id:" + customerId + "\nType:" + type + "Price:" + price;
+		String information =  "Serial Number: " + serialNumber + 
+				"\nCustomer id:" + customerId +
+				"\nShow Name: " + showName +
+				"Price: " + price;
+		String showType;
+		switch (type) {
+		
+		case Ticket.REGULAR:
+			showType = "Regular Ticket";
+			break;
+		case Ticket.ADVANCE:
+			showType = "Advance Ticket";
+			break;
+		case Ticket.STUDENT_ADVANCE:
+			showType = "Student Advance Ticket";
+			break;
+		default:
+			showType = "None";	
+		}
+		return information + "\n" + showType;
 	}
 }
