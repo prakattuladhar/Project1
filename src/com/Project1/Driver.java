@@ -570,12 +570,30 @@ public class Driver {
      */
     private void sellRegularTickets() {
        try {
+    	   // Get and verify customer
            System.out.print("Enter customer id: ");
            int customerId = getInt();
+           Customer customer = theater.getCustomer(customerId);
+           if (customer == null) {
+        	   System.out.print("No customer with ID: " + customerId);
+        	   return;
+           }
+           // Get and verify credit card
            System.out.print("Credit card number: ");
            int cardNumber = getInt();
+           if( !customer.hasCreditCard(cardNumber) ) {
+        	   System.out.print("Credit card: " + cardNumber + " not on file");
+        	   return;
+           }
+           // get and verify date
            System.out.print("Enter date of the show:");
            LocalDate date = getShowDate();
+           Show show = theater.getShowByDate(date);
+           if (show == null) {
+        	   System.out.print("No show playing on this date");
+        	   return;
+           }
+           // number of tickets
            System.out.print("How many tickets do you need?: ");
            int quantity = getInt();
 
@@ -602,12 +620,30 @@ public class Driver {
     	}
     	
         try {
-        	System.out.print("Enter customer id: ");
+        	// Get and verify customer
+            System.out.print("Enter customer id: ");
             int customerId = getInt();
+            Customer customer = theater.getCustomer(customerId);
+            if (customer == null) {
+         	   System.out.print("No customer with ID: " + customerId);
+         	   return;
+            }
+            // Get and verify credit card
             System.out.print("Credit card number: ");
             int cardNumber = getInt();
+            if( !customer.hasCreditCard(cardNumber) ) {
+         	   System.out.print("Credit card: " + cardNumber + " not on file");
+         	   return;
+            }
+            // get and verify date
             System.out.print("Enter date of the show:");
             LocalDate date = getShowDate();
+            Show show = theater.getShowByDate(date);
+            if (show == null) {
+         	   System.out.print("No show playing on this date");
+         	   return;
+            }
+            // number of tickets
             System.out.print("How many tickets do you need?: ");
             int quantity = getInt();
 
@@ -621,21 +657,38 @@ public class Driver {
      */
     private void sellAdvanceTickets() {
        try {
-    	   System.out.print("Enter customer id: ");
+    	// Get and verify customer
+           System.out.print("Enter customer id: ");
            int customerId = getInt();
+           Customer customer = theater.getCustomer(customerId);
+           if (customer == null) {
+        	   System.out.print("No customer with ID: " + customerId);
+        	   return;
+           }
+           // Get and verify credit card
            System.out.print("Credit card number: ");
            int cardNumber = getInt();
+           if( !customer.hasCreditCard(cardNumber) ) {
+        	   System.out.print("Credit card: " + cardNumber + " not on file");
+        	   return;
+           }
+           // get and verify date
            System.out.print("Enter date of the show:");
            LocalDate date = getShowDate();
-           
            LocalDate currentDate = LocalDate.now();
            if (date.compareTo(currentDate) <= 0) {
            	System.out.println("Advance tickets must be bought at least 1 day in advance");
            	return;
            }
-           
+           Show show = theater.getShowByDate(date);
+           if (show == null) {
+        	   System.out.print("No show playing on this date");
+        	   return;
+           }
+           // number of tickets
            System.out.print("How many tickets do you need?: ");
            int quantity = getInt();
+           
 
            theater.addTicket(Ticket.STUDENT_ADVANCE, quantity, customerId, cardNumber, date);
        }catch (Exception e){
@@ -648,8 +701,9 @@ public class Driver {
         LocalDate date = getShowDate();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         Iterator<Ticket> iterator = theater.getTicketList(date);
-        if ( !iterator.hasNext() ) {
+        if ( iterator == null ) {
             System.out.println("No tickets to display");
+            return;
         }
         while ( iterator.hasNext() ) {
             Ticket ticket = iterator.next();

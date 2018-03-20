@@ -18,13 +18,12 @@ public class Ticket implements Serializable {
 	protected String showName;
 	protected LocalDate date;
 	
-	public Ticket(int serialNumber, int customerId, String showName, LocalDate date, BigDecimal price, int type) {
+	public Ticket(int serialNumber, int customerId, String showName, LocalDate date) {
 		this.serialNumber = serialNumber;
 		this.customerId = customerId;
 		this.date = date;
-		this.price = price;
-		this.type = type;
 		this.showName = showName;
+		this.type = Ticket.REGULAR;
 	}
 	
 	// add get/set methods
@@ -35,28 +34,15 @@ public class Ticket implements Serializable {
 	public BigDecimal getPrice() {
 		return price;
 	}
+	public void computePrice(BigDecimal basePrice) {
+		price = basePrice.setScale(2, RoundingMode.HALF_UP);
+	}
 
 	@Override
 	public String toString() {
-		String information =  "Serial Number: " + serialNumber + 
+		return  "Serial Number: " + serialNumber + 
 				"\nCustomer id:" + customerId +
 				"\nShow Name: " + showName +
 				"Price: " + price;
-		String showType;
-		switch (type) {
-		
-		case Ticket.REGULAR:
-			showType = "Regular Ticket";
-			break;
-		case Ticket.ADVANCE:
-			showType = "Advance Ticket";
-			break;
-		case Ticket.STUDENT_ADVANCE:
-			showType = "Student Advance Ticket";
-			break;
-		default:
-			showType = "None";	
-		}
-		return information + "\n" + showType;
 	}
 }

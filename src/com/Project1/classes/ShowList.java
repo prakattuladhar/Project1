@@ -96,10 +96,15 @@ public class ShowList implements Serializable, Iterable<Show> {
      * @return show playing on that date, null if no show playing
      */
     public Show getShowByDate(LocalDate date) {
+    	Show show = null;
     	// find show with greatest start date <= date
-    	Show show = map.floorEntry(date).getValue();
+    	try {
+    		show = map.floorEntry(date).getValue();
+    	} catch (Exception e) {
+    		return null;
+    	}
     	// make sure show end date is >= date
-    	if (show.getEndDate().compareTo(date) >= 0) {
+    	if (show != null && show.getEndDate().compareTo(date) >= 0) {
     		return show;
     	}
     	return null;

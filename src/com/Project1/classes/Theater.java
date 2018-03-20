@@ -128,6 +128,14 @@ public class Theater implements Serializable {
 	   return customerList.contains(customerId);
    }
    /**
+    * Returns customer with given id number
+    * @param customerId
+    * @return customer
+    */
+   public Customer getCustomer(int customerId) {
+	   return customerList.getCustomer(customerId);
+   }
+   /**
     * Deletes a customer
     * @param id
     * @return true if customer deleted, false if no customer existed for that id
@@ -217,19 +225,26 @@ public class Theater implements Serializable {
        return true;
    }
    /**
+    * Gets show playing on a particular date
+    * @param date
+    * @return show
+    */
+   public Show getShowByDate(LocalDate date) {
+	   return showList.getShowByDate(date);
+   }
+   /**
     * Gets an iterator for all shows on the calendar
     * @return iterator<Show>
     */
    public Iterator<Show> getShowIterator(){
        return showList.iterator();
    }
-
    /**
-    *
+    * 
     * @param ticketType
-    * @param:quant
-    * @param:cusNum
-    * @param:cardNum
+    * @param quantity
+    * @param customerId
+    * @param cardNumber
     * @param date
     * @throws Exception
     */
@@ -237,12 +252,12 @@ public class Theater implements Serializable {
 
        //check if cardNumber and  exists before this function can return anything
 	   Customer customer = customerList.getCustomer(customerId);
-	   if (customer == null) {
-		   throw new Exception("Customer ID: " + customerId + " does not exist");
-	   }
-        if( !customer.hasCreditCard(cardNumber) ){
-            throw new Exception("Customer does not have credit card number: " + cardNumber);
-        }
+//	   if (customer == null) {
+//		   throw new Exception("Customer ID: " + customerId + " does not exist");
+//	   }
+//        if( !customer.hasCreditCard(cardNumber) ){
+//            throw new Exception("Customer does not have credit card number: " + cardNumber);
+//        }
 
         Show show = showList.getShowByDate(date);
         if (show == null) {
@@ -278,6 +293,11 @@ public class Theater implements Serializable {
        Client client = clientList.getClient(clientNumber);
        client.payBalance(amount);
     }
+    /**
+     * Gets client with specified ID number
+     * @param clientNumber
+     * @return client
+     */
 	public Client getClient(int clientNumber) {
 		return clientList.getClient(clientNumber);
 	}
