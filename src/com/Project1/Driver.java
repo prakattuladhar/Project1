@@ -410,11 +410,14 @@ public class Driver {
             			card.getExpirationDate().format(formatter) );
             }
             Iterator<Ticket> tickets = customer.getTicketIterator();
+            if ( tickets.hasNext() ) {
+            	System.out.println("Tickets:\n---------------------------------------");
+            }
             while ( tickets.hasNext() ) {
             	Ticket ticket = tickets.next();
                 
             	System.out.println( ticket.toString() );
-                System.out.println( ticket.getDate().format(formatter) );
+                System.out.println( ticket.getDate().format(ticketFormat) );
                 System.out.println("\n---------------------------------------");
             }
             System.out.print("-------------------------------------\n");
@@ -625,14 +628,14 @@ public class Driver {
             int customerId = getInt();
             Customer customer = theater.getCustomer(customerId);
             if (customer == null) {
-         	   System.out.print("No customer with ID: " + customerId);
+         	   System.out.println("No customer with ID: " + customerId);
          	   return;
             }
             // Get and verify credit card
             System.out.print("Credit card number: ");
             int cardNumber = getInt();
             if( !customer.hasCreditCard(cardNumber) ) {
-         	   System.out.print("Credit card: " + cardNumber + " not on file");
+         	   System.out.println("Credit card: " + cardNumber + " not on file");
          	   return;
             }
             // get and verify date
@@ -640,7 +643,7 @@ public class Driver {
             LocalDate date = getShowDate();
             Show show = theater.getShowByDate(date);
             if (show == null) {
-         	   System.out.print("No show playing on this date");
+         	   System.out.println("No show playing on this date");
          	   return;
             }
             // number of tickets
@@ -662,14 +665,14 @@ public class Driver {
            int customerId = getInt();
            Customer customer = theater.getCustomer(customerId);
            if (customer == null) {
-        	   System.out.print("No customer with ID: " + customerId);
+        	   System.out.println("No customer with ID: " + customerId);
         	   return;
            }
            // Get and verify credit card
            System.out.print("Credit card number: ");
            int cardNumber = getInt();
            if( !customer.hasCreditCard(cardNumber) ) {
-        	   System.out.print("Credit card: " + cardNumber + " not on file");
+        	   System.out.println("Credit card: " + cardNumber + " not on file");
         	   return;
            }
            // get and verify date
@@ -682,15 +685,14 @@ public class Driver {
            }
            Show show = theater.getShowByDate(date);
            if (show == null) {
-        	   System.out.print("No show playing on this date");
+        	   System.out.println("No show playing on this date");
         	   return;
            }
            // number of tickets
            System.out.print("How many tickets do you need?: ");
            int quantity = getInt();
-           
-
-           theater.addTicket(Ticket.STUDENT_ADVANCE, quantity, customerId, cardNumber, date);
+          
+           theater.addTicket(Ticket.ADVANCE, quantity, customerId, cardNumber, date);
        }catch (Exception e){
            System.out.print("Something weng wrong.");
        }

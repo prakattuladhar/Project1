@@ -43,6 +43,6 @@ public class Ticket implements Serializable {
 		return  "Serial Number: " + serialNumber + 
 				"\nCustomer id:" + customerId +
 				"\nShow Name: " + showName +
-				"Price: " + price;
+				"\nPrice: " + price;
 	}
 }

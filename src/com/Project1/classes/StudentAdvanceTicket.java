@@ -27,6 +27,6 @@ public class StudentAdvanceTicket extends Ticket{
 	
 	@Override
 	public String toString() {
-		return super.toString() + "\n*Student Advance Ticket\n";
+		return super.toString() + "\n*Student Advance Ticket";
 	}
 }
