@@ -91,6 +91,13 @@ public class Customer extends Member implements Serializable {
     public void addTicket(Ticket ticket) {
     	tickets.add(ticket);
     }
+    /**
+     * Get an iterator for the customer's tickets
+     * @return iterator<Ticket>
+     */
+    public Iterator<Ticket> getTicketIterator() {
+    	return tickets.iterator();
+    }
     @Override
     public String toString() {
     	// Formats credit card information

@@ -388,6 +388,7 @@ public class Driver {
      */
     private void listCustomers() {
     	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
+    	DateTimeFormatter ticketFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
     	
     	Iterator<Customer> iterator = theater.getCustomerIterator();
     	if ( !iterator.hasNext() ) {
@@ -407,6 +408,14 @@ public class Driver {
             	System.out.println( "\tNumber: " + card.getNumber() );
             	System.out.println( "\tExpiration date: " +
             			card.getExpirationDate().format(formatter) );
+            }
+            Iterator<Ticket> tickets = customer.getTicketIterator();
+            while ( tickets.hasNext() ) {
+            	Ticket ticket = tickets.next();
+                
+            	System.out.println( ticket.toString() );
+                System.out.println( ticket.getDate().format(formatter) );
+                System.out.println("\n---------------------------------------");
             }
             System.out.print("-------------------------------------\n");
         }
@@ -637,14 +646,15 @@ public class Driver {
     private void printAllTickets() {
         System.out.print("Enter date of the show:");
         LocalDate date = getShowDate();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         Iterator<Ticket> iterator = theater.getTicketList(date);
         if ( !iterator.hasNext() ) {
             System.out.println("No tickets to display");
         }
         while ( iterator.hasNext() ) {
             Ticket ticket = iterator.next();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-            System.out.println(ticket.toString());
+            
+            System.out.println( ticket.toString() );
             System.out.println( ticket.getDate().format(formatter) );
             System.out.println("\n---------------------------------------");
 
