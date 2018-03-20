@@ -14,6 +14,7 @@ import java.util.*;
 public class Customer extends Member implements Serializable {
 	private static final long serialVersionUID = 1L;
     private ArrayList<CreditCard> creditCards = new ArrayList<CreditCard>(5);
+    private ArrayList<Ticket> tickets = new ArrayList<Ticket>(5);
     /**
      * Constructor
      * @param name		name of customer
@@ -87,6 +88,9 @@ public class Customer extends Member implements Serializable {
     /**
      * String representation of customer's fields and credit cards
      */
+    public void addTicket(Ticket ticket) {
+    	tickets.add(ticket);
+    }
     @Override
     public String toString() {
     	// Formats credit card information

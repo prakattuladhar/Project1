@@ -233,27 +233,37 @@ public class Theater implements Serializable {
     * @param date
     * @throws Exception
     */
-   public void addTicket(int ticketType, int quant, int cusNum, int cardNum, LocalDate date) throws Exception {
+   public void addTicket(int ticketType, int quantity, int customerId, int cardNumber, LocalDate date) throws Exception {
 
        //check if cardNumber and  exists before this function can return anything
-	   Customer customer = customerList.getCustomer(cusNum);
+	   Customer customer = customerList.getCustomer(customerId);
 	   if (customer == null) {
-		   throw new Exception("Customer ID: " + cusNum + " does not exist");
+		   throw new Exception("Customer ID: " + customerId + " does not exist");
 	   }
-        if( !customer.hasCreditCard(cardNum) ){
-            throw new Exception("Customer does not have credit card number: " + cardNum);
+        if( !customer.hasCreditCard(cardNumber) ){
+            throw new Exception("Customer does not have credit card number: " + cardNumber);
         }
         
         Show show = showList.getShowByDate(date);
         if (show == null) {
         	throw new Exception("No show on this date");
         }
+        String showName = show.getName();
+        
         BigDecimal basePrice = show.getBaseTicketPrice();
+        BigDecimal revenue = new BigDecimal("0.00");
 
-        for(int i = 0;i < quant; i++) {
-        	Ticket ticket = ticketFactory.createTicket(cusNum, date, basePrice, ticketType);
+        for(int i = 0; i < quantity; i++) {
+        	Ticket ticket = ticketFactory.createTicket(customerId, showName, date, basePrice, ticketType);
         	ticketList.add(ticket);
+        	customer.addTicket(ticket);
+        	// calculate revenue from tickets
+        	BigDecimal price = ticket.getPrice();
+        	revenue = revenue.add(price);
         }
+        int clientId = show.getClientId();
+        Client client = clientList.getClient(clientId);
+        client.updateBalance(revenue);
    }
 
 
@@ -263,7 +273,7 @@ public class Theater implements Serializable {
     }
 
     //takes in client number and amount and pay the client. Assumes data checking.
-    public void payClient(int clientNumber, int amount){
+    public void payClient(int clientNumber, BigDecimal amount){
        Client client = clientList.getClient(clientNumber);
        client.payBalance(amount);
     }

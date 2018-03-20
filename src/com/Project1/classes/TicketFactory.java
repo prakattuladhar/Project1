@@ -34,22 +34,23 @@ public class TicketFactory implements Serializable {
 	 * @param type
 	 * @return
 	 */
-	public Ticket createTicket(int customerId, LocalDate date, BigDecimal basePrice, int type) {
+	public Ticket createTicket(int customerId, String name, LocalDate date, BigDecimal basePrice, int type) {
 		BigDecimal price = null;
+		
 		
 		switch (type) {
 		
 		// add logic to get correct price instead of 0 for each type of ticket
 		case Ticket.REGULAR:
-			return new Ticket(serialNumberGenerator.getAndIncrement(), customerId, date, basePrice, Ticket.REGULAR);
+			return new Ticket(serialNumberGenerator.getAndIncrement(), customerId, name, date, basePrice, Ticket.REGULAR);
 		case Ticket.ADVANCE:
 			// decimal accurate rounding of: price = basePrice * 70 / 100
-			price = basePrice.multiply( new BigDecimal(70.0) ).divide( new BigDecimal(100.0), 2, RoundingMode.HALF_UP);
-			return new Ticket(serialNumberGenerator.getAndIncrement(), customerId, date, price, Ticket.ADVANCE);
+			price = basePrice.multiply( new BigDecimal("70.0") ).divide( new BigDecimal("100.0"), 2, RoundingMode.HALF_UP );
+			return new Ticket(serialNumberGenerator.getAndIncrement(), customerId, name, date, price, Ticket.ADVANCE);
 		case Ticket.STUDENT_ADVANCE:
 			// decimal accurate rounding of: price = basePrice * 50 / 100
-			price = basePrice.multiply( new BigDecimal(50.0) ).divide( new BigDecimal(100.0), 2, RoundingMode.HALF_UP);
-			return new Ticket(serialNumberGenerator.getAndIncrement(), customerId, date, price, Ticket.STUDENT_ADVANCE);
+			price = basePrice.multiply( new BigDecimal("50.0") ).divide( new BigDecimal("100.0"), 2, RoundingMode.HALF_UP );
+			return new Ticket(serialNumberGenerator.getAndIncrement(), customerId, name, date, price, Ticket.STUDENT_ADVANCE);
 		default:
 			return null;
 		}
