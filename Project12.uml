@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_wC48UCphEeiZnoWvPuXciw" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_wC9NwCphEeiZnoWvPuXciw" source="codegen">
         <details xmi:id="_wC9NwSphEeiZnoWvPuXciw" key="codegenDirectory" value="/Project1/src"/>
-        <details xmi:id="_xKYv4CphEeiZnoWvPuXciw" key="AssociatedSourceCode" value="/Project1/src/com/Project1/Driver.java;2412518275/1;/Project1/src/com/Project1/FileHandler.java;3985004147/1;/Project1/src/com/Project1/Main.java;1776166951/1;/Project1/src/com/Project1/classes/CardNumberMap.java;2524224449/1;/Project1/src/com/Project1/classes/Client.java;1049704691/1;/Project1/src/com/Project1/classes/ClientList.java;509601708/1;/Project1/src/com/Project1/classes/CreditCard.java;3947523728/1;/Project1/src/com/Project1/classes/Customer.java;2762344330/1;/Project1/src/com/Project1/classes/CustomerList.java;2699622370/1;/Project1/src/com/Project1/classes/Member.java;1652464937/1;/Project1/src/com/Project1/classes/MemberIdFactory.java;3160749066/1;/Project1/src/com/Project1/classes/Show.java;2527044839/1;/Project1/src/com/Project1/classes/ShowConflictException.java;2882076432/1;/Project1/src/com/Project1/classes/TicketFactory.java;1439188902/1;/Project1/src/com/Project1/classes/Theater.java;1532136085/1;/Project1/src/com/Project1/classes/Ticket.java;1332525657/1;/Project1/src/com/Project1/classes/ShowList.java;2932428846/1;/Project1/src/com/Project1/classes/TicketList.java;3971340219/1;"/>
+        <details xmi:id="_xKYv4CphEeiZnoWvPuXciw" key="AssociatedSourceCode" value="/Project1/src/com/Project1/Driver.java;6138240/1;/Project1/src/com/Project1/FileHandler.java;3985004147/1;/Project1/src/com/Project1/Main.java;1776166951/1;/Project1/src/com/Project1/classes/CardNumberMap.java;2524224449/1;/Project1/src/com/Project1/classes/Client.java;1049704691/1;/Project1/src/com/Project1/classes/ClientList.java;509601708/1;/Project1/src/com/Project1/classes/CreditCard.java;3947523728/1;/Project1/src/com/Project1/classes/Customer.java;2762344330/1;/Project1/src/com/Project1/classes/CustomerList.java;2699622370/1;/Project1/src/com/Project1/classes/Member.java;1652464937/1;/Project1/src/com/Project1/classes/MemberIdFactory.java;3160749066/1;/Project1/src/com/Project1/classes/Show.java;2527044839/1;/Project1/src/com/Project1/classes/ShowConflictException.java;2882076432/1;/Project1/src/com/Project1/classes/TicketFactory.java;1439188902/1;/Project1/src/com/Project1/classes/Theater.java;486631818/1;/Project1/src/com/Project1/classes/Ticket.java;1332525657/1;/Project1/src/com/Project1/classes/ShowList.java;2932428846/1;/Project1/src/com/Project1/classes/TicketList.java;3971340219/1;"/>
       </contents>
       <contents xmi:type="ecore:EAnnotation" xmi:id="_MvJIkCpmEeir2diEb23EkQ" source="preferences">
         <contents xmi:type="ecore:EAnnotation" xmi:id="_MvJvoCpmEeir2diEb23EkQ" source="com.yattasolutions.codegen.reverse">
@@ -1259,8 +1259,18 @@ If Show[1] != null, there is a conflict with the end date&#xD;
             </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_w3paECphEeiZnoWvPuXciw" name="Theater">
-            <ownedComment xmi:id="_XGjwkCvgEeiBW7TUKJGXDg">
+            <ownedComment xmi:id="_5VBKsCvwEeieUub-hq7bxw">
               <body>&#xD;
+@version 2.0&#xD;
+&#xD;
+This class represents a theater with a single stage that may be rented out&#xD;
+for one show at a time.  One show may last multiple days or weeks, but on&#xD;
+any given day there may only be one show playing.&#xD;
+&#xD;
+Shows are put on by clients who pay to rent the theater and the profits for&#xD;
+a show are split between the theater and the client financing a particular&#xD;
+show. &#xD;
+&#xD;
 @author Prakat Tuladhar&#xD;
  *</body>
             </ownedComment>
@@ -1515,7 +1525,7 @@ If Show[1] != null, there is a conflict with the end date&#xD;
      BigDecimal basePrice = show.getBaseTicketPrice();&#xD;
 &#xD;
      for(int i = 0;i &lt; quant; i++) {&#xD;
-     	Ticket ticket = ticketFactory.createTicket(cusNum, date, basePrice, Ticket.REGULAR);&#xD;
+     	Ticket ticket = ticketFactory.createTicket(cusNum, date, basePrice, ticketType);&#xD;
      	ticketList.add(ticket);&#xD;
      }&#xD;
 </body>
@@ -1528,10 +1538,7 @@ If Show[1] != null, there is a conflict with the end date&#xD;
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
               <language>java</language>
-              <body>if(false){&#xD;
-        throw new Exception(&quot;Not found&quot;);&#xD;
-    }&#xD;
-    Client client = clientList.getClient(clientNumber);&#xD;
+              <body>Client client = clientList.getClient(clientNumber);&#xD;
     client.payBalance(amount);&#xD;
  </body>
             </ownedBehavior>
@@ -1543,8 +1550,7 @@ If Show[1] != null, there is a conflict with the end date&#xD;
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
               <language>java</language>
-              <body>// TODO Auto-generated method stub&#xD;
-		return clientList.getClient(clientNumber);&#xD;
+              <body>return clientList.getClient(clientNumber);&#xD;
 	</body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XGZ_kCvgEeiBW7TUKJGXDg" name="hasClient" specification="_XFVokCvgEeiBW7TUKJGXDg">
@@ -1588,14 +1594,14 @@ If Show[1] != null, there is a conflict with the end date&#xD;
             </ownedOperation>
             <ownedOperation xmi:id="_w3sdYCphEeiZnoWvPuXciw" name="getInstance" isStatic="true" method="_xAoW9SphEeiZnoWvPuXciw">
               <ownedComment xmi:id="_XGjwkSvgEeiBW7TUKJGXDg">
-                <body>Gets instance of Theater object&#xD;
-    * @return</body>
+                <body>Gets an instance of the Theater object&#xD;
+    * @return theater instance</body>
               </ownedComment>
               <ownedParameter xmi:id="_w9-rkCphEeiZnoWvPuXciw" type="_w3paECphEeiZnoWvPuXciw" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_w3tEcCphEeiZnoWvPuXciw" name="addClient" method="_xAo-AiphEeiZnoWvPuXciw">
               <ownedComment xmi:id="_xAzWEiphEeiZnoWvPuXciw">
-                <body>adds a new client&#xD;
+                <body>Adds a new client&#xD;
     * @param name&#xD;
     * @param address&#xD;
     * @param phone&#xD;
@@ -1616,9 +1622,9 @@ If Show[1] != null, there is a conflict with the end date&#xD;
             </ownedOperation>
             <ownedOperation xmi:id="_w3uSkCphEeiZnoWvPuXciw" name="removeClient" method="_xAplECphEeiZnoWvPuXciw">
               <ownedComment xmi:id="_xAzWEyphEeiZnoWvPuXciw">
-                <body>removes a client&#xD;
+                <body>Removes a client from the list of clients&#xD;
     * @param id&#xD;
-    * @return</body>
+    * @return the client that was removed</body>
               </ownedComment>
               <ownedParameter xmi:id="_w3uSkSphEeiZnoWvPuXciw" name="id">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
@@ -1627,7 +1633,7 @@ If Show[1] != null, there is a conflict with the end date&#xD;
             </ownedOperation>
             <ownedOperation xmi:id="_w3vgsCphEeiZnoWvPuXciw" name="getClientIterator" method="_xAplEyphEeiZnoWvPuXciw">
               <ownedComment xmi:id="_xAz9ICphEeiZnoWvPuXciw">
-                <body>&#xD;
+                <body>Gets an iterator for all clients in the theater&#xD;
     * @return iterator of clients</body>
               </ownedComment>
               <ownedParameter xmi:id="_w_HUACphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return"/>
@@ -1647,14 +1653,17 @@ If Show[1] != null, there is a conflict with the end date&#xD;
             </ownedOperation>
             <ownedOperation xmi:id="_w3ykAiphEeiZnoWvPuXciw" name="getCustomerIterator" method="_xAqMIyphEeiZnoWvPuXciw">
               <ownedComment xmi:id="_xAz9IyphEeiZnoWvPuXciw">
-                <body>&#xD;
+                <body>Gets an iterator for the list of all customers&#xD;
     * @return iterator of customers</body>
               </ownedComment>
               <ownedParameter xmi:id="_w_JJMCphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_w31nUCphEeiZnoWvPuXciw" name="removeCreditCard" method="_xAqzNCphEeiZnoWvPuXciw">
-              <ownedComment xmi:id="_xAz9JSphEeiZnoWvPuXciw">
-                <body>&#xD;
+              <ownedComment xmi:id="_5VBxwCvwEeieUub-hq7bxw">
+                <body>Deletes a credit card for a particular customer&#xD;
+    * Customers must of have at least one credit card,&#xD;
+    * so this method will not delete a credit card if&#xD;
+    * it is the customer's only credit card&#xD;
     * @param customerId&#xD;
     * @param cardNumber</body>
               </ownedComment>
@@ -1666,13 +1675,13 @@ If Show[1] != null, there is a conflict with the end date&#xD;
               </ownedParameter>
             </ownedOperation>
             <ownedOperation xmi:id="_w32OYCphEeiZnoWvPuXciw" name="getShowIterator" method="_xAraRiphEeiZnoWvPuXciw">
-              <ownedComment xmi:id="_xAz9JyphEeiZnoWvPuXciw">
-                <body>&#xD;
-    * @return</body>
+              <ownedComment xmi:id="_5VBxwSvwEeieUub-hq7bxw">
+                <body>Gets an iterator for all shows on the calendar&#xD;
+    * @return iterator&lt;Show></body>
               </ownedComment>
               <ownedParameter xmi:id="_w_LlcCphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return"/>
             </ownedOperation>
-            <ownedOperation xmi:id="_w35RsCphEeiZnoWvPuXciw" name="payClient" method="_xAraTiphEeiZnoWvPuXciw" raisedException="_XGKH8CvgEeiBW7TUKJGXDg">
+            <ownedOperation xmi:id="_w35RsCphEeiZnoWvPuXciw" name="payClient" method="_xAraTiphEeiZnoWvPuXciw">
               <ownedParameter xmi:id="_w35RsSphEeiZnoWvPuXciw" name="clientNumber">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
@@ -1716,7 +1725,7 @@ If Show[1] != null, there is a conflict with the end date&#xD;
             </ownedOperation>
             <ownedOperation xmi:id="_w_JJMSphEeiZnoWvPuXciw" name="addCreditCard" method="_xAqzMCphEeiZnoWvPuXciw">
               <ownedComment xmi:id="_xAz9JCphEeiZnoWvPuXciw">
-                <body>&#xD;
+                <body>Adds a credit card associated with a particular customer&#xD;
     * @param customerId&#xD;
     * @param cardNumber&#xD;
     * @param date</body>
@@ -1731,12 +1740,15 @@ If Show[1] != null, there is a conflict with the end date&#xD;
             </ownedOperation>
             <ownedOperation xmi:id="_w_KXUCphEeiZnoWvPuXciw" name="addShow" method="_xAraQCphEeiZnoWvPuXciw">
               <ownedComment xmi:id="_xAz9JiphEeiZnoWvPuXciw">
-                <body>&#xD;
+                <body>Adds a show to the calendar of shows.&#xD;
+    * Show dates my not overlap, and each&#xD;
+    * show must be associated wit a specific&#xD;
+    * client&#xD;
     * @param clientId&#xD;
     * @param name&#xD;
     * @param startDate&#xD;
     * @param endDate&#xD;
-    * @return</body>
+    * @return true if show added, false otherwise</body>
               </ownedComment>
               <ownedParameter xmi:id="_w_KXUSphEeiZnoWvPuXciw" name="clientId">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
@@ -1787,7 +1799,7 @@ If Show[1] != null, there is a conflict with the end date&#xD;
             </ownedOperation>
             <ownedOperation xmi:id="_XFVokCvgEeiBW7TUKJGXDg" name="hasClient" method="_XGZ_kCvgEeiBW7TUKJGXDg">
               <ownedComment xmi:id="_XGkXoCvgEeiBW7TUKJGXDg">
-                <body>checks to see if client exist for given ID number&#xD;
+                <body>Checks to see if client exist for given ID number&#xD;
     * @param clientId&#xD;
     * @return true if clientList contains client, false otherwise</body>
               </ownedComment>
@@ -1800,7 +1812,7 @@ If Show[1] != null, there is a conflict with the end date&#xD;
             </ownedOperation>
             <ownedOperation xmi:id="_XFW2sCvgEeiBW7TUKJGXDg" name="hasCustomer" method="_XGamoCvgEeiBW7TUKJGXDg">
               <ownedComment xmi:id="_XGkXoSvgEeiBW7TUKJGXDg">
-                <body>checks to see if customer exists for given ID number&#xD;
+                <body>Checks to see if customer exists for given ID number&#xD;
     * @param customerId&#xD;
     * @return true if list contains customer, false otherwise</body>
               </ownedComment>
@@ -2202,6 +2214,15 @@ This class represents a schedule of shows for the theater&#xD;
           </packagedElement>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_w10OECphEeiZnoWvPuXciw" name="Driver">
+          <ownedComment xmi:id="_ZtduICvwEeieUub-hq7bxw">
+            <body>@version 2.0&#xD;
+&#xD;
+This class serves as a command line-based user interface for our&#xD;
+Theater application&#xD;
+&#xD;
+@author Prakat Tuladhar&#xD;
+ *</body>
+          </ownedComment>
           <ownedAttribute xmi:id="_w_ix0CphEeiZnoWvPuXciw" name="keyboard" visibility="private" type="_w-ZiUCphEeiZnoWvPuXciw" association="_xBAKYCphEeiZnoWvPuXciw">
             <defaultValue xmi:type="uml:LiteralString" xmi:id="_w_ix0SphEeiZnoWvPuXciw" value="new Scanner(System.in)"/>
           </ownedAttribute>
@@ -2689,54 +2710,61 @@ This class represents a schedule of shows for the theater&#xD;
           <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAZGYSphEeiZnoWvPuXciw" name="sellRegularTickets" specification="_w2Gh8CphEeiZnoWvPuXciw">
             <language>java</language>
             <body>try {&#xD;
-        System.out.print(&quot;How many tickets do you need?: &quot;);&#xD;
-&#xD;
-        int quant = keyboard.nextInt();&#xD;
         System.out.print(&quot;Enter customer id: &quot;);&#xD;
-        int cusNum = keyboard.nextInt();&#xD;
+        int customerId = getInt();&#xD;
         System.out.print(&quot;Credit card number: &quot;);&#xD;
-        int cardNum = keyboard.nextInt();&#xD;
+        int cardNumber = getInt();&#xD;
         System.out.print(&quot;Enter date of the show:&quot;);&#xD;
         LocalDate date = getShowDate();&#xD;
+        System.out.print(&quot;How many tickets do you need?: &quot;);&#xD;
+        int quantity = getInt();&#xD;
 &#xD;
-        theater.addTicket(Ticket.REGULAR, quant, cusNum, cardNum, date);&#xD;
-    }catch (Exception e){&#xD;
-        System.out.print(&quot;Something weng wrong.&quot;);&#xD;
+        theater.addTicket(Ticket.REGULAR, quantity, customerId, cardNumber, date);&#xD;
+    } catch (Exception e ) {&#xD;
+        System.out.print( e.getMessage() );&#xD;
     }&#xD;
 &#xD;
  </body>
           </ownedBehavior>
           <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAZGYiphEeiZnoWvPuXciw" name="sellStudentTicket" specification="_w2HJACphEeiZnoWvPuXciw">
             <language>java</language>
-            <body>try{&#xD;
+            <body>System.out.print(&quot;Student ID must be shown to redeem ticket at door.\n&quot; +&#xD;
+ 			&quot;continue purchasing student tickets?  Enter y for yes. &quot;&#xD;
+ 	);&#xD;
+ 	String response = keyboard.nextLine();&#xD;
+ 	if ( !response.toLowerCase().contentEquals(&quot;y&quot;) ) {&#xD;
+ 		return;&#xD;
+ 	}&#xD;
+ 	&#xD;
+     try {&#xD;
+     	System.out.print(&quot;Enter customer id: &quot;);&#xD;
+         int customerId = getInt();&#xD;
+         System.out.print(&quot;Credit card number: &quot;);&#xD;
+         int cardNumber = getInt();&#xD;
+         System.out.print(&quot;Enter date of the show:&quot;);&#xD;
+         LocalDate date = getShowDate();&#xD;
          System.out.print(&quot;How many tickets do you need?: &quot;);&#xD;
-     int quant=keyboard.nextInt();&#xD;
-     System.out.print(&quot;Enter customer id: &quot;);&#xD;
-     int cusNum=keyboard.nextInt();&#xD;
-     System.out.print(&quot;Credit card number: &quot;);&#xD;
-     int cardNum=keyboard.nextInt();&#xD;
-     System.out.print(&quot;Enter date of the show:&quot;);&#xD;
-     LocalDate date = getShowDate();&#xD;
+         int quantity = getInt();&#xD;
 &#xD;
-     theater.addTicket(Ticket.ADVANCE, quant,cusNum,cardNum,date);&#xD;
- }catch (Exception e){&#xD;
-     System.out.print(&quot;Something weng wrong.&quot;);&#xD;
- }&#xD;
+         theater.addTicket(Ticket.STUDENT_ADVANCE, quantity, customerId, cardNumber, date);&#xD;
+     } catch (Exception e) {&#xD;
+     	 System.out.print( e.getMessage() );&#xD;
+     }&#xD;
  </body>
           </ownedBehavior>
           <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAZGYyphEeiZnoWvPuXciw" name="sellAdvanceTickets" specification="_w2HwECphEeiZnoWvPuXciw">
             <language>java</language>
             <body>try {&#xD;
-        System.out.print(&quot;How many tickets do you need?: &quot;);&#xD;
-        int quant = keyboard.nextInt();&#xD;
-        System.out.print(&quot;Enter customer id: &quot;);&#xD;
-        int cusNum = keyboard.nextInt();&#xD;
+ 	   System.out.print(&quot;Enter customer id: &quot;);&#xD;
+        int customerId = getInt();&#xD;
         System.out.print(&quot;Credit card number: &quot;);&#xD;
-        int cardNum = keyboard.nextInt();&#xD;
+        int cardNumber = getInt();&#xD;
         System.out.print(&quot;Enter date of the show:&quot;);&#xD;
         LocalDate date = getShowDate();&#xD;
+        System.out.print(&quot;How many tickets do you need?: &quot;);&#xD;
+        int quantity = getInt();&#xD;
 &#xD;
-        theater.addTicket(Ticket.STUDENT_ADVANCE, quant, cusNum, cardNum, date);&#xD;
+        theater.addTicket(Ticket.STUDENT_ADVANCE, quantity, customerId, cardNumber, date);&#xD;
     }catch (Exception e){&#xD;
         System.out.print(&quot;Something weng wrong.&quot;);&#xD;
     }&#xD;
@@ -2762,8 +2790,12 @@ This class represents a schedule of shows for the theater&#xD;
 	        System.out.println(&quot;The current balance is: &quot; + clientBalance + &quot;.&quot;);&#xD;
 	        System.out.print(&quot;How much do you want to pay?&quot;);&#xD;
 	        payment=keyboard.nextInt();&#xD;
-	        if(payment&lt;=clientBalance) {&#xD;
+	        if(payment&lt;=clientBalance &amp;&amp; payment>=0) {&#xD;
 	        	client.payBalance(payment);&#xD;
+	        	System.out.println(&quot;Client has been paid. Current balance is: &quot; + clientBalance + &quot;.&quot;);&#xD;
+	        }&#xD;
+	        else {&#xD;
+	        	System.out.println(&quot;Incorrect payment entered. Returning to Menu.&quot;);&#xD;
 	        }&#xD;
 	    }&#xD;
  </body>
@@ -2809,9 +2841,21 @@ This class represents a schedule of shows for the theater&#xD;
      System.out.println(&quot;\n---------------------------------------&quot;);&#xD;
  </body>
           </ownedBehavior>
-          <ownedOperation xmi:id="_w18w8CphEeiZnoWvPuXciw" name="start" method="_xAVcACphEeiZnoWvPuXciw"/>
-          <ownedOperation xmi:id="_w19YACphEeiZnoWvPuXciw" name="printOptions" visibility="private" method="_xAWDECphEeiZnoWvPuXciw"/>
-          <ownedOperation xmi:id="_w19_ECphEeiZnoWvPuXciw" name="printHelp" visibility="private" method="_xAWDESphEeiZnoWvPuXciw"/>
+          <ownedOperation xmi:id="_w18w8CphEeiZnoWvPuXciw" name="start" method="_xAVcACphEeiZnoWvPuXciw">
+            <ownedComment xmi:id="_ZteVMCvwEeieUub-hq7bxw">
+              <body>Runs the event loop that listens for user input</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_w19YACphEeiZnoWvPuXciw" name="printOptions" visibility="private" method="_xAWDECphEeiZnoWvPuXciw">
+            <ownedComment xmi:id="_ZteVMSvwEeieUub-hq7bxw">
+              <body>Prints list of commands user may use</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_w19_ECphEeiZnoWvPuXciw" name="printHelp" visibility="private" method="_xAWDESphEeiZnoWvPuXciw">
+            <ownedComment xmi:id="_Zt2vsCvwEeieUub-hq7bxw">
+              <body>Prints additional information about the commands user may use</body>
+            </ownedComment>
+          </ownedOperation>
           <ownedOperation xmi:id="_w19_ESphEeiZnoWvPuXciw" name="getInt" visibility="private" method="_xAWqICphEeiZnoWvPuXciw">
             <ownedComment xmi:id="_xAvrsCphEeiZnoWvPuXciw">
               <body>Gets integer entered by user&#xD;
@@ -2827,7 +2871,7 @@ This class represents a schedule of shows for the theater&#xD;
               <body>Gets a show date entered by user&#xD;
      * repeats until date is successfully entered&#xD;
      * @param: format&#xD;
-     * @return&#xD;
+     * @return LocalDate date&#xD;
      * @throws Exception</body>
             </ownedComment>
             <ownedParameter xmi:id="_w-cloSphEeiZnoWvPuXciw" type="_w-bXgCphEeiZnoWvPuXciw" direction="return"/>
@@ -2836,7 +2880,7 @@ This class represents a schedule of shows for the theater&#xD;
             <ownedComment xmi:id="_xAvrsiphEeiZnoWvPuXciw">
               <body>Gets an expiration date entered by user&#xD;
      * repeats until date successfully entered&#xD;
-     * @return</body>
+     * @return LocalDate expiration date</body>
             </ownedComment>
             <ownedParameter xmi:id="_w-dzwSphEeiZnoWvPuXciw" type="_w-dMsCphEeiZnoWvPuXciw" direction="return"/>
           </ownedOperation>
@@ -2885,19 +2929,56 @@ This class represents a schedule of shows for the theater&#xD;
             </ownedComment>
           </ownedOperation>
           <ownedOperation xmi:id="_w2EFsSphEeiZnoWvPuXciw" name="addShow" visibility="private" method="_xAYfUyphEeiZnoWvPuXciw">
+            <ownedComment xmi:id="_Zt3WwSvwEeieUub-hq7bxw">
+              <body>Adds a show for a client to the calendar.&#xD;
+     * Show may not be added before current date.&#xD;
+     * Two shows may not occupy the same date range</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_w2EswCphEeiZnoWvPuXciw" name="listShow" visibility="private" method="_xAYfVCphEeiZnoWvPuXciw">
+            <ownedComment xmi:id="_Zt3WwivwEeieUub-hq7bxw">
+              <body>Lists information for all shows</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_w2FT0CphEeiZnoWvPuXciw" name="save" visibility="private" method="_xAYfVSphEeiZnoWvPuXciw">
+            <ownedComment xmi:id="_Zt3WwyvwEeieUub-hq7bxw">
+              <body>Serializes and saves the theater and factory objects to disk</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_w2FT0SphEeiZnoWvPuXciw" name="load" visibility="private" method="_xAZGYCphEeiZnoWvPuXciw">
+            <ownedComment xmi:id="_Zt3WxCvwEeieUub-hq7bxw">
+              <body>De-serializes and loads the theater and factory objects from disk</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_w2Gh8CphEeiZnoWvPuXciw" name="sellRegularTickets" visibility="private" method="_xAZGYSphEeiZnoWvPuXciw">
+            <ownedComment xmi:id="_Zt390CvwEeieUub-hq7bxw">
+              <body>Allows a customer to by one or more regular tickets for specific date&#xD;
+     * May not buy tickets if no show scheduled, or using credit card not on&#xD;
+     * file</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_w2HJACphEeiZnoWvPuXciw" name="sellStudentTicket" visibility="private" method="_xAZGYiphEeiZnoWvPuXciw">
+            <ownedComment xmi:id="_Zt390SvwEeieUub-hq7bxw">
+              <body>Allows a customer to by one or more regular tickets for specific date&#xD;
+     * May not buy tickets if no show scheduled, or using credit card not on&#xD;
+     * file&#xD;
+     * &#xD;
+     * Customer must show student ID to use student tickets</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_w2HwECphEeiZnoWvPuXciw" name="sellAdvanceTickets" visibility="private" method="_xAZGYyphEeiZnoWvPuXciw">
             <ownedComment xmi:id="_xAwSyCphEeiZnoWvPuXciw">
               <body>*</body>
             </ownedComment>
           </ownedOperation>
-          <ownedOperation xmi:id="_w2EswCphEeiZnoWvPuXciw" name="listShow" visibility="private" method="_xAYfVCphEeiZnoWvPuXciw"/>
-          <ownedOperation xmi:id="_w2FT0CphEeiZnoWvPuXciw" name="save" visibility="private" method="_xAYfVSphEeiZnoWvPuXciw"/>
-          <ownedOperation xmi:id="_w2FT0SphEeiZnoWvPuXciw" name="load" visibility="private" method="_xAZGYCphEeiZnoWvPuXciw"/>
-          <ownedOperation xmi:id="_w2Gh8CphEeiZnoWvPuXciw" name="sellRegularTickets" visibility="private" method="_xAZGYSphEeiZnoWvPuXciw"/>
-          <ownedOperation xmi:id="_w2HJACphEeiZnoWvPuXciw" name="sellStudentTicket" visibility="private" method="_xAZGYiphEeiZnoWvPuXciw"/>
-          <ownedOperation xmi:id="_w2HwECphEeiZnoWvPuXciw" name="sellAdvanceTickets" visibility="private" method="_xAZGYyphEeiZnoWvPuXciw"/>
           <ownedOperation xmi:id="_w2HwESphEeiZnoWvPuXciw" name="printAllTicket" visibility="private" method="_U3nMwCvgEeiBW7TUKJGXDg"/>
           <ownedOperation xmi:id="_w2I-MSphEeiZnoWvPuXciw" name="payclient" visibility="private" method="_xAZGZCphEeiZnoWvPuXciw"/>
           <ownedOperation xmi:id="_U2_hsCvgEeiBW7TUKJGXDg" name="getPrice" visibility="private" method="_U3mlsCvgEeiBW7TUKJGXDg">
+            <ownedComment xmi:id="_Zt3WwCvwEeieUub-hq7bxw">
+              <body>Gets number representing a monetary value from the user&#xD;
+     * BigDecimal is used for more accurate rounding&#xD;
+     * @return BigDecimal price</body>
+            </ownedComment>
             <ownedParameter xmi:id="_U3kJcCvgEeiBW7TUKJGXDg" type="_U3htMCvgEeiBW7TUKJGXDg" direction="return"/>
           </ownedOperation>
         </packagedElement>
@@ -3024,6 +3105,12 @@ This class represents a schedule of shows for the theater&#xD;
         <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
       </eAnnotations>
       <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+    <profileApplication xmi:id="_sY_jsCvxEeieUub-hq7bxw">
+      <eAnnotations xmi:id="_sZAKwCvxEeieUub-hq7bxw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://ARCHITECTUREREVIEW_PROFILES/ArchitectureReview.profile.uml#_ypx9siN3EeK_4-5pMoCxQg"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://ARCHITECTUREREVIEW_PROFILES/ArchitectureReview.profile.uml#_qTOicCN3EeK_4-5pMoCxQg"/>
     </profileApplication>
   </uml:Model>
   <UMLLabProfile:TargetLanguage xmi:id="_wDFJkCphEeiZnoWvPuXciw" base_Package="_vy4KYCphEeiZnoWvPuXciw">
