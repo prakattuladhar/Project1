@@ -722,25 +722,25 @@ public class Driver {
     private void payClient() {
     	int clientNumber = 1;
     	Client client = null;
-    	while(client == null && clientNumber != 0) {
-        System.out.print("Please enter the Client ID or enter 0 to cancel: ");
+    	while(client == null && clientNumber != -1) {
+        System.out.print("Please enter the Client ID or enter -1 to cancel: ");
         clientNumber = getInt();
 	        if( theater.hasClient(clientNumber) ) {
 	        	client = theater.getClient(clientNumber);
 	        }
 	        else {
-	        	clientNumber = 0;
+	        	clientNumber = -1;
 	        }
     	}
-    	if (clientNumber != 0) {
+    	if (clientNumber != -1) {
     		BigDecimal clientBalance = client.getBalance().setScale(2, RoundingMode.HALF_UP);
     		BigDecimal payment;
 	        System.out.println("The current balance is: " + clientBalance + ".");
-	        System.out.print("How much do you want to pay?");
+	        System.out.println("How much do you want to pay?");
 	        payment = getPrice();
 	        if(payment.compareTo(clientBalance) <= 0) {   //  Prevents overpaying
 	        	client.payBalance(payment);
-	        	System.out.println("Client has been paid. Current balance is: " + clientBalance + ".");
+	        	System.out.println("Client has been paid. Current balance is: " + client.getBalance() + ".");
 	        }
 	        else {
 	        	System.out.println("Incorrect payment entered. Returning to Menu.");
