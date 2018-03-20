@@ -235,7 +235,7 @@ public class Theater implements Serializable {
         BigDecimal basePrice = show.getBaseTicketPrice();
 
         for(int i = 0;i < quant; i++) {
-        	Ticket ticket = ticketFactory.createTicket(cusNum, date, basePrice, Ticket.REGULAR);
+        	Ticket ticket = ticketFactory.createTicket(cusNum, date, basePrice, ticketType);
         	ticketList.add(ticket);
         }
    }
