@@ -524,7 +524,10 @@
     <targetRole xmi:id="_yqnzliphEeiZnoWvPuXciw" aggregationKind="NONE" name="ticketList" navigable="true">
       <modelElement href="Project12.uml#_xAGygCphEeiZnoWvPuXciw"/>
       <visualProperties xmi:id="_z11pgSphEeiZnoWvPuXciw" position="-76.0,-60.0"/>
-      <visibility xmi:id="_yqnzlyphEeiZnoWvPuXciw" label="+"/>
+      <stereotypes xmi:id="_XMyUYCvgEeiBW7TUKJGXDg" name="LegacyStyledElement">
+        <modelElement href="Project12.uml#_XFDUsCvgEeiBW7TUKJGXDg"/>
+      </stereotypes>
+      <visibility xmi:id="_yqnzlyphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yqnzmCphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
@@ -574,8 +577,6 @@
   </edges>
   <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_y0EDcCphEeiZnoWvPuXciw" targetItem="_y0KxLSphEeiZnoWvPuXciw" sourceItem="_yzNu4CphEeiZnoWvPuXciw"/>
   <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_y0FRkCphEeiZnoWvPuXciw" targetItem="_y0KxPSphEeiZnoWvPuXciw" sourceItem="_y0EqgCphEeiZnoWvPuXciw"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_y3TksCphEeiZnoWvPuXciw" targetItem="_y4JSMCphEeiZnoWvPuXciw" sourceItem="_y19g4CphEeiZnoWvPuXciw"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_y8g00CphEeiZnoWvPuXciw" targetItem="_y8lGQCphEeiZnoWvPuXciw" sourceItem="_y53wgCphEeiZnoWvPuXciw"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_y-6BgCphEeiZnoWvPuXciw" source="_zAWL8CphEeiZnoWvPuXciw">
     <modelElement href="Project12.uml#_xBWIoCphEeiZnoWvPuXciw"/>
     <stereotypes xmi:id="_zAUWwCphEeiZnoWvPuXciw" name="Reference">
@@ -658,6 +659,38 @@
       <cardinality xmi:id="_zJ8z6CphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XK7TMCvgEeiBW7TUKJGXDg" targetItem="_XK76QCvgEeiBW7TUKJGXDg" sourceItem="_XK6sICvgEeiBW7TUKJGXDg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XLjlUCvgEeiBW7TUKJGXDg" targetItem="_zL0cICphEeiZnoWvPuXciw" sourceItem="_XLi-QCvgEeiBW7TUKJGXDg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XLmooCvgEeiBW7TUKJGXDg" targetItem="_XLnPsCvgEeiBW7TUKJGXDg" sourceItem="_XLmBkCvgEeiBW7TUKJGXDg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XMKpUCvgEeiBW7TUKJGXDg" targetItem="_XMKpUSvgEeiBW7TUKJGXDg" sourceItem="_XMARQCvgEeiBW7TUKJGXDg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XMWPgCvgEeiBW7TUKJGXDg" targetItem="_XMW2kCvgEeiBW7TUKJGXDg" sourceItem="_XMNFkCvgEeiBW7TUKJGXDg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XMwfMCvgEeiBW7TUKJGXDg" targetItem="_yqoaoCphEeiZnoWvPuXciw" sourceItem="_XMkR8CvgEeiBW7TUKJGXDg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XN9ZESvgEeiBW7TUKJGXDg" targetItem="_XN-AICvgEeiBW7TUKJGXDg" sourceItem="_XN9ZECvgEeiBW7TUKJGXDg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_XOI_QCvgEeiBW7TUKJGXDg" source="_ygkfsCphEeiZnoWvPuXciw">
+    <modelElement href="Project12.uml#_XGsTcCvgEeiBW7TUKJGXDg"/>
+    <stereotypes xmi:id="_XOI_QSvgEeiBW7TUKJGXDg" name="Reference">
+      <modelElement href="Project12.uml#_XGthkCvgEeiBW7TUKJGXDg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_XOI_QivgEeiBW7TUKJGXDg" text=""/>
+    <sourceRole xmi:id="_XOI_QyvgEeiBW7TUKJGXDg" aggregationKind="NONE" name="">
+      <modelElement href="Project12.uml#_XGsTcSvgEeiBW7TUKJGXDg"/>
+      <visibility xmi:id="_XOI_RCvgEeiBW7TUKJGXDg" label="+"/>
+      <cardinality xmi:id="_XOI_RSvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_XOI_RivgEeiBW7TUKJGXDg" aggregationKind="NONE" name="serialNumberGenerator" navigable="true">
+      <modelElement href="Project12.uml#_XGT48CvgEeiBW7TUKJGXDg"/>
+      <stereotypes xmi:id="_XOsY4CvgEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <visibility xmi:id="_XOI_RyvgEeiBW7TUKJGXDg" label="-"/>
+      <cardinality xmi:id="_XOI_SCvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XOQ7ECvgEeiBW7TUKJGXDg" targetItem="_ygkfxCphEeiZnoWvPuXciw" sourceItem="_XOPs8CvgEeiBW7TUKJGXDg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XOXBsCvgEeiBW7TUKJGXDg" targetItem="_XOXBsSvgEeiBW7TUKJGXDg" sourceItem="_XOWaoCvgEeiBW7TUKJGXDg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XS0D4CvgEeiBW7TUKJGXDg" targetItem="_ygkfuCphEeiZnoWvPuXciw" sourceItem="_XO3YACvgEeiBW7TUKJGXDg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XTIM8SvgEeiBW7TUKJGXDg" targetItem="_yqoazCphEeiZnoWvPuXciw" sourceItem="_XTIM8CvgEeiBW7TUKJGXDg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XTKCICvgEeiBW7TUKJGXDg" targetItem="_yqpB0SphEeiZnoWvPuXciw" sourceItem="_XTJbECvgEeiBW7TUKJGXDg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XTXdgCvgEeiBW7TUKJGXDg" targetItem="_yqpCCCphEeiZnoWvPuXciw" sourceItem="_XTVoUCvgEeiBW7TUKJGXDg"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_XUKHsCvgEeiBW7TUKJGXDg" targetItem="_ygkfvyphEeiZnoWvPuXciw" sourceItem="_XUISgCvgEeiBW7TUKJGXDg"/>
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_yFwL8CphEeiZnoWvPuXciw" sourceConnectionVisual="_yFyBICphEeiZnoWvPuXciw" text="@version 1.0&#xD;&#xA;&#xD;&#xA;This class is used to prevent multiple credit cards from existing&#xD;&#xA;&#xD;&#xA;@author Colin Quinn&#xD;&#xA; *" item="_yF5V6SphEeiZnoWvPuXciw">
     <modelElement href="Project12.uml#_xAw50CphEeiZnoWvPuXciw"/>
   </nodes>
@@ -676,7 +709,7 @@
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_yHOyoCphEeiZnoWvPuXciw" sourceConnectionVisual="_yHkw4CphEeiZnoWvPuXciw" text="@version 1.0&#xD;&#xA;&#xD;&#xA;This class represents a collection of clients&#xD;&#xA;&#xD;&#xA;@author Colin Quinn&#xD;&#xA; *" item="_yHt60CphEeiZnoWvPuXciw">
     <modelElement href="Project12.uml#_xAw51SphEeiZnoWvPuXciw"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_yHmmECphEeiZnoWvPuXciw" sourceConnectionVisual="_yHnNICphEeiZnoWvPuXciw" text="Returns  client associated with ID, or null if no such client&#xD;&#xA;     * @param clientId&#x9;&#x9;&#x9;ID number of client&#xD;&#xA;     * @return Client&#x9;&#x9;&#x9;client associated with that ID" item="_yHt63SphEeiZnoWvPuXciw">
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_yHmmECphEeiZnoWvPuXciw" sourceConnectionVisual="_yHnNICphEeiZnoWvPuXciw" text="Returns client associated with ID, or null if no such client&#xD;&#xA;     * @param clientId&#x9;&#x9;&#x9;ID number of client&#xD;&#xA;     * @return Client&#x9;&#x9;&#x9;client associated with that ID" item="_yHt63SphEeiZnoWvPuXciw">
     <modelElement href="Project12.uml#_xAw52CphEeiZnoWvPuXciw"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_yHn0MCphEeiZnoWvPuXciw" sourceConnectionVisual="_yHn0MSphEeiZnoWvPuXciw" text="Gets the count of clients in the client list&#xD;&#xA;     * @return count of clients in list" item="_yHt65SphEeiZnoWvPuXciw">
@@ -814,14 +847,8 @@
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_yzNu4CphEeiZnoWvPuXciw" sourceConnectionVisual="_y0EDcCphEeiZnoWvPuXciw" text="Check if client has at least one show scheduled&#xD;&#xA;     * @param clientId&#x9;&#x9;Id of client to be checked&#xD;&#xA;     * @return&#x9;true if client has at least one show, false if no shows" item="_y0KxLSphEeiZnoWvPuXciw">
     <modelElement href="Project12.uml#_xAz9KiphEeiZnoWvPuXciw"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_y0EqgCphEeiZnoWvPuXciw" sourceConnectionVisual="_y0FRkCphEeiZnoWvPuXciw" text="Adds a show to the list of shows&#xD;&#xA;     * Fails if there are conflicting dates, or if the client of the show not in&#xD;&#xA;     * client list&#xD;&#xA;     * @param show&#x9;&#x9;show to be added&#xD;&#xA;     * @return true if show dates available, false if not&#xD;&#xA;     * @exception ShowConflictException if date range is not free" item="_y0KxPSphEeiZnoWvPuXciw">
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_y0EqgCphEeiZnoWvPuXciw" sourceConnectionVisual="_y0FRkCphEeiZnoWvPuXciw" text="Adds a show to the list of shows&#xD;&#xA;     * Fails if there are conflicting dates&#xD;&#xA;     * @param show&#x9;&#x9;show to be added&#xD;&#xA;     * @return true if show dates available, false if not&#xD;&#xA;     * @exception ShowConflictException if date range is not free" item="_y0KxPSphEeiZnoWvPuXciw">
     <modelElement href="Project12.uml#_xAz9KSphEeiZnoWvPuXciw"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_y19g4CphEeiZnoWvPuXciw" sourceConnectionVisual="_y3TksCphEeiZnoWvPuXciw" text="@version 1.0&#xD;&#xA;     * Allows map of shows to be sorted by start date&#xD;&#xA;     * @author Colin Quinn" item="_y4JSMCphEeiZnoWvPuXciw">
-    <modelElement href="Project12.uml#_xAz9KyphEeiZnoWvPuXciw"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_y53wgCphEeiZnoWvPuXciw" sourceConnectionVisual="_y8g00CphEeiZnoWvPuXciw" text="@version 1.0&#xD;&#xA;     * Allows map of shows to be sorted by end date&#xD;&#xA;     * @author Colin Quinn" item="_y8lGQCphEeiZnoWvPuXciw">
-    <modelElement href="Project12.uml#_xA0kMCphEeiZnoWvPuXciw"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_zAQsYCphEeiZnoWvPuXciw" sourceConnectionVisual="_zAR6gCphEeiZnoWvPuXciw" text="&#xD;&#xA;&#x9; * @param ticket" item="_zAWL_SphEeiZnoWvPuXciw">
     <modelElement href="Project12.uml#_xA0kMSphEeiZnoWvPuXciw"/>
@@ -885,6 +912,12 @@
       <stereotypes xmi:id="_JFjywCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JGzv8CpmEeir2diEb23EkQ" name="Generics"/>
       <stereotypes xmi:id="_JGzv8SpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_wzuu0CvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_wzxLECvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_wzzAQCvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_wzznUCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1MucCvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w1NVgCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yF589yphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yF58-CphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yF58-SphEeiZnoWvPuXciw" name="TreeMap">
@@ -1033,6 +1066,12 @@
       <stereotypes xmi:id="_JForQSpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JG2MMCpmEeir2diEb23EkQ" name="Generics"/>
       <stereotypes xmi:id="_JG2MMSpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_wz2DkCvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_wz2qoCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_wz34wCvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_wz4f0CvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1Q_4CvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w1Rm8CvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yHt62iphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yHt62yphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yHt63CphEeiZnoWvPuXciw" name="TreeMap">
@@ -1131,6 +1170,24 @@
         </type>
       </parameters>
     </operations>
+    <operations xmi:id="_XLnPsCvgEeiBW7TUKJGXDg" comments="_XLmBkCvgEeiBW7TUKJGXDg" targetConnectionVisual="_XLmooCvgEeiBW7TUKJGXDg" name="contains">
+      <modelElement href="Project12.uml#_XFO64CvgEeiBW7TUKJGXDg"/>
+      <visibility xmi:id="_XLnPsSvgEeiBW7TUKJGXDg" label="+"/>
+      <cardinality xmi:id="_XLnPsivgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_XLnPsyvgEeiBW7TUKJGXDg">
+        <modelElement href="Project12.uml#_XFO64ivgEeiBW7TUKJGXDg"/>
+        <type xmi:id="_XLnPtCvgEeiBW7TUKJGXDg" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_XLnPtSvgEeiBW7TUKJGXDg" name="clientId">
+        <modelElement href="Project12.uml#_XFO64SvgEeiBW7TUKJGXDg"/>
+        <cardinality xmi:id="_XLnPtivgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+        <type xmi:id="_XLnPtyvgEeiBW7TUKJGXDg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_yI4_iSphEeiZnoWvPuXciw" comments="_yIO4MCphEeiZnoWvPuXciw" targetConnectionVisual="_yIyR0CphEeiZnoWvPuXciw" name="CreditCard" associationsOut="_yI4_gCphEeiZnoWvPuXciw">
     <modelElement href="Project12.uml#_w2wCMCphEeiZnoWvPuXciw"/>
@@ -1160,6 +1217,9 @@
       <stereotypes xmi:id="_JFqgcCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JFsVoCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JG4BYCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_wz6VACvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_wz8KMCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1VRUCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yI5mkiphEeiZnoWvPuXciw" label="#"/>
       <cardinality xmi:id="_yI5mkyphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yI5mlCphEeiZnoWvPuXciw" name="YearMonth">
@@ -1253,6 +1313,12 @@
       <stereotypes xmi:id="_JFwAACpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JG6doCpmEeir2diEb23EkQ" name="Generics"/>
       <stereotypes xmi:id="_JG6doSpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_wz-mcCvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_wz_NgCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0BpwCvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w0CQ0CvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1XtkCvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w1XtkSvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yKVKAyphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yKVKBCphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yKVKBSphEeiZnoWvPuXciw" name="ArrayList">
@@ -1368,6 +1434,24 @@
         <cardinality xmi:id="_yKVKNiphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
         <type xmi:id="_yKVKNyphEeiZnoWvPuXciw" name="CreditCard">
           <modelElement href="Project12.uml#_w2wCMCphEeiZnoWvPuXciw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_XOXBsSvgEeiBW7TUKJGXDg" comments="_XOWaoCvgEeiBW7TUKJGXDg" targetConnectionVisual="_XOXBsCvgEeiBW7TUKJGXDg" name="hasCreditCard">
+      <modelElement href="Project12.uml#_XFQwECvgEeiBW7TUKJGXDg"/>
+      <visibility xmi:id="_XOXBsivgEeiBW7TUKJGXDg" label="+"/>
+      <cardinality xmi:id="_XOXBsyvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_XOXBtCvgEeiBW7TUKJGXDg">
+        <modelElement href="Project12.uml#_XFQwEivgEeiBW7TUKJGXDg"/>
+        <type xmi:id="_XOXBtSvgEeiBW7TUKJGXDg" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_XOXBtivgEeiBW7TUKJGXDg" name="cardNumber">
+        <modelElement href="Project12.uml#_XFQwESvgEeiBW7TUKJGXDg"/>
+        <cardinality xmi:id="_XOXBtyvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+        <type xmi:id="_XOXBuCvgEeiBW7TUKJGXDg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </type>
       </parameters>
     </operations>
@@ -1558,6 +1642,9 @@
       <stereotypes xmi:id="_JGC68CpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JGEwICpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHDAgCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0SIcCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0TWkCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1cmECvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yXxwGSphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yXxwGiphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yXxwGyphEeiZnoWvPuXciw" name="AtomicInteger">
@@ -1569,6 +1656,9 @@
       <stereotypes xmi:id="_JF6_ICpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JF_QkCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHEOoCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0PFICvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0QTQCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1ebQCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yXxwHiphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yXxwHyphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yXxwICphEeiZnoWvPuXciw" name="MemberIdFactory">
@@ -1671,10 +1761,21 @@
       <stereotypes xmi:id="_JGGlUCpmEeir2diEb23EkQ" name="Generics"/>
       <stereotypes xmi:id="_JGIagCpmEeir2diEb23EkQ" name="Generics"/>
       <stereotypes xmi:id="_JHGD0CpmEeir2diEb23EkQ" name="Generics"/>
+      <stereotypes xmi:id="_w0VLwCvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w0XA8CvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w1iFoCvfEeiBW7TUKJGXDg" name="Generics"/>
       <visibility xmi:id="_yaiwMCphEeiZnoWvPuXciw" label="+"/>
       <cardinality xmi:id="_yaiwMSphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yaiwMiphEeiZnoWvPuXciw" name="ArrayList">
         <modelElement href="Project12.uml#_w-wusCphEeiZnoWvPuXciw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XLvykCvgEeiBW7TUKJGXDg" name="baseTicketPrice">
+      <modelElement href="Project12.uml#_XGQ1oCvgEeiBW7TUKJGXDg"/>
+      <visibility xmi:id="_XLvykSvgEeiBW7TUKJGXDg" label="+"/>
+      <cardinality xmi:id="_XLvykivgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <type xmi:id="_XLvykyvgEeiBW7TUKJGXDg" name="BigDecimal">
+        <modelElement href="Project12.uml#_U3htMCvgEeiBW7TUKJGXDg"/>
       </type>
     </attributes>
     <operations xmi:id="_yaiwMyphEeiZnoWvPuXciw" name="Show">
@@ -1716,6 +1817,13 @@
           <modelElement href="Project12.uml#_w-bXgCphEeiZnoWvPuXciw"/>
         </type>
       </parameters>
+      <parameters xmi:id="_XTEikCvgEeiBW7TUKJGXDg" name="ticketPrice">
+        <modelElement href="Project12.uml#_w_P24yphEeiZnoWvPuXciw"/>
+        <cardinality xmi:id="_XTEikSvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+        <type xmi:id="_XTEikivgEeiBW7TUKJGXDg" name="BigDecimal">
+          <modelElement href="Project12.uml#_U3htMCvgEeiBW7TUKJGXDg"/>
+        </type>
+      </parameters>
     </operations>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_yd2i4CphEeiZnoWvPuXciw" comments="_yc_AMCphEeiZnoWvPuXciw" targetConnectionVisual="_ydyRcCphEeiZnoWvPuXciw" name="ShowConflictException" associationsOut="_ybd9QCphEeiZnoWvPuXciw">
@@ -1738,6 +1846,12 @@
       <stereotypes xmi:id="_JGRkcCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHGq4CpmEeir2diEb23EkQ" name="Array"/>
       <stereotypes xmi:id="_JHHR8CpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0cggCvfEeiBW7TUKJGXDg" name="Array"/>
+      <stereotypes xmi:id="_w0cggSvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0duoCvfEeiBW7TUKJGXDg" name="Array"/>
+      <stereotypes xmi:id="_w0eVsCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1j60CvfEeiBW7TUKJGXDg" name="Array"/>
+      <stereotypes xmi:id="_w1kh4CvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yd2i6iphEeiZnoWvPuXciw" label="+"/>
       <cardinality xmi:id="_yd2i6yphEeiZnoWvPuXciw" label="1..*" max="-1" min="1"/>
       <type xmi:id="_yd2i7CphEeiZnoWvPuXciw" name="Show">
@@ -1764,27 +1878,49 @@
       </parameters>
     </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ygkfsCphEeiZnoWvPuXciw" name="TicketFactory" associationsIn="_yfLYkCphEeiZnoWvPuXciw _yniqYCphEeiZnoWvPuXciw" associationsOut="_yfLYkCphEeiZnoWvPuXciw">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ygkfsCphEeiZnoWvPuXciw" name="TicketFactory" associationsIn="_yfLYkCphEeiZnoWvPuXciw _yniqYCphEeiZnoWvPuXciw" associationsOut="_yfLYkCphEeiZnoWvPuXciw _XOI_QCvgEeiBW7TUKJGXDg">
     <modelElement href="Project12.uml#_w3khkCphEeiZnoWvPuXciw"/>
     <visualProperties xmi:id="_ygkfsSphEeiZnoWvPuXciw" position="387.0,1834.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_hy7zsCvgEeiBW7TUKJGXDg" name="Patch">
+      <modelElement href="Project12.uml#_hy5-gCvgEeiBW7TUKJGXDg"/>
+    </stereotypes>
     <visibility xmi:id="_ygkfsiphEeiZnoWvPuXciw" label="+"/>
     <attributes xmi:id="_ygkfsyphEeiZnoWvPuXciw" name="factory" staticAttribute="true">
       <modelElement href="Project12.uml#_xADIICphEeiZnoWvPuXciw"/>
       <stereotypes xmi:id="_JGSykCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JGUAsCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHH5ACpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0gK4CvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0gx8CvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1mXECvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_ygkftSphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_ygkftiphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_ygkftyphEeiZnoWvPuXciw" name="TicketFactory">
         <modelElement href="Project12.uml#_w3khkCphEeiZnoWvPuXciw"/>
       </type>
     </attributes>
-    <operations xmi:id="_ygkfuCphEeiZnoWvPuXciw" name="TicketFactory">
+    <attributes xmi:id="_XOAcYCvgEeiBW7TUKJGXDg" defaultValue="1L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="Project12.uml#_XGSq0CvgEeiBW7TUKJGXDg"/>
+      <visibility xmi:id="_XOAcYSvgEeiBW7TUKJGXDg" label="-"/>
+      <cardinality xmi:id="_XOAcYivgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <type xmi:id="_XOAcYyvgEeiBW7TUKJGXDg" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XOAcZCvgEeiBW7TUKJGXDg" name="serialNumberGenerator">
+      <modelElement href="Project12.uml#_XGT48CvgEeiBW7TUKJGXDg"/>
+      <stereotypes xmi:id="_XOAcZSvgEeiBW7TUKJGXDg" name="LegacyStyledElement">
+        <modelElement href="Project12.uml#_XGUgACvgEeiBW7TUKJGXDg"/>
+      </stereotypes>
+      <visibility xmi:id="_XOAcZivgEeiBW7TUKJGXDg" label="-"/>
+      <cardinality xmi:id="_XOAcZyvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <type xmi:id="_XOAcaCvgEeiBW7TUKJGXDg" name="AtomicInteger">
+        <modelElement href="Project12.uml#_w9zFYCphEeiZnoWvPuXciw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_ygkfuCphEeiZnoWvPuXciw" comments="_XO3YACvgEeiBW7TUKJGXDg" targetConnectionVisual="_XS0D4CvgEeiBW7TUKJGXDg" name="TicketFactory">
       <modelElement href="Project12.uml#_w3lvsCphEeiZnoWvPuXciw"/>
       <keywords xmi:id="_ygkfuSphEeiZnoWvPuXciw" keyword="create"/>
-      <stereotypes xmi:id="_ygkfuiphEeiZnoWvPuXciw" name="LegacyStyledElement">
-        <modelElement href="Project12.uml#_w3mWwCphEeiZnoWvPuXciw"/>
-      </stereotypes>
       <visibility xmi:id="_ygkfuyphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_ygkfvCphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <outParameters xmi:id="_ygkfvSphEeiZnoWvPuXciw">
@@ -1794,7 +1930,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_ygkfvyphEeiZnoWvPuXciw" name="instance" staticOperation="true">
+    <operations xmi:id="_ygkfvyphEeiZnoWvPuXciw" comments="_XUISgCvgEeiBW7TUKJGXDg" targetConnectionVisual="_XUKHsCvgEeiBW7TUKJGXDg" name="instance" staticOperation="true">
       <modelElement href="Project12.uml#_w3m90CphEeiZnoWvPuXciw"/>
       <visibility xmi:id="_ygkfwCphEeiZnoWvPuXciw" label="+"/>
       <cardinality xmi:id="_ygkfwSphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
@@ -1805,7 +1941,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_ygkfxCphEeiZnoWvPuXciw" name="createTicket">
+    <operations xmi:id="_ygkfxCphEeiZnoWvPuXciw" comments="_XOPs8CvgEeiBW7TUKJGXDg" targetConnectionVisual="_XOQ7ECvgEeiBW7TUKJGXDg" name="createTicket">
       <modelElement href="Project12.uml#_w_E3wCphEeiZnoWvPuXciw"/>
       <visibility xmi:id="_ygkfxSphEeiZnoWvPuXciw" label="+"/>
       <cardinality xmi:id="_ygkfxiphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
@@ -1829,6 +1965,13 @@
           <modelElement href="Project12.uml#_w-bXgCphEeiZnoWvPuXciw"/>
         </type>
       </parameters>
+      <parameters xmi:id="_XOMpoCvgEeiBW7TUKJGXDg" name="basePrice">
+        <modelElement href="Project12.uml#_XEukkCvgEeiBW7TUKJGXDg"/>
+        <cardinality xmi:id="_XOMpoSvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+        <type xmi:id="_XOMpoivgEeiBW7TUKJGXDg" name="BigDecimal">
+          <modelElement href="Project12.uml#_U3htMCvgEeiBW7TUKJGXDg"/>
+        </type>
+      </parameters>
       <parameters xmi:id="_ygkfzyphEeiZnoWvPuXciw" name="type">
         <modelElement href="Project12.uml#_w_Fe0iphEeiZnoWvPuXciw"/>
         <cardinality xmi:id="_ygkf0CphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
@@ -1837,8 +1980,20 @@
         </type>
       </parameters>
     </operations>
+    <operations xmi:id="_XN-AICvgEeiBW7TUKJGXDg" comments="_XN9ZECvgEeiBW7TUKJGXDg" targetConnectionVisual="_XN9ZESvgEeiBW7TUKJGXDg" name="retrieve" staticOperation="true">
+      <modelElement href="Project12.uml#_XEwZwCvgEeiBW7TUKJGXDg"/>
+      <visibility xmi:id="_XN-AISvgEeiBW7TUKJGXDg" label="+"/>
+      <cardinality xmi:id="_XN-AIivgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <parameters xmi:id="_XN-AIyvgEeiBW7TUKJGXDg" name="input">
+        <modelElement href="Project12.uml#_XExA0CvgEeiBW7TUKJGXDg"/>
+        <cardinality xmi:id="_XN-AJCvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+        <type xmi:id="_XN-AJSvgEeiBW7TUKJGXDg" name="ObjectInputStream">
+          <modelElement href="Project12.uml#_w-7t0CphEeiZnoWvPuXciw"/>
+        </type>
+      </parameters>
+    </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_yqoaoCphEeiZnoWvPuXciw" name="Theater" associationsIn="_yo-00CphEeiZnoWvPuXciw _zCrHMCphEeiZnoWvPuXciw" associationsOut="_yigZYCphEeiZnoWvPuXciw _yksxwCphEeiZnoWvPuXciw _ymapACphEeiZnoWvPuXciw _yniqYCphEeiZnoWvPuXciw _yo-00CphEeiZnoWvPuXciw _ypytJCphEeiZnoWvPuXciw _yqnzkCphEeiZnoWvPuXciw">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_yqoaoCphEeiZnoWvPuXciw" comments="_XMkR8CvgEeiBW7TUKJGXDg" targetConnectionVisual="_XMwfMCvgEeiBW7TUKJGXDg" name="Theater" associationsIn="_yo-00CphEeiZnoWvPuXciw _zCrHMCphEeiZnoWvPuXciw" associationsOut="_yigZYCphEeiZnoWvPuXciw _yksxwCphEeiZnoWvPuXciw _ymapACphEeiZnoWvPuXciw _yniqYCphEeiZnoWvPuXciw _yo-00CphEeiZnoWvPuXciw _ypytJCphEeiZnoWvPuXciw _yqnzkCphEeiZnoWvPuXciw">
     <modelElement href="Project12.uml#_w3paECphEeiZnoWvPuXciw"/>
     <visualProperties xmi:id="_yqoaoSphEeiZnoWvPuXciw" position="726.0,1059.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_yqoaoiphEeiZnoWvPuXciw" label="+"/>
@@ -1847,6 +2002,9 @@
       <stereotypes xmi:id="_JGV14CpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JGXEACpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHJHICpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0iAECvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0j1QCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1nlMCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yqoapSphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yqoapiphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yqoapyphEeiZnoWvPuXciw" name="CustomerList">
@@ -1858,6 +2016,9 @@
       <stereotypes xmi:id="_JGYSICpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JGZgQCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHJuMCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0lDYCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0mRgCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1paYCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yqoaqiphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yqoaqyphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yqoarCphEeiZnoWvPuXciw" name="ClientList">
@@ -1869,6 +2030,9 @@
       <stereotypes xmi:id="_JGj4UCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JGkfYCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHK8UCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0zF0CvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w00T8CvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1rPkCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yqoaryphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yqoasCphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yqoasSphEeiZnoWvPuXciw" name="ShowList">
@@ -1880,6 +2044,9 @@
       <stereotypes xmi:id="_JGbVcCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JGcjkCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHMKcCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0nfoCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0p74CvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1sdsCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yqoatCphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yqoatSphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yqoatiphEeiZnoWvPuXciw" name="CardNumberMap">
@@ -1888,7 +2055,9 @@
     </attributes>
     <attributes xmi:id="_yqoatyphEeiZnoWvPuXciw" defaultValue="new TicketList()" name="ticketList">
       <modelElement href="Project12.uml#_xAGygCphEeiZnoWvPuXciw"/>
-      <visibility xmi:id="_yqoauCphEeiZnoWvPuXciw" label="+"/>
+      <stereotypes xmi:id="_XNKH0CvgEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_XOUlcCvgEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <visibility xmi:id="_yqoauCphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yqoauSphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yqoauiphEeiZnoWvPuXciw" name="TicketList">
         <modelElement href="Project12.uml#_w4WksCphEeiZnoWvPuXciw"/>
@@ -1899,6 +2068,9 @@
       <stereotypes xmi:id="_JGeYwCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JGfm4CpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHOmsCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0rxECvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0tmQCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1uS4CvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yqoavSphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yqoaviphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yqoavyphEeiZnoWvPuXciw" name="TicketFactory">
@@ -1910,10 +2082,21 @@
       <stereotypes xmi:id="_JGhcECpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JGiqMCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHP00CpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0vbcCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0xQoCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1vhACvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yqoawiphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yqoawyphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yqoaxCphEeiZnoWvPuXciw" name="Theater">
         <modelElement href="Project12.uml#_w3paECphEeiZnoWvPuXciw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XMZS0CvgEeiBW7TUKJGXDg" defaultValue="1L" name="serialVersionUID" staticAttribute="true">
+      <modelElement href="Project12.uml#_xAQjgSphEeiZnoWvPuXciw"/>
+      <visibility xmi:id="_XMZS0SvgEeiBW7TUKJGXDg" label="-"/>
+      <cardinality xmi:id="_XMZS0ivgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <type xmi:id="_XMZS0yvgEeiBW7TUKJGXDg" name="long">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
       </type>
     </attributes>
     <operations xmi:id="_yqoaxSphEeiZnoWvPuXciw" name="Theater">
@@ -1931,7 +2114,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_yqoazCphEeiZnoWvPuXciw" name="getInstance" staticOperation="true">
+    <operations xmi:id="_yqoazCphEeiZnoWvPuXciw" comments="_XTIM8CvgEeiBW7TUKJGXDg" targetConnectionVisual="_XTIM8SvgEeiBW7TUKJGXDg" name="getInstance" staticOperation="true">
       <modelElement href="Project12.uml#_w3sdYCphEeiZnoWvPuXciw"/>
       <visibility xmi:id="_yqoazSphEeiZnoWvPuXciw" label="+"/>
       <cardinality xmi:id="_yqoaziphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
@@ -2090,7 +2273,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_yqpB0SphEeiZnoWvPuXciw" name="setTheater">
+    <operations xmi:id="_yqpB0SphEeiZnoWvPuXciw" comments="_XTJbECvgEeiBW7TUKJGXDg" targetConnectionVisual="_XTKCICvgEeiBW7TUKJGXDg" name="setTheater">
       <modelElement href="Project12.uml#_w9_SoCphEeiZnoWvPuXciw"/>
       <visibility xmi:id="_yqpB0iphEeiZnoWvPuXciw" label="+"/>
       <cardinality xmi:id="_yqpB0yphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
@@ -2212,8 +2395,15 @@
           <modelElement href="Project12.uml#_w-bXgCphEeiZnoWvPuXciw"/>
         </type>
       </parameters>
+      <parameters xmi:id="_XNgGECvgEeiBW7TUKJGXDg" name="ticketPrice">
+        <modelElement href="Project12.uml#_XEbCkCvgEeiBW7TUKJGXDg"/>
+        <cardinality xmi:id="_XNgGESvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+        <type xmi:id="_XNgGEivgEeiBW7TUKJGXDg" name="BigDecimal">
+          <modelElement href="Project12.uml#_U3htMCvgEeiBW7TUKJGXDg"/>
+        </type>
+      </parameters>
     </operations>
-    <operations xmi:id="_yqpCCCphEeiZnoWvPuXciw" name="addTicket">
+    <operations xmi:id="_yqpCCCphEeiZnoWvPuXciw" comments="_XTVoUCvgEeiBW7TUKJGXDg" targetConnectionVisual="_XTXdgCvgEeiBW7TUKJGXDg" name="addTicket">
       <modelElement href="Project12.uml#_w_LlcSphEeiZnoWvPuXciw"/>
       <visibility xmi:id="_yqpCCSphEeiZnoWvPuXciw" label="+"/>
       <cardinality xmi:id="_yqpCCiphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
@@ -2267,6 +2457,63 @@
         <modelElement href="Project12.uml#_e3LzYSpjEeiZnoWvPuXciw"/>
         <cardinality xmi:id="_Ndli8SpmEeir2diEb23EkQ" label="1" max="1" min="1"/>
         <type xmi:id="_Ndli8ipmEeir2diEb23EkQ" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_XL-cECvgEeiBW7TUKJGXDg" name="getTicketList">
+      <modelElement href="Project12.uml#_XEeF4CvgEeiBW7TUKJGXDg"/>
+      <stereotypes xmi:id="_XL-cESvgEeiBW7TUKJGXDg" name="Generics">
+        <modelElement href="Project12.uml#_XEgiICvgEeiBW7TUKJGXDg"/>
+      </stereotypes>
+      <visibility xmi:id="_XL-cEivgEeiBW7TUKJGXDg" label="+"/>
+      <cardinality xmi:id="_XL-cEyvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_XL-cFCvgEeiBW7TUKJGXDg">
+        <modelElement href="Project12.uml#_XEfUACvgEeiBW7TUKJGXDg"/>
+        <type xmi:id="_XL-cFSvgEeiBW7TUKJGXDg" name="Iterator">
+          <modelElement href="Project12.uml#_w-qoECphEeiZnoWvPuXciw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_XL-cFivgEeiBW7TUKJGXDg" name="date">
+        <modelElement href="Project12.uml#_XEeF4SvgEeiBW7TUKJGXDg"/>
+        <cardinality xmi:id="_XL-cFyvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+        <type xmi:id="_XL-cGCvgEeiBW7TUKJGXDg" name="LocalDate">
+          <modelElement href="Project12.uml#_w-bXgCphEeiZnoWvPuXciw"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_XMKpUSvgEeiBW7TUKJGXDg" comments="_XMARQCvgEeiBW7TUKJGXDg" targetConnectionVisual="_XMKpUCvgEeiBW7TUKJGXDg" name="hasClient">
+      <modelElement href="Project12.uml#_XFVokCvgEeiBW7TUKJGXDg"/>
+      <visibility xmi:id="_XMKpUivgEeiBW7TUKJGXDg" label="+"/>
+      <cardinality xmi:id="_XMKpUyvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_XMKpVCvgEeiBW7TUKJGXDg">
+        <modelElement href="Project12.uml#_XFWPoSvgEeiBW7TUKJGXDg"/>
+        <type xmi:id="_XMKpVSvgEeiBW7TUKJGXDg" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_XMKpVivgEeiBW7TUKJGXDg" name="clientId">
+        <modelElement href="Project12.uml#_XFWPoCvgEeiBW7TUKJGXDg"/>
+        <cardinality xmi:id="_XMKpVyvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+        <type xmi:id="_XMKpWCvgEeiBW7TUKJGXDg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_XMW2kCvgEeiBW7TUKJGXDg" comments="_XMNFkCvgEeiBW7TUKJGXDg" targetConnectionVisual="_XMWPgCvgEeiBW7TUKJGXDg" name="hasCustomer">
+      <modelElement href="Project12.uml#_XFW2sCvgEeiBW7TUKJGXDg"/>
+      <visibility xmi:id="_XMW2kSvgEeiBW7TUKJGXDg" label="+"/>
+      <cardinality xmi:id="_XMW2kivgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_XMW2kyvgEeiBW7TUKJGXDg">
+        <modelElement href="Project12.uml#_XFW2sivgEeiBW7TUKJGXDg"/>
+        <type xmi:id="_XMW2lCvgEeiBW7TUKJGXDg" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_XMW2lSvgEeiBW7TUKJGXDg" name="customerId">
+        <modelElement href="Project12.uml#_XFW2sSvgEeiBW7TUKJGXDg"/>
+        <cardinality xmi:id="_XMW2livgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+        <type xmi:id="_XMW2lyvgEeiBW7TUKJGXDg" name="int">
           <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </type>
       </parameters>
@@ -2326,8 +2573,8 @@
       </stereotypes>
       <visibility xmi:id="_yuqmKiphEeiZnoWvPuXciw" label="#"/>
       <cardinality xmi:id="_yuqmKyphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
-      <type xmi:id="_yuqmLCphEeiZnoWvPuXciw" name="double">
-        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      <type xmi:id="_XN02MCvgEeiBW7TUKJGXDg" name="BigDecimal">
+        <modelElement href="Project12.uml#_U3htMCvgEeiBW7TUKJGXDg"/>
       </type>
     </attributes>
     <attributes xmi:id="_yuqmLSphEeiZnoWvPuXciw" name="type">
@@ -2357,10 +2604,24 @@
       <stereotypes xmi:id="_JGm7oCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JGoJwCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHVUYCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w03XQCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w04lYCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1zycCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yuqmOSphEeiZnoWvPuXciw" label="#"/>
       <cardinality xmi:id="_yuqmOiphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yuqmOyphEeiZnoWvPuXciw" name="LocalDate">
         <modelElement href="Project12.uml#_w-bXgCphEeiZnoWvPuXciw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_XNyZ8CvgEeiBW7TUKJGXDg" name="serialNumber">
+      <modelElement href="Project12.uml#_XGSDwCvgEeiBW7TUKJGXDg"/>
+      <stereotypes xmi:id="_XNyZ8SvgEeiBW7TUKJGXDg" name="LegacyStyledElement">
+        <modelElement href="Project12.uml#_XGSDwSvgEeiBW7TUKJGXDg"/>
+      </stereotypes>
+      <visibility xmi:id="_XNyZ8ivgEeiBW7TUKJGXDg" label="#"/>
+      <cardinality xmi:id="_XNyZ8yvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <type xmi:id="_XNyZ9CvgEeiBW7TUKJGXDg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
       </type>
     </attributes>
     <operations xmi:id="_yuqmPCphEeiZnoWvPuXciw" name="getDate">
@@ -2385,6 +2646,13 @@
           <modelElement href="Project12.uml#_w4B0kCphEeiZnoWvPuXciw"/>
         </type>
       </outParameters>
+      <parameters xmi:id="_XOfkkCvgEeiBW7TUKJGXDg" name="serialNumber">
+        <modelElement href="Project12.uml#_XFsN4CvgEeiBW7TUKJGXDg"/>
+        <cardinality xmi:id="_XOfkkSvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+        <type xmi:id="_XOfkkivgEeiBW7TUKJGXDg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
       <parameters xmi:id="_yuqmRyphEeiZnoWvPuXciw" name="customerId">
         <modelElement href="Project12.uml#_w_P24SphEeiZnoWvPuXciw"/>
         <cardinality xmi:id="_yuqmSCphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
@@ -2399,11 +2667,11 @@
           <modelElement href="Project12.uml#_w-bXgCphEeiZnoWvPuXciw"/>
         </type>
       </parameters>
-      <parameters xmi:id="_yuqmTSphEeiZnoWvPuXciw" name="price">
-        <modelElement href="Project12.uml#_w_P24yphEeiZnoWvPuXciw"/>
-        <cardinality xmi:id="_yuqmTiphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
-        <type xmi:id="_yuqmTyphEeiZnoWvPuXciw" name="double">
-          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      <parameters xmi:id="_XOkdECvgEeiBW7TUKJGXDg" name="price">
+        <modelElement href="Project12.uml#_xAsBUyphEeiZnoWvPuXciw"/>
+        <cardinality xmi:id="_XOkdESvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+        <type xmi:id="_XOkdEivgEeiBW7TUKJGXDg" name="BigDecimal">
+          <modelElement href="Project12.uml#_U3htMCvgEeiBW7TUKJGXDg"/>
         </type>
       </parameters>
       <parameters xmi:id="_yuqmUCphEeiZnoWvPuXciw" name="type">
@@ -2413,6 +2681,34 @@
           <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </type>
       </parameters>
+    </operations>
+    <operations xmi:id="_XNk-kCvgEeiBW7TUKJGXDg" name="getPrice">
+      <modelElement href="Project12.uml#_XEpsECvgEeiBW7TUKJGXDg"/>
+      <visibility xmi:id="_XNlloCvgEeiBW7TUKJGXDg" label="+"/>
+      <cardinality xmi:id="_XNlloSvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_XNlloivgEeiBW7TUKJGXDg">
+        <modelElement href="Project12.uml#_XEqTICvgEeiBW7TUKJGXDg"/>
+        <type xmi:id="_XNlloyvgEeiBW7TUKJGXDg" name="BigDecimal">
+          <modelElement href="Project12.uml#_U3htMCvgEeiBW7TUKJGXDg"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_XNpQACvgEeiBW7TUKJGXDg" name="toString">
+      <modelElement href="Project12.uml#_XEqTISvgEeiBW7TUKJGXDg"/>
+      <stereotypes xmi:id="_XNpQASvgEeiBW7TUKJGXDg" name="Annotations">
+        <modelElement href="Project12.uml#_XEq6MCvgEeiBW7TUKJGXDg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_XNpQAivgEeiBW7TUKJGXDg" name="LegacyStyledElement">
+        <modelElement href="Project12.uml#_XFINMCvgEeiBW7TUKJGXDg"/>
+      </stereotypes>
+      <visibility xmi:id="_XNpQAyvgEeiBW7TUKJGXDg" label="+"/>
+      <cardinality xmi:id="_XNpQBCvgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_XNpQBSvgEeiBW7TUKJGXDg">
+        <modelElement href="Project12.uml#_XFs08CvgEeiBW7TUKJGXDg"/>
+        <type xmi:id="_XNpQBivgEeiBW7TUKJGXDg" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
     </operations>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_y0KxICphEeiZnoWvPuXciw" comments="_yxfQkCphEeiZnoWvPuXciw" targetConnectionVisual="_yzJdcCphEeiZnoWvPuXciw" name="ShowList" associationsIn="_ypytJCphEeiZnoWvPuXciw" associationsOut="_yzL5sCphEeiZnoWvPuXciw">
@@ -2427,7 +2723,7 @@
         <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
       </type>
     </attributes>
-    <attributes xmi:id="_y0KxJyphEeiZnoWvPuXciw" defaultValue="new TreeMap&lt;Show, Integer>( new SortByStartDate() )" name="map">
+    <attributes xmi:id="_y0KxJyphEeiZnoWvPuXciw" defaultValue="new TreeMap&lt;LocalDate, Show>()" name="map">
       <modelElement href="Project12.uml#_xAOuUCphEeiZnoWvPuXciw"/>
       <stereotypes xmi:id="_JGow0CpmEeir2diEb23EkQ" name="Generics"/>
       <stereotypes xmi:id="_JGpX4CpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
@@ -2435,6 +2731,12 @@
       <stereotypes xmi:id="_JGqmACpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHXJkCpmEeir2diEb23EkQ" name="Generics"/>
       <stereotypes xmi:id="_JHXwoCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w06akCvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w07BoCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0820CvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w0820SvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w11noCvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w12OsCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_y0KxKiphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_y0KxKyphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_y0KxLCphEeiZnoWvPuXciw" name="TreeMap">
@@ -2496,87 +2798,22 @@
           <modelElement href="Project12.uml#_w3clwCphEeiZnoWvPuXciw"/>
         </type>
       </parameters>
-      <parameters xmi:id="_y0KxRSphEeiZnoWvPuXciw" name="list">
-        <modelElement href="Project12.uml#_w-HOcSphEeiZnoWvPuXciw"/>
-        <cardinality xmi:id="_y0KxRiphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
-        <type xmi:id="_y0KxRyphEeiZnoWvPuXciw" name="ClientList">
-          <modelElement href="Project12.uml#_w2j08CphEeiZnoWvPuXciw"/>
-        </type>
-      </parameters>
     </operations>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_y4JSMCphEeiZnoWvPuXciw" comments="_y19g4CphEeiZnoWvPuXciw" targetConnectionVisual="_y3TksCphEeiZnoWvPuXciw" name="SortByStartDate">
-    <modelElement href="Project12.uml#_w4K-gCphEeiZnoWvPuXciw"/>
-    <visualProperties xmi:id="_y4JSMSphEeiZnoWvPuXciw" position="621.0,2791.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_y4JSMiphEeiZnoWvPuXciw" label="-"/>
-    <attributes xmi:id="_y4JSMyphEeiZnoWvPuXciw" defaultValue="1L" name="serialVersionUID" staticAttribute="true">
-      <modelElement href="Project12.uml#_xAP8cSphEeiZnoWvPuXciw"/>
-      <visibility xmi:id="_y4JSNCphEeiZnoWvPuXciw" label="-"/>
-      <cardinality xmi:id="_y4JSNSphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
-      <type xmi:id="_y4JSNiphEeiZnoWvPuXciw" name="long">
-        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
-      </type>
-    </attributes>
-    <operations xmi:id="_y4JSNyphEeiZnoWvPuXciw" name="compare">
-      <modelElement href="Project12.uml#_w-IckCphEeiZnoWvPuXciw"/>
-      <visibility xmi:id="_y4JSOCphEeiZnoWvPuXciw" label="+"/>
-      <cardinality xmi:id="_y4JSOSphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_y4JSOiphEeiZnoWvPuXciw">
-        <modelElement href="Project12.uml#_w-IckyphEeiZnoWvPuXciw"/>
-        <type xmi:id="_y4JSOyphEeiZnoWvPuXciw" name="int">
-          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    <operations xmi:id="_XK76QCvgEeiBW7TUKJGXDg" comments="_XK6sICvgEeiBW7TUKJGXDg" targetConnectionVisual="_XK7TMCvgEeiBW7TUKJGXDg" name="getShowByDate">
+      <modelElement href="Project12.uml#_XDzXgCvgEeiBW7TUKJGXDg"/>
+      <visibility xmi:id="_XK76QSvgEeiBW7TUKJGXDg" label="+"/>
+      <cardinality xmi:id="_XK76QivgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_XK76QyvgEeiBW7TUKJGXDg">
+        <modelElement href="Project12.uml#_XDzXgivgEeiBW7TUKJGXDg"/>
+        <type xmi:id="_XK76RCvgEeiBW7TUKJGXDg" name="Show">
+          <modelElement href="Project12.uml#_w3clwCphEeiZnoWvPuXciw"/>
         </type>
       </outParameters>
-      <parameters xmi:id="_y4JSPCphEeiZnoWvPuXciw" name="a">
-        <modelElement href="Project12.uml#_w-IckSphEeiZnoWvPuXciw"/>
-        <cardinality xmi:id="_y4JSPSphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
-        <type xmi:id="_y4JSPiphEeiZnoWvPuXciw" name="Show">
-          <modelElement href="Project12.uml#_w3clwCphEeiZnoWvPuXciw"/>
-        </type>
-      </parameters>
-      <parameters xmi:id="_y4JSPyphEeiZnoWvPuXciw" name="b">
-        <modelElement href="Project12.uml#_w-IckiphEeiZnoWvPuXciw"/>
-        <cardinality xmi:id="_y4JSQCphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
-        <type xmi:id="_y4JSQSphEeiZnoWvPuXciw" name="Show">
-          <modelElement href="Project12.uml#_w3clwCphEeiZnoWvPuXciw"/>
-        </type>
-      </parameters>
-    </operations>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_y8lGQCphEeiZnoWvPuXciw" comments="_y53wgCphEeiZnoWvPuXciw" targetConnectionVisual="_y8g00CphEeiZnoWvPuXciw" name="SortByEndDate">
-    <modelElement href="Project12.uml#_w4NawCphEeiZnoWvPuXciw"/>
-    <visualProperties xmi:id="_y8lGQSphEeiZnoWvPuXciw" position="959.0,2791.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_y8lGQiphEeiZnoWvPuXciw" label="-"/>
-    <attributes xmi:id="_y8lGQyphEeiZnoWvPuXciw" defaultValue="1L" name="serialVersionUID" staticAttribute="true">
-      <modelElement href="Project12.uml#_xAQjgSphEeiZnoWvPuXciw"/>
-      <visibility xmi:id="_y8lGRCphEeiZnoWvPuXciw" label="-"/>
-      <cardinality xmi:id="_y8lGRSphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
-      <type xmi:id="_y8lGRiphEeiZnoWvPuXciw" name="long">
-        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
-      </type>
-    </attributes>
-    <operations xmi:id="_y8lGRyphEeiZnoWvPuXciw" name="compare">
-      <modelElement href="Project12.uml#_w-JqsCphEeiZnoWvPuXciw"/>
-      <visibility xmi:id="_y8lGSCphEeiZnoWvPuXciw" label="+"/>
-      <cardinality xmi:id="_y8lGSSphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_y8lGSiphEeiZnoWvPuXciw">
-        <modelElement href="Project12.uml#_w-KRwSphEeiZnoWvPuXciw"/>
-        <type xmi:id="_y8lGSyphEeiZnoWvPuXciw" name="int">
-          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-        </type>
-      </outParameters>
-      <parameters xmi:id="_y8lGTCphEeiZnoWvPuXciw" name="a">
-        <modelElement href="Project12.uml#_w-JqsSphEeiZnoWvPuXciw"/>
-        <cardinality xmi:id="_y8lGTSphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
-        <type xmi:id="_y8lGTiphEeiZnoWvPuXciw" name="Show">
-          <modelElement href="Project12.uml#_w3clwCphEeiZnoWvPuXciw"/>
-        </type>
-      </parameters>
-      <parameters xmi:id="_y8lGTyphEeiZnoWvPuXciw" name="b">
-        <modelElement href="Project12.uml#_w-KRwCphEeiZnoWvPuXciw"/>
-        <cardinality xmi:id="_y8lGUCphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
-        <type xmi:id="_y8lGUSphEeiZnoWvPuXciw" name="Show">
-          <modelElement href="Project12.uml#_w3clwCphEeiZnoWvPuXciw"/>
+      <parameters xmi:id="_XK76RSvgEeiBW7TUKJGXDg" name="date">
+        <modelElement href="Project12.uml#_XDzXgSvgEeiBW7TUKJGXDg"/>
+        <cardinality xmi:id="_XK76RivgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+        <type xmi:id="_XK76RyvgEeiBW7TUKJGXDg" name="LocalDate">
+          <modelElement href="Project12.uml#_w-bXgCphEeiZnoWvPuXciw"/>
         </type>
       </parameters>
     </operations>
@@ -2601,6 +2838,12 @@
       <stereotypes xmi:id="_JGtpUSpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHZl0CpmEeir2diEb23EkQ" name="Generics"/>
       <stereotypes xmi:id="_JHaM4CpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0_TECvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w0_TESvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1BvUCvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w1BvUSvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w15SACvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w155ECvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_zAWL-iphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_zAWL-yphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_zAWL_CphEeiZnoWvPuXciw" name="TreeMap">
@@ -2650,6 +2893,9 @@
       <stereotypes xmi:id="_JGx6wCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JGyh0CpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHaz8CpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1JEECvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1K5QCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w17uQCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_zJ9a9SphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_zJ9a9iphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_zJ9a9yphEeiZnoWvPuXciw" name="Scanner">
@@ -2661,6 +2907,9 @@
       <stereotypes xmi:id="_JGu3cCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JGwFkCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JHcCECpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1ELkCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1Gn0CvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w188YCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_zJ9a-iphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_zJ9a-yphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_zJ9a_CphEeiZnoWvPuXciw" name="Theater">
@@ -2792,9 +3041,6 @@
     </operations>
     <operations xmi:id="_zJ9bQiphEeiZnoWvPuXciw" name="printAllTicket">
       <modelElement href="Project12.uml#_w2HwESphEeiZnoWvPuXciw"/>
-      <stereotypes xmi:id="_zJ9bQyphEeiZnoWvPuXciw" name="LegacyStyledElement">
-        <modelElement href="Project12.uml#_w2I-MCphEeiZnoWvPuXciw"/>
-      </stereotypes>
       <visibility xmi:id="_zJ9bRCphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_zJ9bRSphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
     </operations>
@@ -2803,8 +3049,19 @@
       <visibility xmi:id="_zJ9bRyphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_zJ9bSCphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
     </operations>
+    <operations xmi:id="_U3yy8CvgEeiBW7TUKJGXDg" name="getPrice">
+      <modelElement href="Project12.uml#_U2_hsCvgEeiBW7TUKJGXDg"/>
+      <visibility xmi:id="_U3yy8SvgEeiBW7TUKJGXDg" label="-"/>
+      <cardinality xmi:id="_U3yy8ivgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_U3yy8yvgEeiBW7TUKJGXDg">
+        <modelElement href="Project12.uml#_U3kJcCvgEeiBW7TUKJGXDg"/>
+        <type xmi:id="_U3yy9CvgEeiBW7TUKJGXDg" name="BigDecimal">
+          <modelElement href="Project12.uml#_U3htMCvgEeiBW7TUKJGXDg"/>
+        </type>
+      </outParameters>
+    </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_zL0cICphEeiZnoWvPuXciw" name="FileHandler">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_zL0cICphEeiZnoWvPuXciw" comments="_XLi-QCvgEeiBW7TUKJGXDg" targetConnectionVisual="_XLjlUCvgEeiBW7TUKJGXDg" name="FileHandler">
     <modelElement href="Project12.uml#_w2MokCphEeiZnoWvPuXciw"/>
     <visualProperties xmi:id="_zL0cISphEeiZnoWvPuXciw" position="1309.0,2795.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_zL0cIiphEeiZnoWvPuXciw" label="+"/>
@@ -2876,6 +3133,12 @@
       <stereotypes xmi:id="_JF370CpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JG854CpmEeir2diEb23EkQ" name="Generics"/>
       <stereotypes xmi:id="_JG9g8CpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0IXcCvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w0JlkCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0MB0CvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w0Mo4CvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1-KgCvfEeiBW7TUKJGXDg" name="Generics"/>
+      <stereotypes xmi:id="_w1-xkCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yMXKSiphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yMXKSyphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yMXKTCphEeiZnoWvPuXciw" name="TreeMap">
@@ -2887,6 +3150,9 @@
       <stereotypes xmi:id="_JFx1MCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JFzqYCpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JG_WICpmEeir2diEb23EkQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0EtECvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w0GiQCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_w1__sCvfEeiBW7TUKJGXDg" name="LegacyStyledElement"/>
       <visibility xmi:id="_yMXKTyphEeiZnoWvPuXciw" label="-"/>
       <cardinality xmi:id="_yMXKUCphEeiZnoWvPuXciw" label="1" max="1" min="1"/>
       <type xmi:id="_yMXKUSphEeiZnoWvPuXciw" name="CustomerList">
@@ -3004,5 +3270,65 @@
         </type>
       </parameters>
     </operations>
+    <operations xmi:id="_XLpr8CvgEeiBW7TUKJGXDg" name="contains">
+      <modelElement href="Project12.uml#_w-IckCphEeiZnoWvPuXciw"/>
+      <visibility xmi:id="_XLpr8SvgEeiBW7TUKJGXDg" label="+"/>
+      <cardinality xmi:id="_XLpr8ivgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_XLpr8yvgEeiBW7TUKJGXDg">
+        <modelElement href="Project12.uml#_XFSlQCvgEeiBW7TUKJGXDg"/>
+        <type xmi:id="_XLpr9CvgEeiBW7TUKJGXDg" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_XLpr9SvgEeiBW7TUKJGXDg" name="customerId">
+        <modelElement href="Project12.uml#_XFSlQSvgEeiBW7TUKJGXDg"/>
+        <cardinality xmi:id="_XLpr9ivgEeiBW7TUKJGXDg" label="1" max="1" min="1"/>
+        <type xmi:id="_XLpr9yvgEeiBW7TUKJGXDg" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XK6sICvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XK7TMCvgEeiBW7TUKJGXDg" text="Retrieves the show that is playing on a specific date&#xD;&#xA;     * @param date&#xD;&#xA;     * @return show playing on that date, null if no show playing" item="_XK76QCvgEeiBW7TUKJGXDg">
+    <modelElement href="Project12.uml#_xAz9KyphEeiZnoWvPuXciw"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XLi-QCvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XLjlUCvgEeiBW7TUKJGXDg" text="Class to read and write Theater object to file.&#xD;&#xA;&#xD;&#xA;@author Prakat Tuladhar&#xD;&#xA; *" item="_zL0cICphEeiZnoWvPuXciw">
+    <modelElement href="Project12.uml#_XGhUUCvgEeiBW7TUKJGXDg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XLmBkCvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XLmooCvgEeiBW7TUKJGXDg" text="Checks if client is in list&#xD;&#xA;     * @param clientId&#xD;&#xA;     * @return true if client in list, false otherwise" item="_XLnPsCvgEeiBW7TUKJGXDg">
+    <modelElement href="Project12.uml#_XGhUUSvgEeiBW7TUKJGXDg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XMARQCvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XMKpUCvgEeiBW7TUKJGXDg" text="checks to see if client exist for given ID number&#xD;&#xA;    * @param clientId&#xD;&#xA;    * @return true if clientList contains client, false otherwise" item="_XMKpUSvgEeiBW7TUKJGXDg">
+    <modelElement href="Project12.uml#_XGkXoCvgEeiBW7TUKJGXDg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XMNFkCvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XMWPgCvgEeiBW7TUKJGXDg" text="checks to see if customer exists for given ID number&#xD;&#xA;    * @param customerId&#xD;&#xA;    * @return true if list contains customer, false otherwise" item="_XMW2kCvgEeiBW7TUKJGXDg">
+    <modelElement href="Project12.uml#_XGkXoSvgEeiBW7TUKJGXDg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XMkR8CvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XMwfMCvgEeiBW7TUKJGXDg" text="&#xD;&#xA;@author Prakat Tuladhar&#xD;&#xA; *" item="_yqoaoCphEeiZnoWvPuXciw">
+    <modelElement href="Project12.uml#_XGjwkCvgEeiBW7TUKJGXDg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XN9ZECvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XN9ZESvgEeiBW7TUKJGXDg" text="Retrieves the factory&#xD;&#xA;     * &#xD;&#xA;     * @param input inputstream for deserialization" item="_XN-AICvgEeiBW7TUKJGXDg">
+    <modelElement href="Project12.uml#_XGmM0CvgEeiBW7TUKJGXDg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XOPs8CvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XOQ7ECvgEeiBW7TUKJGXDg" text="&#xD;&#xA;&#x9; * @param customerId&#xD;&#xA;&#x9; * @param date&#xD;&#xA;&#x9; * @param type&#xD;&#xA;&#x9; * @return" item="_ygkfxCphEeiZnoWvPuXciw">
+    <modelElement href="Project12.uml#_XGllwivgEeiBW7TUKJGXDg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XOWaoCvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XOXBsCvgEeiBW7TUKJGXDg" text="See if customer has card with specific card number&#xD;&#xA;     * @param cardNumber&#xD;&#xA;     * @return true if customer has credit card with same number, false if not" item="_XOXBsSvgEeiBW7TUKJGXDg">
+    <modelElement href="Project12.uml#_XGh7YCvgEeiBW7TUKJGXDg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XO3YACvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XS0D4CvgEeiBW7TUKJGXDg" text="Initializes Atomic Integer used to generate ticket serial numbers" item="_ygkfuCphEeiZnoWvPuXciw">
+    <modelElement href="Project12.uml#_XGllwCvgEeiBW7TUKJGXDg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XTIM8CvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XTIM8SvgEeiBW7TUKJGXDg" text="Gets instance of Theater object&#xD;&#xA;    * @return" item="_yqoazCphEeiZnoWvPuXciw">
+    <modelElement href="Project12.uml#_XGjwkSvgEeiBW7TUKJGXDg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XTJbECvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XTKCICvgEeiBW7TUKJGXDg" text="&#xD;&#xA;    * @param object" item="_yqpB0SphEeiZnoWvPuXciw">
+    <modelElement href="Project12.uml#_XGjwkivgEeiBW7TUKJGXDg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XTVoUCvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XTXdgCvgEeiBW7TUKJGXDg" text="&#xD;&#xA;    * @param ticketType&#xD;&#xA;    * @param quant&#xD;&#xA;    * @param cusNum&#xD;&#xA;    * @param cardNum&#xD;&#xA;    * @param date&#xD;&#xA;    * @throws Exception" item="_yqpCCCphEeiZnoWvPuXciw">
+    <modelElement href="Project12.uml#_XGk-sCvgEeiBW7TUKJGXDg"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_XUISgCvgEeiBW7TUKJGXDg" sourceConnectionVisual="_XUKHsCvgEeiBW7TUKJGXDg" text="&#xD;&#xA;&#x9; * @return" item="_ygkfvyphEeiZnoWvPuXciw">
+    <modelElement href="Project12.uml#_XGllwSvgEeiBW7TUKJGXDg"/>
   </nodes>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_wC48UCphEeiZnoWvPuXciw" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_wC9NwCphEeiZnoWvPuXciw" source="codegen">
         <details xmi:id="_wC9NwSphEeiZnoWvPuXciw" key="codegenDirectory" value="/Project1/src"/>
-        <details xmi:id="_xKYv4CphEeiZnoWvPuXciw" key="AssociatedSourceCode" value="/Project1/src/com/Project1/Driver.java;2784509701/1;/Project1/src/com/Project1/FileHandler.java;2495662489/1;/Project1/src/com/Project1/Main.java;1776166951/1;/Project1/src/com/Project1/classes/CardNumberMap.java;2524224449/1;/Project1/src/com/Project1/classes/Client.java;1049704691/1;/Project1/src/com/Project1/classes/ClientList.java;2445359764/1;/Project1/src/com/Project1/classes/CreditCard.java;3947523728/1;/Project1/src/com/Project1/classes/Customer.java;1699241295/1;/Project1/src/com/Project1/classes/CustomerList.java;312338631/1;/Project1/src/com/Project1/classes/Member.java;1652464937/1;/Project1/src/com/Project1/classes/MemberIdFactory.java;3160749066/1;/Project1/src/com/Project1/classes/Show.java;3325643589/1;/Project1/src/com/Project1/classes/ShowConflictException.java;2882076432/1;/Project1/src/com/Project1/classes/TicketFactory.java;783365733/1;/Project1/src/com/Project1/classes/Theater.java;732419019/1;/Project1/src/com/Project1/classes/Ticket.java;574899684/1;/Project1/src/com/Project1/classes/ShowList.java;4129177442/1;/Project1/src/com/Project1/classes/TicketList.java;2289826973/1;"/>
+        <details xmi:id="_xKYv4CphEeiZnoWvPuXciw" key="AssociatedSourceCode" value="/Project1/src/com/Project1/Driver.java;595872691/1;/Project1/src/com/Project1/FileHandler.java;3985004147/1;/Project1/src/com/Project1/Main.java;1776166951/1;/Project1/src/com/Project1/classes/CardNumberMap.java;2524224449/1;/Project1/src/com/Project1/classes/Client.java;1049704691/1;/Project1/src/com/Project1/classes/ClientList.java;509601708/1;/Project1/src/com/Project1/classes/CreditCard.java;3947523728/1;/Project1/src/com/Project1/classes/Customer.java;2762344330/1;/Project1/src/com/Project1/classes/CustomerList.java;2699622370/1;/Project1/src/com/Project1/classes/Member.java;1652464937/1;/Project1/src/com/Project1/classes/MemberIdFactory.java;3160749066/1;/Project1/src/com/Project1/classes/Show.java;2527044839/1;/Project1/src/com/Project1/classes/ShowConflictException.java;2882076432/1;/Project1/src/com/Project1/classes/TicketFactory.java;1439188902/1;/Project1/src/com/Project1/classes/Theater.java;1980811347/1;/Project1/src/com/Project1/classes/Ticket.java;1332525657/1;/Project1/src/com/Project1/classes/ShowList.java;2932428846/1;/Project1/src/com/Project1/classes/TicketList.java;3971340219/1;"/>
       </contents>
       <contents xmi:type="ecore:EAnnotation" xmi:id="_MvJIkCpmEeir2diEb23EkQ" source="preferences">
         <contents xmi:type="ecore:EAnnotation" xmi:id="_MvJvoCpmEeir2diEb23EkQ" source="com.yattasolutions.codegen.reverse">
@@ -211,6 +211,7 @@ This class represents a collection of clients&#xD;
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAcwwCphEeiZnoWvPuXciw" name="add" specification="_w9nfMCphEeiZnoWvPuXciw">
               <ownedParameter xmi:id="_xAcwwSphEeiZnoWvPuXciw" name="client" type="_w2cgMCphEeiZnoWvPuXciw"/>
               <ownedParameter xmi:id="_xAcwwiphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
               <language>java</language>
@@ -223,7 +224,9 @@ This class represents a collection of clients&#xD;
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
               <ownedParameter xmi:id="_xAcwxSphEeiZnoWvPuXciw" name="list" type="_w4H7MCphEeiZnoWvPuXciw"/>
-              <ownedParameter xmi:id="_xAcwxiphEeiZnoWvPuXciw" type="_w2cgMCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAcwxiphEeiZnoWvPuXciw" type="_w2cgMCphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>if ( list.ClientHasShow(id) ) {&#xD;
  		throw new RuntimeException(&quot;Cannot remove a client with a show scheduled&quot;);&#xD;
@@ -235,13 +238,16 @@ This class represents a collection of clients&#xD;
               <ownedParameter xmi:id="_xAdX0SphEeiZnoWvPuXciw" name="clientId">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
-              <ownedParameter xmi:id="_xAdX0iphEeiZnoWvPuXciw" type="_w2cgMCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAdX0iphEeiZnoWvPuXciw" type="_w2cgMCphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>return map.get(clientId);&#xD;
  </body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAdX0yphEeiZnoWvPuXciw" name="size" specification="_w2nfUCphEeiZnoWvPuXciw">
               <ownedParameter xmi:id="_xAdX1CphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
               <language>java</language>
@@ -249,14 +255,27 @@ This class represents a collection of clients&#xD;
  </body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAd-4CphEeiZnoWvPuXciw" name="iterator" specification="_w2nfUiphEeiZnoWvPuXciw">
-              <ownedParameter xmi:id="_xAd-4SphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAd-4SphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>return map.values().iterator();&#xD;
  </body>
             </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XGW8QCvgEeiBW7TUKJGXDg" name="contains" specification="_XFO64CvgEeiBW7TUKJGXDg">
+              <ownedParameter xmi:id="_XGW8QSvgEeiBW7TUKJGXDg" name="clientId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_XGW8QivgEeiBW7TUKJGXDg" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+              <language>java</language>
+              <body>return map.containsKey(clientId);&#xD;
+ </body>
+            </ownedBehavior>
             <ownedOperation xmi:id="_w2m4QCphEeiZnoWvPuXciw" name="getClient" method="_xAdX0CphEeiZnoWvPuXciw">
               <ownedComment xmi:id="_xAw52CphEeiZnoWvPuXciw">
-                <body>Returns  client associated with ID, or null if no such client&#xD;
+                <body>Returns client associated with ID, or null if no such client&#xD;
      * @param clientId			ID number of client&#xD;
      * @return Client			client associated with that ID</body>
               </ownedComment>
@@ -302,6 +321,19 @@ This class represents a collection of clients&#xD;
               </ownedParameter>
               <ownedParameter xmi:id="_w9oGQyphEeiZnoWvPuXciw" name="list" type="_w4H7MCphEeiZnoWvPuXciw"/>
               <ownedParameter xmi:id="_w9otUCphEeiZnoWvPuXciw" type="_w2cgMCphEeiZnoWvPuXciw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_XFO64CvgEeiBW7TUKJGXDg" name="contains" method="_XGW8QCvgEeiBW7TUKJGXDg">
+              <ownedComment xmi:id="_XGhUUSvgEeiBW7TUKJGXDg">
+                <body>Checks if client is in list&#xD;
+     * @param clientId&#xD;
+     * @return true if client in list, false otherwise</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_XFO64SvgEeiBW7TUKJGXDg" name="clientId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_XFO64ivgEeiBW7TUKJGXDg" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
             </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_w2wCMCphEeiZnoWvPuXciw" name="CreditCard">
@@ -428,7 +460,9 @@ This class represents a customer&#xD;
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
               <ownedParameter xmi:id="_xAf0FCphEeiZnoWvPuXciw" name="card" type="_w2wCMCphEeiZnoWvPuXciw"/>
-              <ownedParameter xmi:id="_xAf0FSphEeiZnoWvPuXciw" type="_w22v4CphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAf0FSphEeiZnoWvPuXciw" type="_w22v4CphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>super(name, address, phone);&#xD;
      creditCards.add(card);&#xD;
@@ -437,6 +471,7 @@ This class represents a customer&#xD;
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAgbICphEeiZnoWvPuXciw" name="addCreditCard" specification="_w9tl0CphEeiZnoWvPuXciw">
               <ownedParameter xmi:id="_xAgbISphEeiZnoWvPuXciw" name="card" type="_w2wCMCphEeiZnoWvPuXciw"/>
               <ownedParameter xmi:id="_xAgbIiphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
               <language>java</language>
@@ -467,6 +502,7 @@ This class represents a customer&#xD;
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAgbJSphEeiZnoWvPuXciw" name="getCreditCardCount" specification="_w25zMiphEeiZnoWvPuXciw">
               <ownedParameter xmi:id="_xAgbJiphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
               <language>java</language>
@@ -474,13 +510,16 @@ This class represents a customer&#xD;
  </body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAhCMCphEeiZnoWvPuXciw" name="getCreditCardIterator" specification="_w26aQSphEeiZnoWvPuXciw">
-              <ownedParameter xmi:id="_xAhCMSphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAhCMSphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>return creditCards.iterator();&#xD;
  </body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAhCMiphEeiZnoWvPuXciw" name="toString" specification="_w28PcCphEeiZnoWvPuXciw">
               <ownedParameter xmi:id="_xAhCMyphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
               </ownedParameter>
               <language>java</language>
@@ -491,6 +530,22 @@ This class represents a customer&#xD;
  	}&#xD;
  	&#xD;
  	return &quot;Customer{ &quot; + super.toString() + cardInformation + &quot;\n}&quot;;&#xD;
+ </body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XGXjUCvgEeiBW7TUKJGXDg" name="hasCreditCard" specification="_XFQwECvgEeiBW7TUKJGXDg">
+              <ownedParameter xmi:id="_XGXjUSvgEeiBW7TUKJGXDg" name="cardNumber">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_XGXjUivgEeiBW7TUKJGXDg" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+              <language>java</language>
+              <body>for(CreditCard card : creditCards) {&#xD;
+ 		if (card.getNumber() == cardNumber) {&#xD;
+ 			return true;&#xD;
+ 		}&#xD;
+ 	}&#xD;
+ 	return false;&#xD;
  </body>
             </ownedBehavior>
             <ownedOperation xmi:id="_w25zMCphEeiZnoWvPuXciw" name="removeCreditCard" method="_xAgbIyphEeiZnoWvPuXciw">
@@ -560,6 +615,19 @@ This class represents a customer&#xD;
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
             </ownedOperation>
+            <ownedOperation xmi:id="_XFQwECvgEeiBW7TUKJGXDg" name="hasCreditCard" method="_XGXjUCvgEeiBW7TUKJGXDg">
+              <ownedComment xmi:id="_XGh7YCvgEeiBW7TUKJGXDg">
+                <body>See if customer has card with specific card number&#xD;
+     * @param cardNumber&#xD;
+     * @return true if customer has credit card with same number, false if not</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_XFQwESvgEeiBW7TUKJGXDg" name="cardNumber">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_XFQwEivgEeiBW7TUKJGXDg" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_w3Ag4CphEeiZnoWvPuXciw" name="CustomerList">
             <ownedComment xmi:id="_xAyH8SphEeiZnoWvPuXciw">
@@ -581,7 +649,9 @@ This class represents a collection of customers&#xD;
             <interfaceRealization xmi:id="_w-zyACphEeiZnoWvPuXciw" client="_w3Ag4CphEeiZnoWvPuXciw" supplier="_w-nkwCphEeiZnoWvPuXciw" contract="_w-nkwCphEeiZnoWvPuXciw"/>
             <interfaceRealization xmi:id="_w-1nMSphEeiZnoWvPuXciw" client="_w3Ag4CphEeiZnoWvPuXciw" supplier="_w93W0CphEeiZnoWvPuXciw" contract="_w93W0CphEeiZnoWvPuXciw"/>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAhpQCphEeiZnoWvPuXciw" name="instance" specification="_w3DkMCphEeiZnoWvPuXciw">
-              <ownedParameter xmi:id="_xAhpQSphEeiZnoWvPuXciw" type="_w3Ag4CphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAhpQSphEeiZnoWvPuXciw" type="_w3Ag4CphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>if (customerList == null) {&#xD;
  		return (customerList = new CustomerList());&#xD;
@@ -593,6 +663,7 @@ This class represents a collection of customers&#xD;
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAhpQiphEeiZnoWvPuXciw" name="add" specification="_w9vbASphEeiZnoWvPuXciw">
               <ownedParameter xmi:id="_xAhpQyphEeiZnoWvPuXciw" name="customer" type="_w22v4CphEeiZnoWvPuXciw"/>
               <ownedParameter xmi:id="_xAhpRCphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
               <language>java</language>
@@ -604,7 +675,9 @@ This class represents a collection of customers&#xD;
               <ownedParameter xmi:id="_xAiQUSphEeiZnoWvPuXciw" name="id">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
-              <ownedParameter xmi:id="_xAiQUiphEeiZnoWvPuXciw" type="_w22v4CphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAiQUiphEeiZnoWvPuXciw" type="_w22v4CphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>return map.get(id);&#xD;
  </body>
@@ -613,13 +686,16 @@ This class represents a collection of customers&#xD;
               <ownedParameter xmi:id="_xAi3YSphEeiZnoWvPuXciw" name="id">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
-              <ownedParameter xmi:id="_xAi3YiphEeiZnoWvPuXciw" type="_w22v4CphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAi3YiphEeiZnoWvPuXciw" type="_w22v4CphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>return map.remove(id);&#xD;
  </body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAi3YyphEeiZnoWvPuXciw" name="size" specification="_w3HOkCphEeiZnoWvPuXciw">
               <ownedParameter xmi:id="_xAi3ZCphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
               <language>java</language>
@@ -627,9 +703,22 @@ This class represents a collection of customers&#xD;
  </body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAi3ZSphEeiZnoWvPuXciw" name="iterator" specification="_w3H1oSphEeiZnoWvPuXciw">
-              <ownedParameter xmi:id="_xAi3ZiphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAi3ZiphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>return map.values().iterator();&#xD;
+ </body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAtPcyphEeiZnoWvPuXciw" name="contains" specification="_w-IckCphEeiZnoWvPuXciw">
+              <ownedParameter xmi:id="_XGYKYCvgEeiBW7TUKJGXDg" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_XGYKYSvgEeiBW7TUKJGXDg" name="customerId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <language>java</language>
+              <body>return map.containsKey(customerId);&#xD;
  </body>
             </ownedBehavior>
             <ownedOperation xmi:id="_w3CWECphEeiZnoWvPuXciw" name="CustomerList" visibility="private">
@@ -687,6 +776,14 @@ This class represents a collection of customers&#xD;
               <ownedParameter xmi:id="_w9vbAiphEeiZnoWvPuXciw" name="customer" type="_w22v4CphEeiZnoWvPuXciw"/>
               <ownedParameter xmi:id="_w9vbAyphEeiZnoWvPuXciw" direction="return">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_w-IckCphEeiZnoWvPuXciw" name="contains" method="_xAtPcyphEeiZnoWvPuXciw">
+              <ownedParameter xmi:id="_XFSlQCvgEeiBW7TUKJGXDg" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_XFSlQSvgEeiBW7TUKJGXDg" name="customerId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
             </ownedOperation>
           </packagedElement>
@@ -974,6 +1071,7 @@ This class represents a show or play that is performed at the theater&#xD;
             <ownedAttribute xmi:id="_w_-2sSphEeiZnoWvPuXciw" name="customerIds" type="_w-wusCphEeiZnoWvPuXciw" isReadOnly="true" association="_xBKicSphEeiZnoWvPuXciw">
               <defaultValue xmi:type="uml:LiteralString" xmi:id="_xAAE0SphEeiZnoWvPuXciw" value="new ArrayList&lt;Integer>()"/>
             </ownedAttribute>
+            <ownedAttribute xmi:id="_XGQ1oCvgEeiBW7TUKJGXDg" name="baseTicketPrice" type="_U3htMCvgEeiBW7TUKJGXDg" isReadOnly="true"/>
             <interfaceRealization xmi:id="_w--KECphEeiZnoWvPuXciw" client="_w3clwCphEeiZnoWvPuXciw" supplier="_w93W0CphEeiZnoWvPuXciw" contract="_w93W0CphEeiZnoWvPuXciw"/>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAnI0iphEeiZnoWvPuXciw" name="Show" specification="_w-_YMCphEeiZnoWvPuXciw">
               <ownedParameter xmi:id="_xAnI0yphEeiZnoWvPuXciw" name="clientId">
@@ -984,12 +1082,15 @@ This class represents a show or play that is performed at the theater&#xD;
               </ownedParameter>
               <ownedParameter xmi:id="_xAnI1SphEeiZnoWvPuXciw" name="startDate" type="_w-bXgCphEeiZnoWvPuXciw"/>
               <ownedParameter xmi:id="_xAnI1iphEeiZnoWvPuXciw" name="endDate" type="_w-bXgCphEeiZnoWvPuXciw"/>
-              <ownedParameter xmi:id="_xAnI1yphEeiZnoWvPuXciw" type="_w3clwCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAnI1yphEeiZnoWvPuXciw" type="_w3clwCphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>this.clientId = clientId;&#xD;
      this.name = name;&#xD;
      this.startDate = startDate;&#xD;
      this.endDate = endDate;&#xD;
+     this.baseTicketPrice = ticketPrice;&#xD;
  </body>
             </ownedBehavior>
             <ownedOperation xmi:id="_w-_YMCphEeiZnoWvPuXciw" name="Show" method="_xAnI0iphEeiZnoWvPuXciw">
@@ -1005,6 +1106,7 @@ This class represents a show or play that is performed at the theater&#xD;
               <ownedParameter xmi:id="_w-__QiphEeiZnoWvPuXciw" name="startDate" type="_w-bXgCphEeiZnoWvPuXciw"/>
               <ownedParameter xmi:id="_w-__QyphEeiZnoWvPuXciw" name="endDate" type="_w-bXgCphEeiZnoWvPuXciw"/>
               <ownedParameter xmi:id="_w-__RiphEeiZnoWvPuXciw" type="_w3clwCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_w_P24yphEeiZnoWvPuXciw" name="ticketPrice" type="_U3htMCvgEeiBW7TUKJGXDg"/>
             </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_w3iFUCphEeiZnoWvPuXciw" name="ShowConflictException">
@@ -1048,8 +1150,15 @@ If Show[1] != null, there is a conflict with the end date&#xD;
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_w3khkCphEeiZnoWvPuXciw" name="TicketFactory">
             <ownedAttribute xmi:id="_xADIICphEeiZnoWvPuXciw" name="factory" visibility="private" isStatic="true" type="_w3khkCphEeiZnoWvPuXciw" association="_xBM-sSphEeiZnoWvPuXciw"/>
+            <ownedAttribute xmi:id="_XGSq0CvgEeiBW7TUKJGXDg" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_XGTR4CvgEeiBW7TUKJGXDg" value="1L"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:id="_XGT48CvgEeiBW7TUKJGXDg" name="serialNumberGenerator" visibility="private" type="_w9zFYCphEeiZnoWvPuXciw" association="_XGsTcCvgEeiBW7TUKJGXDg"/>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAnv5CphEeiZnoWvPuXciw" name="instance" specification="_w3m90CphEeiZnoWvPuXciw">
-              <ownedParameter xmi:id="_xAnv5SphEeiZnoWvPuXciw" type="_w3khkCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAnv5SphEeiZnoWvPuXciw" type="_w3khkCphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>if (factory == null) {&#xD;
 			factory = new TicketFactory();&#xD;
@@ -1058,50 +1167,103 @@ If Show[1] != null, there is a conflict with the end date&#xD;
 	</body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAoW8CphEeiZnoWvPuXciw" name="createTicket" specification="_w_E3wCphEeiZnoWvPuXciw">
-              <ownedParameter xmi:id="_xAoW8SphEeiZnoWvPuXciw" name="customerId">
+              <ownedParameter xmi:id="_XGe4ECvgEeiBW7TUKJGXDg" name="customerId">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
-              <ownedParameter xmi:id="_xAoW8iphEeiZnoWvPuXciw" name="date" type="_w-bXgCphEeiZnoWvPuXciw"/>
-              <ownedParameter xmi:id="_xAoW8yphEeiZnoWvPuXciw" name="type">
+              <ownedParameter xmi:id="_XGe4ESvgEeiBW7TUKJGXDg" name="date" type="_w-bXgCphEeiZnoWvPuXciw"/>
+              <ownedParameter xmi:id="_XGe4EivgEeiBW7TUKJGXDg" name="type">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
-              <ownedParameter xmi:id="_xAoW9CphEeiZnoWvPuXciw" type="_w4B0kCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_XGe4EyvgEeiBW7TUKJGXDg" type="_w4B0kCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_XGe4FCvgEeiBW7TUKJGXDg" name="basePrice" type="_U3htMCvgEeiBW7TUKJGXDg"/>
               <language>java</language>
-              <body>switch (type) {&#xD;
+              <body>BigDecimal price = null;&#xD;
+		&#xD;
+		switch (type) {&#xD;
 		&#xD;
 		// add logic to get correct price instead of 0 for each type of ticket&#xD;
 		case Ticket.REGULAR:&#xD;
-			return new Ticket(customerId, date, 0, Ticket.REGULAR);&#xD;
+			return new Ticket(serialNumberGenerator.getAndIncrement(), customerId, date, basePrice, Ticket.REGULAR);&#xD;
 		case Ticket.ADVANCE:&#xD;
-			return new Ticket(customerId, date, 0, Ticket.ADVANCE);&#xD;
+			// decimal accurate rounding of: price = basePrice * 70 / 100&#xD;
+			price = basePrice.multiply( new BigDecimal(70.0) ).divide( new BigDecimal(100.0), 2, RoundingMode.HALF_UP);&#xD;
+			return new Ticket(serialNumberGenerator.getAndIncrement(), customerId, date, price, Ticket.ADVANCE);&#xD;
 		case Ticket.STUDENT_ADVANCE:&#xD;
-			return new Ticket(customerId, date, 0, Ticket.STUDENT_ADVANCE);&#xD;
+			// decimal accurate rounding of: price = basePrice * 50 / 100&#xD;
+			price = basePrice.multiply( new BigDecimal(50.0) ).divide( new BigDecimal(100.0), 2, RoundingMode.HALF_UP);&#xD;
+			return new Ticket(serialNumberGenerator.getAndIncrement(), customerId, date, price, Ticket.STUDENT_ADVANCE);&#xD;
 		default:&#xD;
 			return null;&#xD;
 		}&#xD;
 	</body>
             </ownedBehavior>
-            <ownedOperation xmi:id="_w3lvsCphEeiZnoWvPuXciw" name="TicketFactory" visibility="private">
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XGeRAivgEeiBW7TUKJGXDg" name="TicketFactory" specification="_w3lvsCphEeiZnoWvPuXciw">
+              <ownedParameter xmi:id="_XGeRAyvgEeiBW7TUKJGXDg" type="_w3khkCphEeiZnoWvPuXciw" direction="return"/>
+              <language>java</language>
+              <body>serialNumberGenerator = new AtomicInteger(0);&#xD;
+	</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XGffICvgEeiBW7TUKJGXDg" name="retrieve" specification="_XEwZwCvgEeiBW7TUKJGXDg">
+              <ownedParameter xmi:id="_XGffISvgEeiBW7TUKJGXDg" name="input" type="_w-7t0CphEeiZnoWvPuXciw"/>
+              <language>java</language>
+              <body>try {&#xD;
+     factory = (TicketFactory) input.readObject();&#xD;
+   } catch(IOException ioe) {&#xD;
+     ioe.printStackTrace();&#xD;
+   } catch(Exception cnfe) {&#xD;
+     cnfe.printStackTrace();&#xD;
+   }&#xD;
+ </body>
+            </ownedBehavior>
+            <ownedOperation xmi:id="_w3lvsCphEeiZnoWvPuXciw" name="TicketFactory" visibility="private" method="_XGeRAivgEeiBW7TUKJGXDg">
               <eAnnotations xmi:id="_w3lvsSphEeiZnoWvPuXciw" source="http://www.eclipse.org/uml2/2.0.0/UML">
                 <details xmi:id="_w3lvsiphEeiZnoWvPuXciw" key="create"/>
               </eAnnotations>
+              <ownedComment xmi:id="_XGllwCvgEeiBW7TUKJGXDg">
+                <body>Initializes Atomic Integer used to generate ticket serial numbers</body>
+              </ownedComment>
               <ownedParameter xmi:id="_w3mWwSphEeiZnoWvPuXciw" type="_w3khkCphEeiZnoWvPuXciw" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_w3m90CphEeiZnoWvPuXciw" name="instance" isStatic="true" method="_xAnv5CphEeiZnoWvPuXciw">
+              <ownedComment xmi:id="_XGllwSvgEeiBW7TUKJGXDg">
+                <body>&#xD;
+	 * @return</body>
+              </ownedComment>
               <ownedParameter xmi:id="_w99dcCphEeiZnoWvPuXciw" type="_w3khkCphEeiZnoWvPuXciw" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_w_E3wCphEeiZnoWvPuXciw" name="createTicket" method="_xAoW8CphEeiZnoWvPuXciw">
+              <ownedComment xmi:id="_XGllwivgEeiBW7TUKJGXDg">
+                <body>&#xD;
+	 * @param customerId&#xD;
+	 * @param date&#xD;
+	 * @param type&#xD;
+	 * @return</body>
+              </ownedComment>
               <ownedParameter xmi:id="_w_Fe0CphEeiZnoWvPuXciw" name="customerId">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
               <ownedParameter xmi:id="_w_Fe0SphEeiZnoWvPuXciw" name="date" type="_w-bXgCphEeiZnoWvPuXciw"/>
+              <ownedParameter xmi:id="_w_Fe0yphEeiZnoWvPuXciw" type="_w4B0kCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_XEukkCvgEeiBW7TUKJGXDg" name="basePrice" type="_U3htMCvgEeiBW7TUKJGXDg"/>
               <ownedParameter xmi:id="_w_Fe0iphEeiZnoWvPuXciw" name="type">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
-              <ownedParameter xmi:id="_w_Fe0yphEeiZnoWvPuXciw" type="_w4B0kCphEeiZnoWvPuXciw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_XEwZwCvgEeiBW7TUKJGXDg" name="retrieve" isStatic="true" method="_XGffICvgEeiBW7TUKJGXDg">
+              <ownedComment xmi:id="_XGmM0CvgEeiBW7TUKJGXDg">
+                <body>Retrieves the factory&#xD;
+     * &#xD;
+     * @param input inputstream for deserialization</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_XExA0CvgEeiBW7TUKJGXDg" name="input" type="_w-7t0CphEeiZnoWvPuXciw"/>
             </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_w3paECphEeiZnoWvPuXciw" name="Theater">
+            <ownedComment xmi:id="_XGjwkCvgEeiBW7TUKJGXDg">
+              <body>&#xD;
+@author Prakat Tuladhar&#xD;
+ *</body>
+            </ownedComment>
             <ownedAttribute xmi:id="_xADvMSphEeiZnoWvPuXciw" name="customerList" visibility="private" type="_w3Ag4CphEeiZnoWvPuXciw" association="_xBNlwSphEeiZnoWvPuXciw">
               <defaultValue xmi:type="uml:LiteralString" xmi:id="_xADvMiphEeiZnoWvPuXciw" value="CustomerList.instance()"/>
             </ownedAttribute>
@@ -1114,13 +1276,17 @@ If Show[1] != null, there is a conflict with the end date&#xD;
             <ownedAttribute xmi:id="_xAGLcCphEeiZnoWvPuXciw" name="cardNumbers" visibility="private" type="_w2WZkCphEeiZnoWvPuXciw" association="_xBQpECphEeiZnoWvPuXciw">
               <defaultValue xmi:type="uml:LiteralString" xmi:id="_xAGLcSphEeiZnoWvPuXciw" value="new CardNumberMap()"/>
             </ownedAttribute>
-            <ownedAttribute xmi:id="_xAGygCphEeiZnoWvPuXciw" name="ticketList" type="_w4WksCphEeiZnoWvPuXciw" isReadOnly="true" association="_xBRQISphEeiZnoWvPuXciw">
+            <ownedAttribute xmi:id="_xAGygCphEeiZnoWvPuXciw" name="ticketList" visibility="private" type="_w4WksCphEeiZnoWvPuXciw" isReadOnly="true" association="_xBRQISphEeiZnoWvPuXciw">
               <defaultValue xmi:type="uml:LiteralString" xmi:id="_xAGygSphEeiZnoWvPuXciw" value="new TicketList()"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="_xAGygiphEeiZnoWvPuXciw" name="ticketFactory" visibility="private" type="_w3khkCphEeiZnoWvPuXciw" association="_xBSeQSphEeiZnoWvPuXciw">
               <defaultValue xmi:type="uml:LiteralString" xmi:id="_xAGygyphEeiZnoWvPuXciw" value="TicketFactory.instance()"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="_xAHZkSphEeiZnoWvPuXciw" name="theater" visibility="private" isStatic="true" type="_w3paECphEeiZnoWvPuXciw" association="_xBTFUSphEeiZnoWvPuXciw"/>
+            <ownedAttribute xmi:id="_xAQjgSphEeiZnoWvPuXciw" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_xAQjgiphEeiZnoWvPuXciw" value="1L"/>
+            </ownedAttribute>
             <interfaceRealization xmi:id="_w_Gs8CphEeiZnoWvPuXciw" client="_w3paECphEeiZnoWvPuXciw" supplier="_w93W0CphEeiZnoWvPuXciw" contract="_w93W0CphEeiZnoWvPuXciw"/>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAoW9SphEeiZnoWvPuXciw" name="getInstance" specification="_w3sdYCphEeiZnoWvPuXciw">
               <ownedParameter xmi:id="_xAoW9iphEeiZnoWvPuXciw" type="_w3paECphEeiZnoWvPuXciw" direction="return">
@@ -1159,7 +1325,6 @@ If Show[1] != null, there is a conflict with the end date&#xD;
 	   } catch (RuntimeException re) {&#xD;
 		   throw re;&#xD;
 	   }&#xD;
-&#xD;
 </body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAplECphEeiZnoWvPuXciw" name="removeClient" specification="_w3uSkCphEeiZnoWvPuXciw">
@@ -1285,26 +1450,27 @@ If Show[1] != null, there is a conflict with the end date&#xD;
 </body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAraQCphEeiZnoWvPuXciw" name="addShow" specification="_w_KXUCphEeiZnoWvPuXciw">
-              <ownedParameter xmi:id="_xAraQSphEeiZnoWvPuXciw" name="clientId">
+              <ownedParameter xmi:id="_XGbNsCvgEeiBW7TUKJGXDg" name="clientId">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
-              <ownedParameter xmi:id="_xAraQiphEeiZnoWvPuXciw" name="name">
+              <ownedParameter xmi:id="_XGbNsSvgEeiBW7TUKJGXDg" name="name">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
               </ownedParameter>
-              <ownedParameter xmi:id="_xAraQyphEeiZnoWvPuXciw" name="startDate" type="_w-bXgCphEeiZnoWvPuXciw"/>
-              <ownedParameter xmi:id="_xAraRCphEeiZnoWvPuXciw" name="endDate" type="_w-bXgCphEeiZnoWvPuXciw"/>
-              <ownedParameter xmi:id="_xAraRSphEeiZnoWvPuXciw" direction="return">
-                <name xsi:nil="true"/>
+              <ownedParameter xmi:id="_XGb0wCvgEeiBW7TUKJGXDg" name="startDate" type="_w-bXgCphEeiZnoWvPuXciw"/>
+              <ownedParameter xmi:id="_XGb0wSvgEeiBW7TUKJGXDg" name="endDate" type="_w-bXgCphEeiZnoWvPuXciw"/>
+              <ownedParameter xmi:id="_XGb0wivgEeiBW7TUKJGXDg" direction="return">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
+              <ownedParameter xmi:id="_XGb0wyvgEeiBW7TUKJGXDg" name="ticketPrice" type="_U3htMCvgEeiBW7TUKJGXDg"/>
               <language>java</language>
-              <body>Show show = new Show(clientId, name, startDate, endDate);&#xD;
+              <body>if ( !clientList.contains(clientId) ) {&#xD;
+		   throw new RuntimeException(&quot;Client ID: &quot; + clientId + &quot; does not exist&quot;);&#xD;
+	   }&#xD;
+	   Show show = new Show(clientId, name, startDate, endDate, ticketPrice);&#xD;
     try {&#xD;
- 	   showList.add(show, clientList);&#xD;
+ 	   showList.add(show);&#xD;
     } catch (ShowConflictException se) {&#xD;
  	   throw se;&#xD;
-    } catch (RuntimeException re) {&#xD;
- 	   throw re;&#xD;
     }&#xD;
     return true;&#xD;
 </body>
@@ -1332,28 +1498,24 @@ If Show[1] != null, there is a conflict with the end date&#xD;
               </ownedParameter>
               <ownedParameter xmi:id="_xAraTSphEeiZnoWvPuXciw" name="date" type="_w-bXgCphEeiZnoWvPuXciw"/>
               <language>java</language>
-              <body>//check if cardNumber and  existsbefor this function can return anything&#xD;
-&#xD;
-&#xD;
-     if(ticketType==Ticket.REGULAR){&#xD;
-         for(int i=0;i&lt;quant;i++) {&#xD;
-             Ticket ticket = ticketFactory.createTicket(cusNum, date, Ticket.REGULAR);&#xD;
-             ticketList.add(ticket);&#xD;
-         }&#xD;
+              <body>//check if cardNumber and  exists before this function can return anything&#xD;
+	   Customer customer = customerList.getCustomer(cusNum);&#xD;
+	   if (customer == null) {&#xD;
+		   throw new Exception(&quot;Customer ID: &quot; + cusNum + &quot; does not exist&quot;);&#xD;
+	   }&#xD;
+     if( !customer.hasCreditCard(cardNum) ){&#xD;
+         throw new Exception(&quot;Customer does not have credit card number: &quot; + cardNum);&#xD;
      }&#xD;
-    else if(ticketType==Ticket.ADVANCE){&#xD;
-        for(int i=0;i&lt;quant;i++) {&#xD;
-            Ticket ticket = ticketFactory.createTicket(cusNum, date, Ticket.REGULAR);&#xD;
-            ticketList.add(ticket);&#xD;
-        }&#xD;
-    }&#xD;
-    else if(ticketType==Ticket.STUDENT_ADVANCE){&#xD;
-        for(int i=0;i&lt;quant;i++) {&#xD;
-            Ticket ticket = ticketFactory.createTicket(cusNum, date, Ticket.REGULAR);&#xD;
-            ticketList.add(ticket);&#xD;
-        }&#xD;
-    }else {&#xD;
-         System.out.print(&quot;Ticket type not found.&quot;);&#xD;
+     &#xD;
+     Show show = showList.getShowByDate(date);&#xD;
+     if (show == null) {&#xD;
+     	throw new Exception(&quot;No show on this date&quot;);&#xD;
+     }&#xD;
+     BigDecimal basePrice = show.getBaseTicketPrice();&#xD;
+&#xD;
+     for(int i = 0;i &lt; quant; i++) {&#xD;
+     	Ticket ticket = ticketFactory.createTicket(cusNum, date, basePrice, Ticket.REGULAR);&#xD;
+     	ticketList.add(ticket);&#xD;
      }&#xD;
 </body>
             </ownedBehavior>
@@ -1365,16 +1527,51 @@ If Show[1] != null, there is a conflict with the end date&#xD;
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
               <language>java</language>
-              <body>Client client=clientList.getClient(clientNumber);&#xD;
+              <body>if(false){&#xD;
+        throw new Exception(&quot;Not found&quot;);&#xD;
+    }&#xD;
+    Client client = clientList.getClient(clientNumber);&#xD;
     client.payBalance(amount);&#xD;
  </body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_e3LzYCpjEeiZnoWvPuXciw" name="getClient" specification="_e3IwECpjEeiZnoWvPuXciw">
-              <ownedParameter xmi:id="_NbtToCpmEeir2diEb23EkQ" type="_w2cgMCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_XGcb0CvgEeiBW7TUKJGXDg" type="_w2cgMCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_XGcb0SvgEeiBW7TUKJGXDg" name="clientNumber">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
               <language>java</language>
               <body>// TODO Auto-generated method stub&#xD;
 		return clientList.getClient(clientNumber);&#xD;
 	</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XGZ_kCvgEeiBW7TUKJGXDg" name="hasClient" specification="_XFVokCvgEeiBW7TUKJGXDg">
+              <ownedParameter xmi:id="_XGZ_kSvgEeiBW7TUKJGXDg" name="clientId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_XGZ_kivgEeiBW7TUKJGXDg" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+              <language>java</language>
+              <body>return clientList.contains(clientId);&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XGamoCvgEeiBW7TUKJGXDg" name="hasCustomer" specification="_XFW2sCvgEeiBW7TUKJGXDg">
+              <ownedParameter xmi:id="_XGamoSvgEeiBW7TUKJGXDg" name="customerId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_XGamoivgEeiBW7TUKJGXDg" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+              <language>java</language>
+              <body>return customerList.contains(customerId);&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XGb0xCvgEeiBW7TUKJGXDg" name="getTicketList" specification="_XEeF4CvgEeiBW7TUKJGXDg">
+              <ownedParameter xmi:id="_XGb0xSvgEeiBW7TUKJGXDg" name="date" type="_w-bXgCphEeiZnoWvPuXciw"/>
+              <ownedParameter xmi:id="_XGb0xivgEeiBW7TUKJGXDg" type="_w-qoECphEeiZnoWvPuXciw" direction="return"/>
+              <language>java</language>
+              <body>return ticketList.getTicketsByDate(date);&#xD;
+ </body>
             </ownedBehavior>
             <ownedOperation xmi:id="_w3rPQCphEeiZnoWvPuXciw" name="Theater" visibility="private">
               <eAnnotations xmi:id="_w3rPQSphEeiZnoWvPuXciw" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -1383,6 +1580,10 @@ If Show[1] != null, there is a conflict with the end date&#xD;
               <ownedParameter xmi:id="_w3r2USphEeiZnoWvPuXciw" type="_w3paECphEeiZnoWvPuXciw" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_w3sdYCphEeiZnoWvPuXciw" name="getInstance" isStatic="true" method="_xAoW9SphEeiZnoWvPuXciw">
+              <ownedComment xmi:id="_XGjwkSvgEeiBW7TUKJGXDg">
+                <body>Gets instance of Theater object&#xD;
+    * @return</body>
+              </ownedComment>
               <ownedParameter xmi:id="_w9-rkCphEeiZnoWvPuXciw" type="_w3paECphEeiZnoWvPuXciw" direction="return"/>
             </ownedOperation>
             <ownedOperation xmi:id="_w3tEcCphEeiZnoWvPuXciw" name="addClient" method="_xAo-AiphEeiZnoWvPuXciw">
@@ -1464,7 +1665,7 @@ If Show[1] != null, there is a conflict with the end date&#xD;
               </ownedComment>
               <ownedParameter xmi:id="_w_LlcCphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return"/>
             </ownedOperation>
-            <ownedOperation xmi:id="_w35RsCphEeiZnoWvPuXciw" name="payClient" method="_xAraTiphEeiZnoWvPuXciw">
+            <ownedOperation xmi:id="_w35RsCphEeiZnoWvPuXciw" name="payClient" method="_xAraTiphEeiZnoWvPuXciw" raisedException="_XGKH8CvgEeiBW7TUKJGXDg">
               <ownedParameter xmi:id="_w35RsSphEeiZnoWvPuXciw" name="clientNumber">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
@@ -1473,6 +1674,10 @@ If Show[1] != null, there is a conflict with the end date&#xD;
               </ownedParameter>
             </ownedOperation>
             <ownedOperation xmi:id="_w9_SoCphEeiZnoWvPuXciw" name="setTheater" method="_xAo-ACphEeiZnoWvPuXciw">
+              <ownedComment xmi:id="_XGjwkivgEeiBW7TUKJGXDg">
+                <body>&#xD;
+    * @param object</body>
+              </ownedComment>
               <ownedParameter xmi:id="_w9_SoSphEeiZnoWvPuXciw" name="object" type="_w3paECphEeiZnoWvPuXciw"/>
             </ownedOperation>
             <ownedOperation xmi:id="_w_H7ECphEeiZnoWvPuXciw" name="addCustomer" method="_xAplFSphEeiZnoWvPuXciw">
@@ -1537,8 +1742,18 @@ If Show[1] != null, there is a conflict with the end date&#xD;
               <ownedParameter xmi:id="_w_K-YSphEeiZnoWvPuXciw" direction="return">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
+              <ownedParameter xmi:id="_XEbCkCvgEeiBW7TUKJGXDg" name="ticketPrice" type="_U3htMCvgEeiBW7TUKJGXDg"/>
             </ownedOperation>
-            <ownedOperation xmi:id="_w_LlcSphEeiZnoWvPuXciw" name="addTicket" method="_xAraSCphEeiZnoWvPuXciw">
+            <ownedOperation xmi:id="_w_LlcSphEeiZnoWvPuXciw" name="addTicket" method="_xAraSCphEeiZnoWvPuXciw" raisedException="_XGKH8CvgEeiBW7TUKJGXDg">
+              <ownedComment xmi:id="_XGk-sCvgEeiBW7TUKJGXDg">
+                <body>&#xD;
+    * @param ticketType&#xD;
+    * @param quant&#xD;
+    * @param cusNum&#xD;
+    * @param cardNum&#xD;
+    * @param date&#xD;
+    * @throws Exception</body>
+              </ownedComment>
               <ownedParameter xmi:id="_w_LlciphEeiZnoWvPuXciw" name="ticketType">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
@@ -1557,6 +1772,36 @@ If Show[1] != null, there is a conflict with the end date&#xD;
               <ownedParameter xmi:id="_NbaYsCpmEeir2diEb23EkQ" type="_w2cgMCphEeiZnoWvPuXciw" direction="return"/>
               <ownedParameter xmi:id="_e3LzYSpjEeiZnoWvPuXciw" name="clientNumber">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_XEeF4CvgEeiBW7TUKJGXDg" name="getTicketList" method="_XGb0xCvgEeiBW7TUKJGXDg">
+              <ownedParameter xmi:id="_XEeF4SvgEeiBW7TUKJGXDg" name="date" type="_w-bXgCphEeiZnoWvPuXciw"/>
+              <ownedParameter xmi:id="_XEfUACvgEeiBW7TUKJGXDg" type="_w-qoECphEeiZnoWvPuXciw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_XFVokCvgEeiBW7TUKJGXDg" name="hasClient" method="_XGZ_kCvgEeiBW7TUKJGXDg">
+              <ownedComment xmi:id="_XGkXoCvgEeiBW7TUKJGXDg">
+                <body>checks to see if client exist for given ID number&#xD;
+    * @param clientId&#xD;
+    * @return true if clientList contains client, false otherwise</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_XFWPoCvgEeiBW7TUKJGXDg" name="clientId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_XFWPoSvgEeiBW7TUKJGXDg" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:id="_XFW2sCvgEeiBW7TUKJGXDg" name="hasCustomer" method="_XGamoCvgEeiBW7TUKJGXDg">
+              <ownedComment xmi:id="_XGkXoSvgEeiBW7TUKJGXDg">
+                <body>checks to see if customer exists for given ID number&#xD;
+    * @param customerId&#xD;
+    * @return true if list contains customer, false otherwise</body>
+              </ownedComment>
+              <ownedParameter xmi:id="_XFW2sSvgEeiBW7TUKJGXDg" name="customerId">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
+              <ownedParameter xmi:id="_XFW2sivgEeiBW7TUKJGXDg" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
             </ownedOperation>
           </packagedElement>
@@ -1580,9 +1825,7 @@ If Show[1] != null, there is a conflict with the end date&#xD;
             <ownedAttribute xmi:id="_xAKc4CphEeiZnoWvPuXciw" name="customerId" visibility="protected">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
             </ownedAttribute>
-            <ownedAttribute xmi:id="_xALD8SphEeiZnoWvPuXciw" name="price" visibility="protected">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-            </ownedAttribute>
+            <ownedAttribute xmi:id="_xALD8SphEeiZnoWvPuXciw" name="price" visibility="protected" type="_U3htMCvgEeiBW7TUKJGXDg"/>
             <ownedAttribute xmi:id="_xALrASphEeiZnoWvPuXciw" name="type" visibility="protected">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
             </ownedAttribute>
@@ -1590,30 +1833,51 @@ If Show[1] != null, there is a conflict with the end date&#xD;
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="_xAM5ISphEeiZnoWvPuXciw" name="date" visibility="protected" type="_w-bXgCphEeiZnoWvPuXciw" association="_xBUTcSphEeiZnoWvPuXciw"/>
+            <ownedAttribute xmi:id="_XGSDwCvgEeiBW7TUKJGXDg" name="serialNumber" visibility="protected">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+            </ownedAttribute>
             <interfaceRealization xmi:id="_w_OowCphEeiZnoWvPuXciw" client="_w4B0kCphEeiZnoWvPuXciw" supplier="_w93W0CphEeiZnoWvPuXciw" contract="_w93W0CphEeiZnoWvPuXciw"/>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAsBUCphEeiZnoWvPuXciw" name="Ticket" specification="_w_P24CphEeiZnoWvPuXciw">
-              <ownedParameter xmi:id="_xAsBUSphEeiZnoWvPuXciw" name="customerId">
+              <ownedParameter xmi:id="_XGdp8CvgEeiBW7TUKJGXDg" name="customerId">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
-              <ownedParameter xmi:id="_xAsBUiphEeiZnoWvPuXciw" name="date" type="_w-bXgCphEeiZnoWvPuXciw"/>
-              <ownedParameter xmi:id="_xAsBUyphEeiZnoWvPuXciw" name="price">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-              </ownedParameter>
-              <ownedParameter xmi:id="_xAsBVCphEeiZnoWvPuXciw" name="type">
+              <ownedParameter xmi:id="_XGdp8SvgEeiBW7TUKJGXDg" name="date" type="_w-bXgCphEeiZnoWvPuXciw"/>
+              <ownedParameter xmi:id="_XGdp8ivgEeiBW7TUKJGXDg" name="ticketPrice" type="_U3htMCvgEeiBW7TUKJGXDg"/>
+              <ownedParameter xmi:id="_XGdp8yvgEeiBW7TUKJGXDg" name="type">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
-              <ownedParameter xmi:id="_xAsBVSphEeiZnoWvPuXciw" type="_w4B0kCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_XGdp9CvgEeiBW7TUKJGXDg" type="_w4B0kCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_XGdp9SvgEeiBW7TUKJGXDg" name="serialNumber">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
               <language>java</language>
-              <body>this.customerId = customerId;&#xD;
+              <body>this.serialNumber = serialNumber;&#xD;
+		this.customerId = customerId;&#xD;
 		this.date = date;&#xD;
 		this.price = price;&#xD;
 		this.type = type;&#xD;
 	</body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAsoYCphEeiZnoWvPuXciw" name="getDate" specification="_w4EQ0CphEeiZnoWvPuXciw">
-              <ownedParameter xmi:id="_xAsoYSphEeiZnoWvPuXciw" type="_w-bXgCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAsoYSphEeiZnoWvPuXciw" type="_w-bXgCphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>return date;&#xD;
+	</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XGdp9ivgEeiBW7TUKJGXDg" name="getPrice" specification="_XEpsECvgEeiBW7TUKJGXDg">
+              <ownedParameter xmi:id="_XGdp9yvgEeiBW7TUKJGXDg" type="_U3htMCvgEeiBW7TUKJGXDg" direction="return"/>
+              <language>java</language>
+              <body>return price;&#xD;
+	</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XGeRACvgEeiBW7TUKJGXDg" name="toString" specification="_XEqTISvgEeiBW7TUKJGXDg">
+              <ownedParameter xmi:id="_XGeRASvgEeiBW7TUKJGXDg" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
+              <language>java</language>
+              <body>return &quot;Customer id:&quot; + customerId + &quot;\nType:&quot; + type + &quot;Price:&quot; + price;&#xD;
 	</body>
             </ownedBehavior>
             <ownedOperation xmi:id="_w4EQ0CphEeiZnoWvPuXciw" name="getDate" method="_xAsoYCphEeiZnoWvPuXciw">
@@ -1623,17 +1887,26 @@ If Show[1] != null, there is a conflict with the end date&#xD;
               <eAnnotations xmi:id="_w_Qd8CphEeiZnoWvPuXciw" source="http://www.eclipse.org/uml2/2.0.0/UML">
                 <details xmi:id="_w_Qd8SphEeiZnoWvPuXciw" key="create"/>
               </eAnnotations>
+              <ownedParameter xmi:id="_w_Qd8iphEeiZnoWvPuXciw" type="_w4B0kCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_XFsN4CvgEeiBW7TUKJGXDg" name="serialNumber">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+              </ownedParameter>
               <ownedParameter xmi:id="_w_P24SphEeiZnoWvPuXciw" name="customerId">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
               <ownedParameter xmi:id="_w_P24iphEeiZnoWvPuXciw" name="date" type="_w-bXgCphEeiZnoWvPuXciw"/>
-              <ownedParameter xmi:id="_w_P24yphEeiZnoWvPuXciw" name="price">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-              </ownedParameter>
+              <ownedParameter xmi:id="_xAsBUyphEeiZnoWvPuXciw" name="price" type="_U3htMCvgEeiBW7TUKJGXDg"/>
               <ownedParameter xmi:id="_w_P25CphEeiZnoWvPuXciw" name="type">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
-              <ownedParameter xmi:id="_w_Qd8iphEeiZnoWvPuXciw" type="_w4B0kCphEeiZnoWvPuXciw" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_XEpsECvgEeiBW7TUKJGXDg" name="getPrice" method="_XGdp9ivgEeiBW7TUKJGXDg">
+              <ownedParameter xmi:id="_XEqTICvgEeiBW7TUKJGXDg" type="_U3htMCvgEeiBW7TUKJGXDg" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:id="_XEqTISvgEeiBW7TUKJGXDg" name="toString" method="_XGeRACvgEeiBW7TUKJGXDg">
+              <ownedParameter xmi:id="_XFs08CvgEeiBW7TUKJGXDg" direction="return">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+              </ownedParameter>
             </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_w4H7MCphEeiZnoWvPuXciw" name="ShowList">
@@ -1650,30 +1923,31 @@ This class represents a schedule of shows for the theater&#xD;
               <defaultValue xmi:type="uml:LiteralString" xmi:id="_xAOHQSphEeiZnoWvPuXciw" value="1L"/>
             </ownedAttribute>
             <ownedAttribute xmi:id="_xAOuUCphEeiZnoWvPuXciw" name="map" visibility="private" type="_w-khcCphEeiZnoWvPuXciw" association="_xBU6gSphEeiZnoWvPuXciw">
-              <defaultValue xmi:type="uml:LiteralString" xmi:id="_xAPVYSphEeiZnoWvPuXciw" value="new TreeMap&lt;Show, Integer>( new SortByStartDate() )"/>
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_xAPVYSphEeiZnoWvPuXciw" value="new TreeMap&lt;LocalDate, Show>()"/>
             </ownedAttribute>
             <interfaceRealization xmi:id="_w_STICphEeiZnoWvPuXciw" client="_w4H7MCphEeiZnoWvPuXciw" supplier="_w93W0CphEeiZnoWvPuXciw" contract="_w93W0CphEeiZnoWvPuXciw"/>
             <interfaceRealization xmi:id="_w_S6MCphEeiZnoWvPuXciw" client="_w4H7MCphEeiZnoWvPuXciw" supplier="_w-nkwCphEeiZnoWvPuXciw" contract="_w-nkwCphEeiZnoWvPuXciw"/>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAsoYiphEeiZnoWvPuXciw" name="add" specification="_w-GnYCphEeiZnoWvPuXciw">
               <ownedParameter xmi:id="_xAsoYyphEeiZnoWvPuXciw" name="show" type="_w3clwCphEeiZnoWvPuXciw"/>
-              <ownedParameter xmi:id="_xAsoZCphEeiZnoWvPuXciw" name="list" type="_w2j08CphEeiZnoWvPuXciw"/>
               <ownedParameter xmi:id="_xAsoZSphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
               <language>java</language>
-              <body>if (list.getClient( show.getClientId() ) == null) {&#xD;
- 		throw new RuntimeException(&quot;Add failed: No client exists for ID: &quot; + show.getClientId() );&#xD;
- 	}&#xD;
- 	&#xD;
- 	boolean available = true;&#xD;
+              <body>boolean available = true;&#xD;
  	// Holds potentially conflicting shows&#xD;
  	Show[] conflictingShows = {null, null};&#xD;
  	&#xD;
  	/*&#xD;
  	 * Check that show starts after previous show ends&#xD;
- 	 * floorKey returns show with greatest start time &lt;= show's start time&#xD;
+ 	 * floorEntry().getValue() returns show with greatest start time &lt;= show's start time&#xD;
  	 */&#xD;
- 	Show previous = map.floorKey(show);&#xD;
+ 	Show previous = null;&#xD;
+ 	try {&#xD;
+ 		previous = map.floorEntry( show.getStartDate() ).getValue();&#xD;
+ 	} catch (RuntimeException e) {&#xD;
+ 		;&#xD;
+ 	}&#xD;
  	if (&#xD;
  		previous == null ||					// Is there a previous show?&#xD;
  		(show.getStartDate().compareTo( previous.getEndDate() ) > 0)&#xD;
@@ -1685,9 +1959,15 @@ This class represents a schedule of shows for the theater&#xD;
  	}&#xD;
  	/*&#xD;
  	 * Check that show ends before next show starts&#xD;
- 	 * ceilingKey returns show with lowest start time >= show's start time&#xD;
+ 	 * ceilingEntry().getValue() returns show with lowest start time >= show's start time&#xD;
  	 */&#xD;
- 	Show next = map.ceilingKey(show);&#xD;
+ 	Show next = null;&#xD;
+ 	try {&#xD;
+ 		next = map.ceilingEntry( show.getStartDate() ).getValue();&#xD;
+ 	} catch (RuntimeException e) {&#xD;
+ 		;&#xD;
+ 	}&#xD;
+ 	&#xD;
  	if (&#xD;
  		next == null ||						// Is there a next show?&#xD;
  		(show.getEndDate().compareTo( next.getStartDate() ) &lt; 0)&#xD;
@@ -1702,7 +1982,7 @@ This class represents a schedule of shows for the theater&#xD;
  		throw new ShowConflictException(conflictingShows);&#xD;
  	}&#xD;
  	&#xD;
- 	map.put(show, show.getClientId() );&#xD;
+ 	map.put(show.getStartDate(), show);&#xD;
  	&#xD;
      return available;&#xD;
  </body>
@@ -1712,16 +1992,37 @@ This class represents a schedule of shows for the theater&#xD;
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
               <ownedParameter xmi:id="_xAtPciphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
               <language>java</language>
-              <body>return map.containsValue(clientId);&#xD;
+              <body>for ( Show show : map.values() ) {&#xD;
+ 		if (show.getClientId() == clientId) {&#xD;
+ 			return true;&#xD;
+ 		}&#xD;
+ 	}&#xD;
+ 	return false;&#xD;
  </body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAt2gCphEeiZnoWvPuXciw" name="iterator" specification="_w4PP8CphEeiZnoWvPuXciw">
-              <ownedParameter xmi:id="_xAt2gSphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAt2gSphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
-              <body>return map.keySet().iterator();&#xD;
+              <body>return map.values().iterator();&#xD;
+ </body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XGZYgCvgEeiBW7TUKJGXDg" name="getShowByDate" specification="_XDzXgCvgEeiBW7TUKJGXDg">
+              <ownedParameter xmi:id="_XGZYgSvgEeiBW7TUKJGXDg" name="date" type="_w-bXgCphEeiZnoWvPuXciw"/>
+              <ownedParameter xmi:id="_XGZYgivgEeiBW7TUKJGXDg" type="_w3clwCphEeiZnoWvPuXciw" direction="return"/>
+              <language>java</language>
+              <body>// find show with greatest start date &lt;= date&#xD;
+ 	Show show = map.floorEntry(date).getValue();&#xD;
+ 	// make sure show end date is >= date&#xD;
+ 	if (show.getEndDate().compareTo(date) >= 0) {&#xD;
+ 		return show;&#xD;
+ 	}&#xD;
+ 	return null;&#xD;
  </body>
             </ownedBehavior>
             <ownedOperation xmi:id="_w4JwYCphEeiZnoWvPuXciw" name="ClientHasShow" method="_xAtPcCphEeiZnoWvPuXciw">
@@ -1743,78 +2044,25 @@ This class represents a schedule of shows for the theater&#xD;
             <ownedOperation xmi:id="_w-GnYCphEeiZnoWvPuXciw" name="add" method="_xAsoYiphEeiZnoWvPuXciw">
               <ownedComment xmi:id="_xAz9KSphEeiZnoWvPuXciw">
                 <body>Adds a show to the list of shows&#xD;
-     * Fails if there are conflicting dates, or if the client of the show not in&#xD;
-     * client list&#xD;
+     * Fails if there are conflicting dates&#xD;
      * @param show		show to be added&#xD;
      * @return true if show dates available, false if not&#xD;
      * @exception ShowConflictException if date range is not free</body>
               </ownedComment>
               <ownedParameter xmi:id="_w-HOcCphEeiZnoWvPuXciw" name="show" type="_w3clwCphEeiZnoWvPuXciw"/>
-              <ownedParameter xmi:id="_w-HOcSphEeiZnoWvPuXciw" name="list" type="_w2j08CphEeiZnoWvPuXciw"/>
               <ownedParameter xmi:id="_w-HOciphEeiZnoWvPuXciw" direction="return">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
             </ownedOperation>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_w4K-gCphEeiZnoWvPuXciw" name="SortByStartDate" visibility="private">
+            <ownedOperation xmi:id="_XDzXgCvgEeiBW7TUKJGXDg" name="getShowByDate" method="_XGZYgCvgEeiBW7TUKJGXDg">
               <ownedComment xmi:id="_xAz9KyphEeiZnoWvPuXciw">
-                <body>@version 1.0&#xD;
-     * Allows map of shows to be sorted by start date&#xD;
-     * @author Colin Quinn</body>
+                <body>Retrieves the show that is playing on a specific date&#xD;
+     * @param date&#xD;
+     * @return show playing on that date, null if no show playing</body>
               </ownedComment>
-              <ownedAttribute xmi:id="_xAP8cSphEeiZnoWvPuXciw" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
-                <defaultValue xmi:type="uml:LiteralString" xmi:id="_xAQjgCphEeiZnoWvPuXciw" value="1L"/>
-              </ownedAttribute>
-              <interfaceRealization xmi:id="_w_V9gSphEeiZnoWvPuXciw" client="_w4K-gCphEeiZnoWvPuXciw" supplier="_w_UvYCphEeiZnoWvPuXciw" contract="_w_UvYCphEeiZnoWvPuXciw"/>
-              <interfaceRealization xmi:id="_w_XLoCphEeiZnoWvPuXciw" client="_w4K-gCphEeiZnoWvPuXciw" supplier="_w93W0CphEeiZnoWvPuXciw" contract="_w93W0CphEeiZnoWvPuXciw"/>
-              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAtPcyphEeiZnoWvPuXciw" name="compare" specification="_w-IckCphEeiZnoWvPuXciw">
-                <ownedParameter xmi:id="_xAtPdCphEeiZnoWvPuXciw" name="a" type="_w3clwCphEeiZnoWvPuXciw"/>
-                <ownedParameter xmi:id="_xAtPdSphEeiZnoWvPuXciw" name="b" type="_w3clwCphEeiZnoWvPuXciw"/>
-                <ownedParameter xmi:id="_xAtPdiphEeiZnoWvPuXciw" direction="return">
-                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-                </ownedParameter>
-                <language>java</language>
-                <body>return a.getStartDate().compareTo( b.getStartDate() );&#xD;
- 	</body>
-              </ownedBehavior>
-              <ownedOperation xmi:id="_w-IckCphEeiZnoWvPuXciw" name="compare" method="_xAtPcyphEeiZnoWvPuXciw">
-                <ownedParameter xmi:id="_w-IckSphEeiZnoWvPuXciw" name="a" type="_w3clwCphEeiZnoWvPuXciw"/>
-                <ownedParameter xmi:id="_w-IckiphEeiZnoWvPuXciw" name="b" type="_w3clwCphEeiZnoWvPuXciw"/>
-                <ownedParameter xmi:id="_w-IckyphEeiZnoWvPuXciw" direction="return">
-                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-                </ownedParameter>
-              </ownedOperation>
-            </nestedClassifier>
-            <nestedClassifier xmi:type="uml:Class" xmi:id="_w4NawCphEeiZnoWvPuXciw" name="SortByEndDate" visibility="private">
-              <ownedComment xmi:id="_xA0kMCphEeiZnoWvPuXciw">
-                <body>@version 1.0&#xD;
-     * Allows map of shows to be sorted by end date&#xD;
-     * @author Colin Quinn</body>
-              </ownedComment>
-              <ownedAttribute xmi:id="_xAQjgSphEeiZnoWvPuXciw" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
-                <defaultValue xmi:type="uml:LiteralString" xmi:id="_xAQjgiphEeiZnoWvPuXciw" value="1L"/>
-              </ownedAttribute>
-              <interfaceRealization xmi:id="_w_XysCphEeiZnoWvPuXciw" client="_w4NawCphEeiZnoWvPuXciw" supplier="_w_UvYCphEeiZnoWvPuXciw" contract="_w_UvYCphEeiZnoWvPuXciw"/>
-              <interfaceRealization xmi:id="_w_ZA0CphEeiZnoWvPuXciw" client="_w4NawCphEeiZnoWvPuXciw" supplier="_w93W0CphEeiZnoWvPuXciw" contract="_w93W0CphEeiZnoWvPuXciw"/>
-              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAtPdyphEeiZnoWvPuXciw" name="compare" specification="_w-JqsCphEeiZnoWvPuXciw">
-                <ownedParameter xmi:id="_xAtPeCphEeiZnoWvPuXciw" name="a" type="_w3clwCphEeiZnoWvPuXciw"/>
-                <ownedParameter xmi:id="_xAtPeSphEeiZnoWvPuXciw" name="b" type="_w3clwCphEeiZnoWvPuXciw"/>
-                <ownedParameter xmi:id="_xAtPeiphEeiZnoWvPuXciw" direction="return">
-                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-                </ownedParameter>
-                <language>java</language>
-                <body>return a.getEndDate().compareTo( b.getEndDate() );&#xD;
- 	</body>
-              </ownedBehavior>
-              <ownedOperation xmi:id="_w-JqsCphEeiZnoWvPuXciw" name="compare" method="_xAtPdyphEeiZnoWvPuXciw">
-                <ownedParameter xmi:id="_w-JqsSphEeiZnoWvPuXciw" name="a" type="_w3clwCphEeiZnoWvPuXciw"/>
-                <ownedParameter xmi:id="_w-KRwCphEeiZnoWvPuXciw" name="b" type="_w3clwCphEeiZnoWvPuXciw"/>
-                <ownedParameter xmi:id="_w-KRwSphEeiZnoWvPuXciw" direction="return">
-                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-                </ownedParameter>
-              </ownedOperation>
-            </nestedClassifier>
+              <ownedParameter xmi:id="_XDzXgSvgEeiBW7TUKJGXDg" name="date" type="_w-bXgCphEeiZnoWvPuXciw"/>
+              <ownedParameter xmi:id="_XDzXgivgEeiBW7TUKJGXDg" type="_w3clwCphEeiZnoWvPuXciw" direction="return"/>
+            </ownedOperation>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_w4WksCphEeiZnoWvPuXciw" name="TicketList">
             <ownedAttribute xmi:id="_xARKkCphEeiZnoWvPuXciw" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isReadOnly="true">
@@ -1843,7 +2091,9 @@ This class represents a schedule of shows for the theater&#xD;
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAt2hCphEeiZnoWvPuXciw" name="getTicketsByDate" specification="_w_cEICphEeiZnoWvPuXciw">
               <ownedParameter xmi:id="_xAt2hSphEeiZnoWvPuXciw" name="date" type="_w-bXgCphEeiZnoWvPuXciw"/>
-              <ownedParameter xmi:id="_xAt2hiphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_xAt2hiphEeiZnoWvPuXciw" type="_w-qoECphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>ArrayList&lt;Ticket> dateTickets = map.get(date);&#xD;
 		if (dateTickets != null) {&#xD;
@@ -1939,6 +2189,9 @@ This class represents a schedule of shows for the theater&#xD;
           </packagedElement>
           <packagedElement xmi:type="uml:Association" xmi:id="_xBWIoCphEeiZnoWvPuXciw" name="" memberEnd="_xBWIoSphEeiZnoWvPuXciw _xARxoSphEeiZnoWvPuXciw">
             <ownedEnd xmi:id="_xBWIoSphEeiZnoWvPuXciw" name="" type="_w4WksCphEeiZnoWvPuXciw" association="_xBWIoCphEeiZnoWvPuXciw"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Association" xmi:id="_XGsTcCvgEeiBW7TUKJGXDg" name="" memberEnd="_XGsTcSvgEeiBW7TUKJGXDg _XGT48CvgEeiBW7TUKJGXDg">
+            <ownedEnd xmi:id="_XGsTcSvgEeiBW7TUKJGXDg" name="" type="_w3khkCphEeiZnoWvPuXciw" association="_XGsTcCvgEeiBW7TUKJGXDg"/>
           </packagedElement>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_w10OECphEeiZnoWvPuXciw" name="Driver">
@@ -2096,7 +2349,7 @@ This class represents a schedule of shows for the theater&#xD;
              &quot;any session. If stored data is found, the user has the option to use it. The user may also invoke\n&quot; +&#xD;
              &quot;a command to load data, provided he/she has not yet issued any data-related commands in\n&quot; +&#xD;
              &quot;that session.&quot; +&#xD;
-             &quot;\n13.3. (This was â€œHelpâ€ in Iteration 1.) Sell regular tickets. Accept the quantity, customer id, credit&quot; +&#xD;
+             &quot;\n13.3. (This was â€œHelpï¿½ in Iteration 1.) Sell regular tickets. Accept the quantity, customer id, credit&quot; +&#xD;
              &quot; card number, and the date of the show. &quot; +&#xD;
              &quot;\n14.  Sell advance tickets. Accept the quantity, customer id, credit card number, and the date of the show.&quot; +&#xD;
              &quot;\n15. 5. Sell student advance tickets. Accept the quantity, customer id, credit card number, and the date of the show.&quot; +&#xD;
@@ -2334,6 +2587,10 @@ This class represents a schedule of shows for the theater&#xD;
             <language>java</language>
             <body>System.out.print(&quot;Enter client id: &quot;);&#xD;
      int clientId = getInt();&#xD;
+     if ( !theater.hasClient(clientId) ) {&#xD;
+     	System.out.println(&quot;Client ID: &quot; + clientId + &quot; does not exist&quot;);&#xD;
+     	return;&#xD;
+     }&#xD;
      &#xD;
      System.out.print(&quot;Enter name of the show: &quot;);&#xD;
      String name = keyboard.nextLine();&#xD;
@@ -2343,6 +2600,9 @@ This class represents a schedule of shows for the theater&#xD;
      &#xD;
      System.out.print(&quot;Enter end date for show: &quot;);&#xD;
      LocalDate endDate = getShowDate();&#xD;
+     &#xD;
+     System.out.print(&quot;Enter ticket price: &quot;);&#xD;
+     BigDecimal price = getPrice();&#xD;
      &#xD;
      LocalDate currentDate = LocalDate.now();&#xD;
      if (startDate.compareTo(currentDate) &lt;= 0) {&#xD;
@@ -2356,7 +2616,7 @@ This class represents a schedule of shows for the theater&#xD;
      }&#xD;
      &#xD;
      try {&#xD;
-     	theater.addShow(clientId, name, startDate, endDate);&#xD;
+     	theater.addShow(clientId, name, startDate, endDate, price);&#xD;
      } catch (ShowConflictException se) {&#xD;
      	System.out.println(&quot;Add Failed: &quot;);&#xD;
      	DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;MM/dd/yyyy&quot;);&#xD;
@@ -2410,7 +2670,7 @@ This class represents a schedule of shows for the theater&#xD;
           <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAZGYCphEeiZnoWvPuXciw" name="load" specification="_w2FT0SphEeiZnoWvPuXciw">
             <language>java</language>
             <body>try {&#xD;
-         theater= FileHandler.readFromFile(&quot;output.dat&quot;);&#xD;
+         theater = FileHandler.readFromFile(&quot;output.dat&quot;);&#xD;
      } catch (IOException e) {&#xD;
          e.printStackTrace();&#xD;
      } catch (ClassNotFoundException e) {&#xD;
@@ -2421,22 +2681,28 @@ This class represents a schedule of shows for the theater&#xD;
           </ownedBehavior>
           <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAZGYSphEeiZnoWvPuXciw" name="sellRegularTickets" specification="_w2Gh8CphEeiZnoWvPuXciw">
             <language>java</language>
-            <body>System.out.print(&quot;How many tickets do you need?: &quot;);&#xD;
-     int quant=keyboard.nextInt();&#xD;
-     System.out.print(&quot;Enter customer id: &quot;);&#xD;
-     int cusNum=keyboard.nextInt();&#xD;
-     System.out.print(&quot;Credit card number: &quot;);&#xD;
-     int cardNum=keyboard.nextInt();&#xD;
-     System.out.print(&quot;Enter date of the show:&quot;);&#xD;
-     LocalDate date = getShowDate();&#xD;
+            <body>try {&#xD;
+        System.out.print(&quot;How many tickets do you need?: &quot;);&#xD;
 &#xD;
-     theater.addTicket(Ticket.REGULAR, quant,cusNum,cardNum,date);&#xD;
+        int quant = keyboard.nextInt();&#xD;
+        System.out.print(&quot;Enter customer id: &quot;);&#xD;
+        int cusNum = keyboard.nextInt();&#xD;
+        System.out.print(&quot;Credit card number: &quot;);&#xD;
+        int cardNum = keyboard.nextInt();&#xD;
+        System.out.print(&quot;Enter date of the show:&quot;);&#xD;
+        LocalDate date = getShowDate();&#xD;
+&#xD;
+        theater.addTicket(Ticket.REGULAR, quant, cusNum, cardNum, date);&#xD;
+    }catch (Exception e){&#xD;
+        System.out.print(&quot;Something weng wrong.&quot;);&#xD;
+    }&#xD;
 &#xD;
  </body>
           </ownedBehavior>
           <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAZGYiphEeiZnoWvPuXciw" name="sellStudentTicket" specification="_w2HJACphEeiZnoWvPuXciw">
             <language>java</language>
-            <body>System.out.print(&quot;How many tickets do you need?: &quot;);&#xD;
+            <body>try{&#xD;
+         System.out.print(&quot;How many tickets do you need?: &quot;);&#xD;
      int quant=keyboard.nextInt();&#xD;
      System.out.print(&quot;Enter customer id: &quot;);&#xD;
      int cusNum=keyboard.nextInt();&#xD;
@@ -2446,20 +2712,27 @@ This class represents a schedule of shows for the theater&#xD;
      LocalDate date = getShowDate();&#xD;
 &#xD;
      theater.addTicket(Ticket.ADVANCE, quant,cusNum,cardNum,date);&#xD;
+ }catch (Exception e){&#xD;
+     System.out.print(&quot;Something weng wrong.&quot;);&#xD;
+ }&#xD;
  </body>
           </ownedBehavior>
           <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAZGYyphEeiZnoWvPuXciw" name="sellAdvanceTickets" specification="_w2HwECphEeiZnoWvPuXciw">
             <language>java</language>
-            <body>System.out.print(&quot;How many tickets do you need?: &quot;);&#xD;
-     int quant=keyboard.nextInt();&#xD;
-     System.out.print(&quot;Enter customer id: &quot;);&#xD;
-     int cusNum=keyboard.nextInt();&#xD;
-     System.out.print(&quot;Credit card number: &quot;);&#xD;
-     int cardNum=keyboard.nextInt();&#xD;
-     System.out.print(&quot;Enter date of the show:&quot;);&#xD;
-     LocalDate date = getShowDate();&#xD;
+            <body>try {&#xD;
+        System.out.print(&quot;How many tickets do you need?: &quot;);&#xD;
+        int quant = keyboard.nextInt();&#xD;
+        System.out.print(&quot;Enter customer id: &quot;);&#xD;
+        int cusNum = keyboard.nextInt();&#xD;
+        System.out.print(&quot;Credit card number: &quot;);&#xD;
+        int cardNum = keyboard.nextInt();&#xD;
+        System.out.print(&quot;Enter date of the show:&quot;);&#xD;
+        LocalDate date = getShowDate();&#xD;
 &#xD;
-     theater.addTicket(Ticket.STUDENT_ADVANCE, quant,cusNum,cardNum,date);&#xD;
+        theater.addTicket(Ticket.STUDENT_ADVANCE, quant, cusNum, cardNum, date);&#xD;
+    }catch (Exception e){&#xD;
+        System.out.print(&quot;Something weng wrong.&quot;);&#xD;
+    }&#xD;
  </body>
           </ownedBehavior>
           <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAZGZCphEeiZnoWvPuXciw" name="payclient" specification="_w2I-MSphEeiZnoWvPuXciw">
@@ -2477,6 +2750,45 @@ This class represents a schedule of shows for the theater&#xD;
 	        System.out.print(&quot;How much do you want to pay?&quot;);&#xD;
 	        client.payBalance(keyboard.nextInt());&#xD;
 	    }&#xD;
+ </body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_U3mlsCvgEeiBW7TUKJGXDg" name="getPrice" specification="_U2_hsCvgEeiBW7TUKJGXDg">
+            <ownedParameter xmi:id="_U3mlsSvgEeiBW7TUKJGXDg" type="_U3htMCvgEeiBW7TUKJGXDg" direction="return"/>
+            <language>java</language>
+            <body>String line;&#xD;
+ 	BigDecimal response = null;&#xD;
+ 	&#xD;
+ 	do {&#xD;
+ 		line = keyboard.nextLine();&#xD;
+ 		try {&#xD;
+ 			response = new BigDecimal(line).setScale(2, RoundingMode.HALF_UP);&#xD;
+ 		} catch (NumberFormatException | ArithmeticException e) {&#xD;
+ 			System.out.println(&quot;Invalid Input: Please enter a valid price in format 0.00&quot;);&#xD;
+ 		}&#xD;
+ 		// Allow user to return to menu&#xD;
+//    		if ( line.equalsIgnoreCase(&quot;q&quot;) ) {&#xD;
+//    			throw new RuntimeException();&#xD;
+//    		}&#xD;
+ 	} while (response != null);&#xD;
+ 	return response;&#xD;
+ </body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_U3nMwCvgEeiBW7TUKJGXDg" name="printAllTicket" specification="_w2HwESphEeiZnoWvPuXciw">
+            <language>java</language>
+            <body>System.out.print(&quot;Enter date of the show:&quot;);&#xD;
+     LocalDate date = getShowDate();&#xD;
+     Iterator&lt;Ticket> iterator = theater.getTicketList(date);&#xD;
+     if ( !iterator.hasNext() ) {&#xD;
+         System.out.println(&quot;No tickets to display&quot;);&#xD;
+     }&#xD;
+     while ( iterator.hasNext() ) {&#xD;
+         Ticket ticket = iterator.next();&#xD;
+         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;MM/dd/yyyy&quot;);&#xD;
+         System.out.print(ticket.toString());&#xD;
+         System.out.println(&quot;\n---------------------------------------&quot;);&#xD;
+&#xD;
+     }&#xD;
+     System.out.println(&quot;\n---------------------------------------&quot;);&#xD;
  </body>
           </ownedBehavior>
           <ownedOperation xmi:id="_w18w8CphEeiZnoWvPuXciw" name="start" method="_xAVcACphEeiZnoWvPuXciw"/>
@@ -2565,18 +2877,28 @@ This class represents a schedule of shows for the theater&#xD;
           <ownedOperation xmi:id="_w2Gh8CphEeiZnoWvPuXciw" name="sellRegularTickets" visibility="private" method="_xAZGYSphEeiZnoWvPuXciw"/>
           <ownedOperation xmi:id="_w2HJACphEeiZnoWvPuXciw" name="sellStudentTicket" visibility="private" method="_xAZGYiphEeiZnoWvPuXciw"/>
           <ownedOperation xmi:id="_w2HwECphEeiZnoWvPuXciw" name="sellAdvanceTickets" visibility="private" method="_xAZGYyphEeiZnoWvPuXciw"/>
-          <ownedOperation xmi:id="_w2HwESphEeiZnoWvPuXciw" name="printAllTicket" visibility="private"/>
+          <ownedOperation xmi:id="_w2HwESphEeiZnoWvPuXciw" name="printAllTicket" visibility="private" method="_U3nMwCvgEeiBW7TUKJGXDg"/>
           <ownedOperation xmi:id="_w2I-MSphEeiZnoWvPuXciw" name="payclient" visibility="private" method="_xAZGZCphEeiZnoWvPuXciw"/>
+          <ownedOperation xmi:id="_U2_hsCvgEeiBW7TUKJGXDg" name="getPrice" visibility="private" method="_U3mlsCvgEeiBW7TUKJGXDg">
+            <ownedParameter xmi:id="_U3kJcCvgEeiBW7TUKJGXDg" type="_U3htMCvgEeiBW7TUKJGXDg" direction="return"/>
+          </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_w2MokCphEeiZnoWvPuXciw" name="FileHandler">
+          <ownedComment xmi:id="_XGhUUCvgEeiBW7TUKJGXDg">
+            <body>Class to read and write Theater object to file.&#xD;
+&#xD;
+@author Prakat Tuladhar&#xD;
+ *</body>
+          </ownedComment>
           <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAZtcCphEeiZnoWvPuXciw" name="writeToFile" specification="_w9jNwCphEeiZnoWvPuXciw">
             <ownedParameter xmi:id="_xAZtcSphEeiZnoWvPuXciw" name="object" type="_w3paECphEeiZnoWvPuXciw"/>
             <language>java</language>
-            <body>FileOutputStream fileOut=new FileOutputStream(&quot;output.dat&quot;);//output file name output.dat&#xD;
-     ObjectOutputStream objectOut=new ObjectOutputStream(fileOut);&#xD;
+            <body>FileOutputStream fileOut = new FileOutputStream(&quot;output.dat&quot;);//output file name output.dat&#xD;
+     ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);&#xD;
 &#xD;
      objectOut.writeObject(object);&#xD;
      objectOut.writeObject( MemberIdFactory.instance() );&#xD;
+     objectOut.writeObject( TicketFactory.instance() );&#xD;
      objectOut.close();&#xD;
      fileOut.close();&#xD;
 &#xD;
@@ -2586,12 +2908,16 @@ This class represents a schedule of shows for the theater&#xD;
             <ownedParameter xmi:id="_xAaUgSphEeiZnoWvPuXciw" name="fileName">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             </ownedParameter>
-            <ownedParameter xmi:id="_xAaUgiphEeiZnoWvPuXciw" type="_w3paECphEeiZnoWvPuXciw" direction="return"/>
+            <ownedParameter xmi:id="_xAaUgiphEeiZnoWvPuXciw" type="_w3paECphEeiZnoWvPuXciw" direction="return">
+              <name xsi:nil="true"/>
+            </ownedParameter>
             <language>java</language>
-            <body>FileInputStream fileIn=new FileInputStream(&quot;output.dat&quot;);//input file name output.dat&#xD;
-     ObjectInputStream objectIn=new ObjectInputStream(fileIn);&#xD;
+            <body>FileInputStream fileIn = new FileInputStream(&quot;output.dat&quot;);//input file name output.dat&#xD;
+     ObjectInputStream objectIn = new ObjectInputStream(fileIn);&#xD;
      Theater object = (Theater) objectIn.readObject();&#xD;
      MemberIdFactory.retrieve(objectIn);&#xD;
+     TicketFactory.retrieve(objectIn);&#xD;
+     &#xD;
      objectIn.close();&#xD;
      fileIn.close();&#xD;
      return object;&#xD;
@@ -2669,6 +2995,10 @@ This class represents a schedule of shows for the theater&#xD;
         <packagedElement xmi:type="uml:Class" xmi:id="_w-heISphEeiZnoWvPuXciw" name="ClassNotFoundException"/>
         <packagedElement xmi:type="uml:Interface" xmi:id="_w-nkwCphEeiZnoWvPuXciw" name="Iterable"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_w_CbgCphEeiZnoWvPuXciw" name="RuntimeException"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_XGKH8CvgEeiBW7TUKJGXDg" name="Exception"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_U22-0CvgEeiBW7TUKJGXDg" name="math">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_U3htMCvgEeiBW7TUKJGXDg" name="BigDecimal"/>
       </packagedElement>
     </packagedElement>
     <profileApplication xmi:id="_wC_C8CphEeiZnoWvPuXciw">
@@ -2681,7 +3011,6 @@ This class represents a schedule of shows for the theater&#xD;
   <UMLLabProfile:TargetLanguage xmi:id="_wDFJkCphEeiZnoWvPuXciw" base_Package="_vy4KYCphEeiZnoWvPuXciw">
     <languageName>java</languageName>
   </UMLLabProfile:TargetLanguage>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_w2I-MCphEeiZnoWvPuXciw" base_Element="_w2HwESphEeiZnoWvPuXciw"/>
   <UMLLabProfile:Generics xmi:id="_w2pUgCphEeiZnoWvPuXciw" genericsValue="Client" base_Element="_w2nfUiphEeiZnoWvPuXciw"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_w2qioCphEeiZnoWvPuXciw" base_Element="_w2nfUiphEeiZnoWvPuXciw"/>
   <UMLLabProfile:Annotations xmi:id="_w2rwwCphEeiZnoWvPuXciw" base_Element="_w2nfUiphEeiZnoWvPuXciw">
@@ -2702,7 +3031,6 @@ This class represents a schedule of shows for the theater&#xD;
   <UMLLabProfile:Annotations xmi:id="_w3VRACphEeiZnoWvPuXciw" base_Element="_w3UC4SphEeiZnoWvPuXciw">
     <annotations xmi:id="_w3VRASphEeiZnoWvPuXciw" name="Override"/>
   </UMLLabProfile:Annotations>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_w3mWwCphEeiZnoWvPuXciw" base_Element="_w3lvsCphEeiZnoWvPuXciw"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_w3r2UCphEeiZnoWvPuXciw" base_Element="_w3rPQCphEeiZnoWvPuXciw"/>
   <UMLLabProfile:Generics xmi:id="_w3wu0CphEeiZnoWvPuXciw" genericsValue="Client" base_Element="_w3vgsCphEeiZnoWvPuXciw"/>
   <UMLLabProfile:Generics xmi:id="_w30ZMCphEeiZnoWvPuXciw" genericsValue="Customer" base_Element="_w3ykAiphEeiZnoWvPuXciw"/>
@@ -2733,8 +3061,6 @@ This class represents a schedule of shows for the theater&#xD;
   <UMLLabProfile:Reference xmi:id="_w_DpoCphEeiZnoWvPuXciw" base_Element="_w_CbgCphEeiZnoWvPuXciw"/>
   <UMLLabProfile:Generics xmi:id="_w_UIUCphEeiZnoWvPuXciw" genericsValue="Show" base_Element="_w_S6MCphEeiZnoWvPuXciw"/>
   <UMLLabProfile:Reference xmi:id="_w_V9gCphEeiZnoWvPuXciw" base_Element="_w_UvYCphEeiZnoWvPuXciw"/>
-  <UMLLabProfile:Generics xmi:id="_w_WkkCphEeiZnoWvPuXciw" genericsValue="Show" base_Element="_w_V9gSphEeiZnoWvPuXciw"/>
-  <UMLLabProfile:Generics xmi:id="_w_YZwCphEeiZnoWvPuXciw" genericsValue="Show" base_Element="_w_XysCphEeiZnoWvPuXciw"/>
   <UMLLabProfile:Generics xmi:id="_w_crMCphEeiZnoWvPuXciw" genericsValue="Ticket" base_Element="_w_cEICphEeiZnoWvPuXciw"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_w_jY4CphEeiZnoWvPuXciw" base_Element="_w_ix0CphEeiZnoWvPuXciw"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_w_knACphEeiZnoWvPuXciw" base_Element="_w_j_8CphEeiZnoWvPuXciw"/>
@@ -2770,7 +3096,7 @@ This class represents a schedule of shows for the theater&#xD;
   <UMLLabProfile:LegacyStyledElement xmi:id="_xAMSECphEeiZnoWvPuXciw" base_Element="_xALrASphEeiZnoWvPuXciw"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_xAM5ICphEeiZnoWvPuXciw" base_Element="_xAMSESphEeiZnoWvPuXciw"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_xANgMCphEeiZnoWvPuXciw" base_Element="_xAM5ISphEeiZnoWvPuXciw"/>
-  <UMLLabProfile:Generics xmi:id="_xAPVYCphEeiZnoWvPuXciw" genericsValue="Show, Integer" base_Element="_xAOuUCphEeiZnoWvPuXciw"/>
+  <UMLLabProfile:Generics xmi:id="_xAPVYCphEeiZnoWvPuXciw" genericsValue="LocalDate, Show" base_Element="_xAOuUCphEeiZnoWvPuXciw"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_xAP8cCphEeiZnoWvPuXciw" base_Element="_xAOuUCphEeiZnoWvPuXciw"/>
   <UMLLabProfile:Generics xmi:id="_xASYsCphEeiZnoWvPuXciw" genericsValue="LocalDate, ArrayList&lt;Ticket>" base_Element="_xARxoSphEeiZnoWvPuXciw"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_xAS_wSphEeiZnoWvPuXciw" base_Element="_xARxoSphEeiZnoWvPuXciw"/>
@@ -2799,4 +3125,16 @@ This class represents a schedule of shows for the theater&#xD;
   <UMLLabProfile:Reference xmi:id="_xBU6gCphEeiZnoWvPuXciw" base_Element="_xBUTcSphEeiZnoWvPuXciw"/>
   <UMLLabProfile:Reference xmi:id="_xBVhkCphEeiZnoWvPuXciw" base_Element="_xBU6gSphEeiZnoWvPuXciw"/>
   <UMLLabProfile:Reference xmi:id="_xBWvsCphEeiZnoWvPuXciw" base_Element="_xBWIoCphEeiZnoWvPuXciw"/>
+  <UMLLabProfile:Reference xmi:id="_U3jiYCvgEeiBW7TUKJGXDg" base_Element="_U3htMCvgEeiBW7TUKJGXDg"/>
+  <UMLLabProfile:Generics xmi:id="_XEgiICvgEeiBW7TUKJGXDg" genericsValue="Ticket" base_Element="_XEeF4CvgEeiBW7TUKJGXDg"/>
+  <UMLLabProfile:Annotations xmi:id="_XEq6MCvgEeiBW7TUKJGXDg" base_Element="_XEqTISvgEeiBW7TUKJGXDg">
+    <annotations xmi:id="_XEq6MSvgEeiBW7TUKJGXDg" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_XFDUsCvgEeiBW7TUKJGXDg" base_Element="_xAGygCphEeiZnoWvPuXciw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_XFINMCvgEeiBW7TUKJGXDg" base_Element="_XEqTISvgEeiBW7TUKJGXDg"/>
+  <UMLLabProfile:Reference xmi:id="_XGLWECvgEeiBW7TUKJGXDg" base_Element="_XGKH8CvgEeiBW7TUKJGXDg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_XGSDwSvgEeiBW7TUKJGXDg" base_Element="_XGSDwCvgEeiBW7TUKJGXDg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_XGUgACvgEeiBW7TUKJGXDg" base_Element="_XGT48CvgEeiBW7TUKJGXDg"/>
+  <UMLLabProfile:Reference xmi:id="_XGthkCvgEeiBW7TUKJGXDg" base_Element="_XGsTcCvgEeiBW7TUKJGXDg"/>
+  <UMLLabProfile:Patch xmi:id="_hy5-gCvgEeiBW7TUKJGXDg" base_Element="_w3khkCphEeiZnoWvPuXciw" patchText="@@ -242,16 +242,40 @@&#xA; Factory &#xA;+implements Serializable &#xA; %7B%0D%0A%09priv&#xA;" conflicting="false"/>
 </xmi:XMI>
