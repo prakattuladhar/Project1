@@ -550,10 +550,19 @@ public class Driver {
 
 
     private void payclient() {
-    	
-        System.out.print("Please enter the Client ID: ");
-        int clientNumber=keyboard.nextInt();
-        theater.getClientBalance(clientNumber);
+    	int clientNumber = 1;
+    	Client client = null;
+    	while(client==null && clientNumber != 0) {
+        System.out.print("Please enter the Client ID or enter 0 to cancel: ");
+        clientNumber=keyboard.nextInt();
+        client = theater.getClient(clientNumber);
+    	}
+    	if(clientNumber!=0) {
+        int clientBalance = client.getBalance();
+	        System.out.println("The currentBalance is: " + clientBalance + ".");
+	        System.out.print("How much do you want to pay?");
+	        client.payBalance(keyboard.nextInt());
+	    }
     }
 
 
