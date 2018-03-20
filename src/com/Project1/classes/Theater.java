@@ -246,16 +246,12 @@ public class Theater implements Serializable {
         return ticketList.getTicketsByDate(date);
     }
 
-    //takes in client number and amount and pay the client. Throws exception if client not found or balance amount is greater than balance
-    public void payClient(int clientNumber, int amount) throws Exception {
-       if(false){
-           throw new Exception("Not found");
-       }
+    //takes in client number and amount and pay the client. Assumes data checking.
+    public void payClient(int clientNumber, int amount){
        Client client = clientList.getClient(clientNumber);
        client.payBalance(amount);
     }
 	public Client getClient(int clientNumber) {
-		// TODO Auto-generated method stub
 		return clientList.getClient(clientNumber);
 	}
 }
