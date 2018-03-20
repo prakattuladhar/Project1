@@ -18,12 +18,13 @@ public class Ticket implements Serializable {
 	protected String showName;
 	protected LocalDate date;
 	
-	public Ticket(int serialNumber, int customerId, LocalDate date, BigDecimal price, int type) {
+	public Ticket(int serialNumber, int customerId, String showName, LocalDate date, BigDecimal price, int type) {
 		this.serialNumber = serialNumber;
 		this.customerId = customerId;
 		this.date = date;
 		this.price = price;
 		this.type = type;
+		this.showName = showName;
 	}
 	
 	// add get/set methods

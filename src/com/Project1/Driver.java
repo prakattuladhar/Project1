@@ -42,9 +42,9 @@ public class Driver {
             switch (option) {
                 case 0: {
                     System.out.print("Confirm exit program? Enter Y for yes: ");
-                    String opt;
-                    opt= keyboard.nextLine();
-                    if(opt.equalsIgnoreCase("Y")) {
+                    String exit;
+                    exit = keyboard.nextLine();
+                    if( exit.equalsIgnoreCase("Y") ) {
                         save();
                         System.out.println("Thank you for using");
                         System.exit(100);
@@ -62,7 +62,7 @@ public class Driver {
                     break;
                 }
                 case 3: {
-                    listClient();
+                    listClients();
                     break;
                 }
                 case 4: {
@@ -90,7 +90,7 @@ public class Driver {
                     break;
                 }
                 case 10: {
-                    listShow();
+                    listShows();
                     break;
                 }
                 case 11: {
@@ -109,15 +109,15 @@ public class Driver {
                     sellAdvanceTickets();
                     break;
                 }case 15:{
-                    sellStudentTicket();
+                    sellStudentTickets();
                     break;
                 }
                 case 16:{
-                    payclient();
+                    payClient();
                     break;
                 }
                 case 17:{
-                    printAllTicket();
+                    printAllTickets();
                     break;
                 }
                 case 18:{
@@ -222,11 +222,12 @@ public class Driver {
     		} catch (NumberFormatException | ArithmeticException e) {
     			System.out.println("Invalid Input: Please enter a valid price in format 0.00");
     		}
-    		// Allow user to return to menu
-//    		if ( line.equalsIgnoreCase("q") ) {
-//    			throw new RuntimeException();
-//    		}
-    	} while (response != null);
+    		if (response.compareTo( new BigDecimal("0.00") ) <= 0) {
+        		System.out.println("Invalid Input: Price must be greater than 0");
+        		response = null;
+        	}
+    	} while (response == null);
+    	
     	return response;
     }
     /**
@@ -318,7 +319,7 @@ public class Driver {
     /**
      * Lists information for every client
      */
-    private void listClient() {
+    private void listClients() {
     	Iterator<Client> iterator = theater.getClientIterator();
     	if ( !iterator.hasNext() ) {
     		System.out.println("No clients to display");
@@ -512,7 +513,7 @@ public class Driver {
     /**
      * Lists information for all shows
      */
-    private void listShow() {
+    private void listShows() {
     	Iterator<Show> iterator = theater.getShowIterator();
     	if ( !iterator.hasNext() ) {
     		System.out.println("No shows to display");
@@ -582,7 +583,7 @@ public class Driver {
      * 
      * Customer must show student ID to use student tickets
      */
-    private void sellStudentTicket() {
+    private void sellStudentTickets() {
     	System.out.print("Student ID must be shown to redeem ticket at door.\n" +
     			"continue purchasing student tickets?  Enter y for yes. "
     	);
@@ -626,7 +627,7 @@ public class Driver {
        }
     }
 
-    private void printAllTicket() {
+    private void printAllTickets() {
         System.out.print("Enter date of the show:");
         LocalDate date = getShowDate();
         Iterator<Ticket> iterator = theater.getTicketList(date);
@@ -644,26 +645,26 @@ public class Driver {
     }
 
 
-    private void payclient() {
+    private void payClient() {
     	int clientNumber = 1;
     	Client client = null;
-    	while(client==null && clientNumber != 0) {
+    	while(client == null && clientNumber != 0) {
         System.out.print("Please enter the Client ID or enter 0 to cancel: ");
-        clientNumber=keyboard.nextInt();
-	        if(theater.hasClient(clientNumber)) {
+        clientNumber = getInt();
+	        if( theater.hasClient(clientNumber) ) {
 	        	client = theater.getClient(clientNumber);
 	        }
 	        else {
-	        	clientNumber=0;
+	        	clientNumber = 0;
 	        }
     	}
-    	if(clientNumber!=0) {
-    		int clientBalance = client.getBalance();
-    		int payment;
+    	if (clientNumber != 0) {
+    		BigDecimal clientBalance = client.getBalance().setScale(2, RoundingMode.HALF_UP);
+    		BigDecimal payment;
 	        System.out.println("The current balance is: " + clientBalance + ".");
 	        System.out.print("How much do you want to pay?");
-	        payment=keyboard.nextInt();
-	        if(payment<=clientBalance && payment>=0) {
+	        payment = getPrice();
+	        if(payment.compareTo(clientBalance) <= 0) {   //  Prevents overpaying
 	        	client.payBalance(payment);
 	        	System.out.println("Client has been paid. Current balance is: " + clientBalance + ".");
 	        }
