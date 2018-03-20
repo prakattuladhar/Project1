@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_wC48UCphEeiZnoWvPuXciw" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_wC9NwCphEeiZnoWvPuXciw" source="codegen">
         <details xmi:id="_wC9NwSphEeiZnoWvPuXciw" key="codegenDirectory" value="/Project1/src"/>
-        <details xmi:id="_xKYv4CphEeiZnoWvPuXciw" key="AssociatedSourceCode" value="/Project1/src/com/Project1/Driver.java;595872691/1;/Project1/src/com/Project1/FileHandler.java;3985004147/1;/Project1/src/com/Project1/Main.java;1776166951/1;/Project1/src/com/Project1/classes/CardNumberMap.java;2524224449/1;/Project1/src/com/Project1/classes/Client.java;1049704691/1;/Project1/src/com/Project1/classes/ClientList.java;509601708/1;/Project1/src/com/Project1/classes/CreditCard.java;3947523728/1;/Project1/src/com/Project1/classes/Customer.java;2762344330/1;/Project1/src/com/Project1/classes/CustomerList.java;2699622370/1;/Project1/src/com/Project1/classes/Member.java;1652464937/1;/Project1/src/com/Project1/classes/MemberIdFactory.java;3160749066/1;/Project1/src/com/Project1/classes/Show.java;2527044839/1;/Project1/src/com/Project1/classes/ShowConflictException.java;2882076432/1;/Project1/src/com/Project1/classes/TicketFactory.java;1439188902/1;/Project1/src/com/Project1/classes/Theater.java;1980811347/1;/Project1/src/com/Project1/classes/Ticket.java;1332525657/1;/Project1/src/com/Project1/classes/ShowList.java;2932428846/1;/Project1/src/com/Project1/classes/TicketList.java;3971340219/1;"/>
+        <details xmi:id="_xKYv4CphEeiZnoWvPuXciw" key="AssociatedSourceCode" value="/Project1/src/com/Project1/Driver.java;2412518275/1;/Project1/src/com/Project1/FileHandler.java;3985004147/1;/Project1/src/com/Project1/Main.java;1776166951/1;/Project1/src/com/Project1/classes/CardNumberMap.java;2524224449/1;/Project1/src/com/Project1/classes/Client.java;1049704691/1;/Project1/src/com/Project1/classes/ClientList.java;509601708/1;/Project1/src/com/Project1/classes/CreditCard.java;3947523728/1;/Project1/src/com/Project1/classes/Customer.java;2762344330/1;/Project1/src/com/Project1/classes/CustomerList.java;2699622370/1;/Project1/src/com/Project1/classes/Member.java;1652464937/1;/Project1/src/com/Project1/classes/MemberIdFactory.java;3160749066/1;/Project1/src/com/Project1/classes/Show.java;2527044839/1;/Project1/src/com/Project1/classes/ShowConflictException.java;2882076432/1;/Project1/src/com/Project1/classes/TicketFactory.java;1439188902/1;/Project1/src/com/Project1/classes/Theater.java;1532136085/1;/Project1/src/com/Project1/classes/Ticket.java;1332525657/1;/Project1/src/com/Project1/classes/ShowList.java;2932428846/1;/Project1/src/com/Project1/classes/TicketList.java;3971340219/1;"/>
       </contents>
       <contents xmi:type="ecore:EAnnotation" xmi:id="_MvJIkCpmEeir2diEb23EkQ" source="preferences">
         <contents xmi:type="ecore:EAnnotation" xmi:id="_MvJvoCpmEeir2diEb23EkQ" source="com.yattasolutions.codegen.reverse">
@@ -1459,6 +1459,7 @@ If Show[1] != null, there is a conflict with the end date&#xD;
               <ownedParameter xmi:id="_XGb0wCvgEeiBW7TUKJGXDg" name="startDate" type="_w-bXgCphEeiZnoWvPuXciw"/>
               <ownedParameter xmi:id="_XGb0wSvgEeiBW7TUKJGXDg" name="endDate" type="_w-bXgCphEeiZnoWvPuXciw"/>
               <ownedParameter xmi:id="_XGb0wivgEeiBW7TUKJGXDg" direction="return">
+                <name xsi:nil="true"/>
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
               <ownedParameter xmi:id="_XGb0wyvgEeiBW7TUKJGXDg" name="ticketPrice" type="_U3htMCvgEeiBW7TUKJGXDg"/>
@@ -1535,7 +1536,9 @@ If Show[1] != null, there is a conflict with the end date&#xD;
  </body>
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_e3LzYCpjEeiZnoWvPuXciw" name="getClient" specification="_e3IwECpjEeiZnoWvPuXciw">
-              <ownedParameter xmi:id="_XGcb0CvgEeiBW7TUKJGXDg" type="_w2cgMCphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_XGcb0CvgEeiBW7TUKJGXDg" type="_w2cgMCphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <ownedParameter xmi:id="_XGcb0SvgEeiBW7TUKJGXDg" name="clientNumber">
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
@@ -1549,6 +1552,7 @@ If Show[1] != null, there is a conflict with the end date&#xD;
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
               <ownedParameter xmi:id="_XGZ_kivgEeiBW7TUKJGXDg" direction="return">
+                <name xsi:nil="true"/>
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
               <language>java</language>
@@ -1560,6 +1564,7 @@ If Show[1] != null, there is a conflict with the end date&#xD;
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
               </ownedParameter>
               <ownedParameter xmi:id="_XGamoivgEeiBW7TUKJGXDg" direction="return">
+                <name xsi:nil="true"/>
                 <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
               </ownedParameter>
               <language>java</language>
@@ -1568,7 +1573,9 @@ If Show[1] != null, there is a conflict with the end date&#xD;
             </ownedBehavior>
             <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XGb0xCvgEeiBW7TUKJGXDg" name="getTicketList" specification="_XEeF4CvgEeiBW7TUKJGXDg">
               <ownedParameter xmi:id="_XGb0xSvgEeiBW7TUKJGXDg" name="date" type="_w-bXgCphEeiZnoWvPuXciw"/>
-              <ownedParameter xmi:id="_XGb0xivgEeiBW7TUKJGXDg" type="_w-qoECphEeiZnoWvPuXciw" direction="return"/>
+              <ownedParameter xmi:id="_XGb0xivgEeiBW7TUKJGXDg" type="_w-qoECphEeiZnoWvPuXciw" direction="return">
+                <name xsi:nil="true"/>
+              </ownedParameter>
               <language>java</language>
               <body>return ticketList.getTicketsByDate(date);&#xD;
  </body>
@@ -2742,18 +2749,29 @@ This class represents a schedule of shows for the theater&#xD;
  	while(client==null &amp;&amp; clientNumber != 0) {&#xD;
      System.out.print(&quot;Please enter the Client ID or enter 0 to cancel: &quot;);&#xD;
      clientNumber=keyboard.nextInt();&#xD;
-     client = theater.getClient(clientNumber);&#xD;
+	        if(theater.hasClient(clientNumber)) {&#xD;
+	        	client = theater.getClient(clientNumber);&#xD;
+	        }&#xD;
+	        else {&#xD;
+	        	clientNumber=0;&#xD;
+	        }&#xD;
  	}&#xD;
  	if(clientNumber!=0) {&#xD;
-     int clientBalance = client.getBalance();&#xD;
-	        System.out.println(&quot;The currentBalance is: &quot; + clientBalance + &quot;.&quot;);&#xD;
+ 		int clientBalance = client.getBalance();&#xD;
+ 		int payment;&#xD;
+	        System.out.println(&quot;The current balance is: &quot; + clientBalance + &quot;.&quot;);&#xD;
 	        System.out.print(&quot;How much do you want to pay?&quot;);&#xD;
-	        client.payBalance(keyboard.nextInt());&#xD;
+	        payment=keyboard.nextInt();&#xD;
+	        if(payment&lt;=clientBalance) {&#xD;
+	        	client.payBalance(payment);&#xD;
+	        }&#xD;
 	    }&#xD;
  </body>
           </ownedBehavior>
           <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_U3mlsCvgEeiBW7TUKJGXDg" name="getPrice" specification="_U2_hsCvgEeiBW7TUKJGXDg">
-            <ownedParameter xmi:id="_U3mlsSvgEeiBW7TUKJGXDg" type="_U3htMCvgEeiBW7TUKJGXDg" direction="return"/>
+            <ownedParameter xmi:id="_U3mlsSvgEeiBW7TUKJGXDg" type="_U3htMCvgEeiBW7TUKJGXDg" direction="return">
+              <name xsi:nil="true"/>
+            </ownedParameter>
             <language>java</language>
             <body>String line;&#xD;
  	BigDecimal response = null;&#xD;
