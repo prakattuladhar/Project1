@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.*;
 import java.time.*;
 import java.time.format.*;
+import java.math.*;
 
 public class Driver {
 	
@@ -161,7 +162,7 @@ public class Driver {
                 "any session. If stored data is found, the user has the option to use it. The user may also invoke\n" +
                 "a command to load data, provided he/she has not yet issued any data-related commands in\n" +
                 "that session." +
-                "\n13.3. (This was “Help� in Iteration 1.) Sell regular tickets. Accept the quantity, customer id, credit" +
+                "\n13.3. (This was “Help� in Iteration 1.) Sell regular tickets. Accept the quantity, customer id, credit" +
                 " card number, and the date of the show. " +
                 "\n14.  Sell advance tickets. Accept the quantity, customer id, credit card number, and the date of the show." +
                 "\n15. 5. Sell student advance tickets. Accept the quantity, customer id, credit card number, and the date of the show." +
@@ -191,6 +192,24 @@ public class Driver {
 //    			throw new RuntimeException();
 //    		}
     	} while (response == -1);
+    	return response;
+    }
+    private BigDecimal getPrice() {
+    	String line;
+    	BigDecimal response = null;
+    	
+    	do {
+    		line = keyboard.nextLine();
+    		try {
+    			response = new BigDecimal(line).setScale(2, RoundingMode.HALF_UP);
+    		} catch (NumberFormatException | ArithmeticException e) {
+    			System.out.println("Invalid Input: Please enter a valid price in format 0.00");
+    		}
+    		// Allow user to return to menu
+//    		if ( line.equalsIgnoreCase("q") ) {
+//    			throw new RuntimeException();
+//    		}
+    	} while (response != null);
     	return response;
     }
     /**
@@ -421,6 +440,10 @@ public class Driver {
     private void addShow() {
     	System.out.print("Enter client id: ");
         int clientId = getInt();
+        if ( !theater.hasClient(clientId) ) {
+        	System.out.println("Client ID: " + clientId + " does not exist");
+        	return;
+        }
         
         System.out.print("Enter name of the show: ");
         String name = keyboard.nextLine();
@@ -430,6 +453,9 @@ public class Driver {
         
         System.out.print("Enter end date for show: ");
         LocalDate endDate = getShowDate();
+        
+        System.out.print("Enter ticket price: ");
+        BigDecimal price = getPrice();
         
         LocalDate currentDate = LocalDate.now();
         if (startDate.compareTo(currentDate) <= 0) {
@@ -443,7 +469,7 @@ public class Driver {
         }
         
         try {
-        	theater.addShow(clientId, name, startDate, endDate);
+        	theater.addShow(clientId, name, startDate, endDate, price);
         } catch (ShowConflictException se) {
         	System.out.println("Add Failed: ");
         	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
@@ -497,7 +523,7 @@ public class Driver {
 
     private void load() {
         try {
-            theater= FileHandler.readFromFile("output.dat");
+            theater = FileHandler.readFromFile("output.dat");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -507,20 +533,26 @@ public class Driver {
     }
 
     private void sellRegularTickets() {
-        System.out.print("How many tickets do you need?: ");
-        int quant=keyboard.nextInt();
-        System.out.print("Enter customer id: ");
-        int cusNum=keyboard.nextInt();
-        System.out.print("Credit card number: ");
-        int cardNum=keyboard.nextInt();
-        System.out.print("Enter date of the show:");
-        LocalDate date = getShowDate();
+       try {
+           System.out.print("How many tickets do you need?: ");
 
-        theater.addTicket(Ticket.REGULAR, quant,cusNum,cardNum,date);
+           int quant = keyboard.nextInt();
+           System.out.print("Enter customer id: ");
+           int cusNum = keyboard.nextInt();
+           System.out.print("Credit card number: ");
+           int cardNum = keyboard.nextInt();
+           System.out.print("Enter date of the show:");
+           LocalDate date = getShowDate();
+
+           theater.addTicket(Ticket.REGULAR, quant, cusNum, cardNum, date);
+       }catch (Exception e){
+           System.out.print("Something weng wrong.");
+       }
 
     }
     private void sellStudentTicket() {
-        System.out.print("How many tickets do you need?: ");
+        try{
+            System.out.print("How many tickets do you need?: ");
         int quant=keyboard.nextInt();
         System.out.print("Enter customer id: ");
         int cusNum=keyboard.nextInt();
@@ -530,22 +562,43 @@ public class Driver {
         LocalDate date = getShowDate();
 
         theater.addTicket(Ticket.ADVANCE, quant,cusNum,cardNum,date);
+    }catch (Exception e){
+        System.out.print("Something weng wrong.");
+    }
     }
 
     private void sellAdvanceTickets() {
-        System.out.print("How many tickets do you need?: ");
-        int quant=keyboard.nextInt();
-        System.out.print("Enter customer id: ");
-        int cusNum=keyboard.nextInt();
-        System.out.print("Credit card number: ");
-        int cardNum=keyboard.nextInt();
-        System.out.print("Enter date of the show:");
-        LocalDate date = getShowDate();
+       try {
+           System.out.print("How many tickets do you need?: ");
+           int quant = keyboard.nextInt();
+           System.out.print("Enter customer id: ");
+           int cusNum = keyboard.nextInt();
+           System.out.print("Credit card number: ");
+           int cardNum = keyboard.nextInt();
+           System.out.print("Enter date of the show:");
+           LocalDate date = getShowDate();
 
-        theater.addTicket(Ticket.STUDENT_ADVANCE, quant,cusNum,cardNum,date);
+           theater.addTicket(Ticket.STUDENT_ADVANCE, quant, cusNum, cardNum, date);
+       }catch (Exception e){
+           System.out.print("Something weng wrong.");
+       }
     }
 
     private void printAllTicket() {
+        System.out.print("Enter date of the show:");
+        LocalDate date = getShowDate();
+        Iterator<Ticket> iterator = theater.getTicketList(date);
+        if ( !iterator.hasNext() ) {
+            System.out.println("No tickets to display");
+        }
+        while ( iterator.hasNext() ) {
+            Ticket ticket = iterator.next();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+            System.out.print(ticket.toString());
+            System.out.println("\n---------------------------------------");
+
+        }
+        System.out.println("\n---------------------------------------");
     }
 
 
