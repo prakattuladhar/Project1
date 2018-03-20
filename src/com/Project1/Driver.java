@@ -611,10 +611,14 @@ public class Driver {
         client = theater.getClient(clientNumber);
     	}
     	if(clientNumber!=0) {
-        int clientBalance = client.getBalance();
-	        System.out.println("The currentBalance is: " + clientBalance + ".");
+    		int clientBalance = client.getBalance();
+    		int payment;
+	        System.out.println("The current balance is: " + clientBalance + ".");
 	        System.out.print("How much do you want to pay?");
-	        client.payBalance(keyboard.nextInt());
+	        payment=keyboard.nextInt();
+	        if(payment<=clientBalance) {
+	        	client.payBalance(payment);
+	        }
 	    }
     }
 
