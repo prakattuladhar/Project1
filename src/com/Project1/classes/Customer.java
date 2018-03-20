@@ -14,6 +14,7 @@ import java.util.*;
 public class Customer extends Member implements Serializable {
 	private static final long serialVersionUID = 1L;
     private ArrayList<CreditCard> creditCards = new ArrayList<CreditCard>(5);
+    private ArrayList<Ticket> tickets = new ArrayList<Ticket>(5);
     /**
      * Constructor
      * @param name		name of customer
@@ -34,6 +35,19 @@ public class Customer extends Member implements Serializable {
     public boolean addCreditCard(CreditCard card){
     	creditCards.add(card);
     	return true;
+    }
+    /**
+     * See if customer has card with specific card number
+     * @param cardNumber
+     * @return true if customer has credit card with same number, false if not
+     */
+    public boolean hasCreditCard(int cardNumber) {
+    	for(CreditCard card : creditCards) {
+    		if (card.getNumber() == cardNumber) {
+    			return true;
+    		}
+    	}
+    	return false;
     }
     /**
      * Removes a credit card associated with customer
@@ -74,6 +88,9 @@ public class Customer extends Member implements Serializable {
     /**
      * String representation of customer's fields and credit cards
      */
+    public void addTicket(Ticket ticket) {
+    	tickets.add(ticket);
+    }
     @Override
     public String toString() {
     	// Formats credit card information

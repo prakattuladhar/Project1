@@ -3,16 +3,27 @@ package com.Project1.classes;
 import java.io.*;
 import java.util.*;
 import java.time.*;
+import java.math.*;
 import com.Project1.classes.Ticket;
 
 /**
- * 
+ *
+ * @version 2.0
+ *
+ * This class represents a theater with a single stage that may be rented out
+ * for one show at a time.  One show may last multiple days or weeks, but on
+ * any given day there may only be one show playing.
+ *
+ * Shows are put on by clients who pay to rent the theater and the profits for
+ * a show are split between the theater and the client financing a particular
+ * show.
+ *
  * @author Prakat Tuladhar
  *
  */
 public class Theater implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
    private CustomerList customerList = CustomerList.instance();
    private ClientList clientList = new ClientList();
    private ShowList showList = new ShowList();
@@ -28,8 +39,8 @@ public class Theater implements Serializable {
 
    }
    /**
-    * Gets instance of Theater object
-    * @return
+    * Gets an instance of the Theater object
+    * @return theater instance
     */
    public static Theater getInstance(){
        if(theater == null)
@@ -37,7 +48,7 @@ public class Theater implements Serializable {
        return theater;
    }
    /**
-    * 
+    *
     * @param object
     */
    public void setTheater(Theater object){
@@ -46,7 +57,7 @@ public class Theater implements Serializable {
 
    // Client methods
    /**
-    * adds a new client
+    * Adds a new client
     * @param name
     * @param address
     * @param phone
@@ -61,20 +72,20 @@ public class Theater implements Serializable {
 	   }
    }
    /**
-    * checks to see if client exist for given ID number
+    * Checks to see if client exist for given ID number
     * @param clientId
     * @return true if clientList contains client, false otherwise
     */
-   public boolean hasClient(int clientId) {
+   public boolean hasClient(int clientId){
 	   return clientList.contains(clientId);
    }
    /**
-    * removes a client
+    * Removes a client from the list of clients
     * @param id
-    * @return
+    * @return the client that was removed
     */
    public Client removeClient(int id){
-	   
+
        try {
     	   return clientList.remove(id, showList);
        } catch (RuntimeException re) {
@@ -82,13 +93,13 @@ public class Theater implements Serializable {
        }
    }
    /**
-    * 
+    * Gets an iterator for all clients in the theater
     * @return iterator of clients
     */
    public Iterator<Client> getClientIterator(){
        return clientList.iterator();
    }
-   
+
    // Customer methods
     /**
      * Adds a new customer
@@ -109,7 +120,7 @@ public class Theater implements Serializable {
        return customerList.add(customer);
    }
    /**
-    * checks to see if customer exists for given ID number
+    * Checks to see if customer exists for given ID number
     * @param customerId
     * @return true if list contains customer, false otherwise
     */
@@ -135,16 +146,16 @@ public class Theater implements Serializable {
        return null;
    }
    /**
-    * 
+    * Gets an iterator for the list of all customers
     * @return iterator of customers
     */
    public Iterator<Customer> getCustomerIterator(){
        return customerList.iterator();
    }
-   
+
    // CreditCard methods
    /**
-    * 
+    * Adds a credit card associated with a particular customer
     * @param customerId
     * @param cardNumber
     * @param date
@@ -162,7 +173,10 @@ public class Theater implements Serializable {
 	   cardNumbers.addCard(cardNumber, card);
    }
    /**
-    * 
+    * Deletes a credit card for a particular customer
+    * Customers must of have at least one credit card,
+    * so this method will not delete a credit card if
+    * it is the customer's only credit card
     * @param customerId
     * @param cardNumber
     */
@@ -180,18 +194,21 @@ public class Theater implements Serializable {
    }
    // Show methods
    /**
-    * 
+    * Adds a show to the calendar of shows.
+    * Show dates my not overlap, and each
+    * show must be associated wit a specific
+    * client
     * @param clientId
     * @param name
     * @param startDate
     * @param endDate
-    * @return
+    * @return true if show added, false otherwise
     */
-   public boolean addShow(int clientId, String name, LocalDate startDate, LocalDate endDate){
+   public boolean addShow(int clientId, String name, LocalDate startDate, LocalDate endDate, BigDecimal ticketPrice){
 	   if ( !clientList.contains(clientId) ) {
 		   throw new RuntimeException("Client ID: " + clientId + " does not exist");
 	   }
-	   Show show = new Show(clientId, name, startDate, endDate);
+	   Show show = new Show(clientId, name, startDate, endDate, ticketPrice);
        try {
     	   showList.add(show);
        } catch (ShowConflictException se) {
@@ -200,60 +217,68 @@ public class Theater implements Serializable {
        return true;
    }
    /**
-    * 
-    * @return
+    * Gets an iterator for all shows on the calendar
+    * @return iterator<Show>
     */
    public Iterator<Show> getShowIterator(){
        return showList.iterator();
    }
 
+   /**
+    *
+    * @param ticketType
+    * @param:quant
+    * @param:cusNum
+    * @param:cardNum
+    * @param date
+    * @throws Exception
+    */
+   public void addTicket(int ticketType, int quantity, int customerId, int cardNumber, LocalDate date) throws Exception {
 
-   //accepts customers info and type of ticket
-   public void addTicket(int ticketType, int quant, int cusNum, int cardNum,LocalDate date) throws Exception{
-
-       //check if cardNumber and  existsbefor this function can return anything
-        if(false){
-            throw new Exception("Not found");
+       //check if cardNumber and  exists before this function can return anything
+	   Customer customer = customerList.getCustomer(customerId);
+	   if (customer == null) {
+		   throw new Exception("Customer ID: " + customerId + " does not exist");
+	   }
+        if( !customer.hasCreditCard(cardNumber) ){
+            throw new Exception("Customer does not have credit card number: " + cardNumber);
         }
 
-        if(ticketType==Ticket.REGULAR){
-            for(int i=0;i<quant;i++) {
-                Ticket ticket = ticketFactory.createTicket(cusNum, date, Ticket.REGULAR);
-                ticketList.add(ticket);
-            }
+        Show show = showList.getShowByDate(date);
+        if (show == null) {
+        	throw new Exception("No show on this date");
         }
-       else if(ticketType==Ticket.ADVANCE){
-           for(int i=0;i<quant;i++) {
-               Ticket ticket = ticketFactory.createTicket(cusNum, date, Ticket.REGULAR);
-               ticketList.add(ticket);
-           }
-       }
-       else if(ticketType==Ticket.STUDENT_ADVANCE){
-           for(int i=0;i<quant;i++) {
-               Ticket ticket = ticketFactory.createTicket(cusNum, date, Ticket.REGULAR);
-               ticketList.add(ticket);
-           }
-       }else {
-            System.out.print("Ticket type not found.");
+        String showName = show.getName();
+
+        BigDecimal basePrice = show.getBaseTicketPrice();
+        BigDecimal revenue = new BigDecimal("0.00");
+
+        for(int i = 0; i < quantity; i++) {
+        	Ticket ticket = ticketFactory.createTicket(customerId, showName, date, basePrice, ticketType);
+        	ticketList.add(ticket);
+        	customer.addTicket(ticket);
+        	// calculate revenue from tickets
+        	BigDecimal price = ticket.getPrice();
+        	revenue = revenue.add(price);
         }
+        int clientId = show.getClientId();
+        Client client = clientList.getClient(clientId);
+        client.updateBalance(revenue);
    }
 
 
-   //should return array of ticket list
+   // returns iterator of ticket list
     public Iterator<Ticket> getTicketList(LocalDate date) {
         return ticketList.getTicketsByDate(date);
     }
 
-    //takes in client number and amount and pay the client. Throws exception if client not found or balance amount is greater than balance
-    public void payClient(int clientNumber, int amount) throws Exception {
-       if(false){
-           throw new Exception("Not found");
 
-       }
-       Client client=clientList.getClient(clientNumber);
+    //takes in client number and amount and pay the client. Assumes data checking.
+    public void payClient(int clientNumber, BigDecimal amount){
+       Client client = clientList.getClient(clientNumber);
        client.payBalance(amount);
     }
-    public int getClientBalance(int clientNumber) {
-    	return clientList.getClient(clientNumber).getBalance();
-    }
+	public Client getClient(int clientNumber) {
+		return clientList.getClient(clientNumber);
+	}
 }

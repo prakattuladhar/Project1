@@ -1,6 +1,7 @@
 package com.Project1.classes;
 
 import java.io.*;
+import java.math.*;
 
 /**
  * @version 1.0
@@ -13,7 +14,7 @@ import java.io.*;
  */
 public class Client extends Member implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int balance;
+	private BigDecimal balance;
 	/**
 	 * Constructor
 	 * @param name		name of client
@@ -22,16 +23,19 @@ public class Client extends Member implements Serializable {
 	 */
     public Client(String name, String address, int phone) {
         super(name, address, phone);
-        balance = 0;
+        balance = new BigDecimal("0.00");
     }
     /**
      * Gets balance on client's account
      * @return balance
      */
-    public int getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
-    public void payBalance(int amount){
-        balance-=amount;
+    public void updateBalance(BigDecimal revenue){
+        balance = balance.add(revenue).setScale(2, RoundingMode.HALF_UP);
+    }
+    public void payBalance(BigDecimal amount){
+        balance = balance.subtract(amount).setScale(2, RoundingMode.HALF_UP);
     }
 }

@@ -8,12 +8,23 @@ import java.io.IOException;
 import java.util.*;
 import java.time.*;
 import java.time.format.*;
-
+import java.math.*;
+/**
+ * @version 2.0
+ * 
+ * This class serves as a command line-based user interface for our
+ * Theater application
+ * 
+ * @author Prakat Tuladhar
+ *
+ */
 public class Driver {
 	
     private Scanner keyboard = new Scanner(System.in);
     private Theater theater = Theater.getInstance();
-
+    /**
+     * Runs the event loop that listens for user input
+     */
     public void start() {
         int option;
         do {
@@ -31,9 +42,9 @@ public class Driver {
             switch (option) {
                 case 0: {
                     System.out.print("Confirm exit program? Enter Y for yes: ");
-                    String opt;
-                    opt= keyboard.nextLine();
-                    if(opt.equalsIgnoreCase("Y")) {
+                    String exit;
+                    exit = keyboard.nextLine();
+                    if( exit.equalsIgnoreCase("Y") ) {
                         save();
                         System.out.println("Thank you for using");
                         System.exit(100);
@@ -51,7 +62,7 @@ public class Driver {
                     break;
                 }
                 case 3: {
-                    listClient();
+                    listClients();
                     break;
                 }
                 case 4: {
@@ -79,7 +90,7 @@ public class Driver {
                     break;
                 }
                 case 10: {
-                    listShow();
+                    listShows();
                     break;
                 }
                 case 11: {
@@ -98,15 +109,15 @@ public class Driver {
                     sellAdvanceTickets();
                     break;
                 }case 15:{
-                    sellStudentTicket();
+                    sellStudentTickets();
                     break;
                 }
                 case 16:{
-                    payclient();
+                    payClient();
                     break;
                 }
                 case 17:{
-                    printAllTicket();
+                    printAllTickets();
                     break;
                 }
                 case 18:{
@@ -120,9 +131,9 @@ public class Driver {
             }
         } while (true);
     }
-
-
-
+    /**
+     * Prints list of commands user may use
+     */
     private void printOptions() {
         System.out.print("----------------------------------------------");
         System.out.println("\n0. Exit Application\n1. Add Client\n2. Remove Client\n3. List all CLients\n" +
@@ -131,7 +142,9 @@ public class Driver {
                 "\n14. Sell advance ticekts.\n15. Sell student tickets.\n16. Pay client." +
                 "\n17. List all tickets.\n18. Print help.");
     }
-
+    /**
+     * Prints additional information about the commands user may use
+     */
     private void printHelp() {
         System.out.print("----------------------------------------------");
         System.out.println("\n0. Exit the Application. Store the data on disk and quit the application." +
@@ -194,10 +207,34 @@ public class Driver {
     	return response;
     }
     /**
+     * Gets number representing a monetary value from the user
+     * BigDecimal is used for more accurate rounding
+     * @return BigDecimal price
+     */
+    private BigDecimal getPrice() {
+    	String line;
+    	BigDecimal response = null;
+    	
+    	do {
+    		line = keyboard.nextLine();
+    		try {
+    			response = new BigDecimal(line).setScale(2, RoundingMode.HALF_UP);
+    		} catch (NumberFormatException | ArithmeticException e) {
+    			System.out.println("Invalid Input: Please enter a valid price in format 0.00");
+    		}
+    		if (response.compareTo( new BigDecimal("0.00") ) <= 0) {
+        		System.out.println("Invalid Input: Price must be greater than 0");
+        		response = null;
+        	}
+    	} while (response == null);
+    	
+    	return response;
+    }
+    /**
      * Gets a show date entered by user
      * repeats until date is successfully entered
      * @param: format
-     * @return
+     * @return LocalDate date
      * @throws Exception
      */
     private LocalDate getShowDate() {
@@ -215,7 +252,7 @@ public class Driver {
     /**
      * Gets an expiration date entered by user
      * repeats until date successfully entered
-     * @return
+     * @return LocalDate expiration date
      */
     private YearMonth getExpirationDate() {
     	do {
@@ -282,7 +319,7 @@ public class Driver {
     /**
      * Lists information for every client
      */
-    private void listClient() {
+    private void listClients() {
     	Iterator<Client> iterator = theater.getClientIterator();
     	if ( !iterator.hasNext() ) {
     		System.out.println("No clients to display");
@@ -416,7 +453,9 @@ public class Driver {
         System.out.println("Credit card removed");
     }
     /**
-     * 
+     * Adds a show for a client to the calendar.
+     * Show may not be added before current date.
+     * Two shows may not occupy the same date range
      */
     private void addShow() {
     	System.out.print("Enter client id: ");
@@ -435,6 +474,9 @@ public class Driver {
         System.out.print("Enter end date for show: ");
         LocalDate endDate = getShowDate();
         
+        System.out.print("Enter ticket price: ");
+        BigDecimal price = getPrice();
+        
         LocalDate currentDate = LocalDate.now();
         if (startDate.compareTo(currentDate) <= 0) {
         	System.out.println("Show must start on or after current date");
@@ -447,7 +489,7 @@ public class Driver {
         }
         
         try {
-        	theater.addShow(clientId, name, startDate, endDate);
+        	theater.addShow(clientId, name, startDate, endDate, price);
         } catch (ShowConflictException se) {
         	System.out.println("Add Failed: ");
         	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
@@ -468,10 +510,10 @@ public class Driver {
         }
         System.out.println("Show added");
     }
-
-
-    //prints all the shows
-    private void listShow() {
+    /**
+     * Lists information for all shows
+     */
+    private void listShows() {
     	Iterator<Show> iterator = theater.getShowIterator();
     	if ( !iterator.hasNext() ) {
     		System.out.println("No shows to display");
@@ -488,8 +530,9 @@ public class Driver {
         }
         System.out.println("\n---------------------------------------");
     }
-
-
+    /**
+     * Serializes and saves the theater and factory objects to disk
+     */
     private void save() {
         try {
             FileHandler.writeToFile(theater);
@@ -498,10 +541,12 @@ public class Driver {
         }
         System.out.println("Save succesful");
     }
-
+    /**
+     * De-serializes and loads the theater and factory objects from disk
+     */
     private void load() {
         try {
-            theater= FileHandler.readFromFile("output.dat");
+            theater = FileHandler.readFromFile("output.dat");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -509,60 +554,80 @@ public class Driver {
         }
         System.out.println("Loaded file successfully");
     }
-
+    /**
+     * Allows a customer to by one or more regular tickets for specific date
+     * May not buy tickets if no show scheduled, or using credit card not on
+     * file
+     */
     private void sellRegularTickets() {
        try {
-           System.out.print("How many tickets do you need?: ");
-
-           int quant = keyboard.nextInt();
            System.out.print("Enter customer id: ");
-           int cusNum = keyboard.nextInt();
+           int customerId = getInt();
            System.out.print("Credit card number: ");
-           int cardNum = keyboard.nextInt();
+           int cardNumber = getInt();
            System.out.print("Enter date of the show:");
            LocalDate date = getShowDate();
+           System.out.print("How many tickets do you need?: ");
+           int quantity = getInt();
 
-           theater.addTicket(Ticket.REGULAR, quant, cusNum, cardNum, date);
-       }catch (Exception e){
-           System.out.print("Something weng wrong.");
+           theater.addTicket(Ticket.REGULAR, quantity, customerId, cardNumber, date);
+       } catch (Exception e ) {
+           System.out.print( e.getMessage() );
        }
 
     }
-    private void sellStudentTicket() {
-        try{
+    /**
+     * Allows a customer to by one or more regular tickets for specific date
+     * May not buy tickets if no show scheduled, or using credit card not on
+     * file
+     * 
+     * Customer must show student ID to use student tickets
+     */
+    private void sellStudentTickets() {
+    	System.out.print("Student ID must be shown to redeem ticket at door.\n" +
+    			"continue purchasing student tickets?  Enter y for yes. "
+    	);
+    	String response = keyboard.nextLine();
+    	if ( !response.toLowerCase().contentEquals("y") ) {
+    		return;
+    	}
+    	
+        try {
+        	System.out.print("Enter customer id: ");
+            int customerId = getInt();
+            System.out.print("Credit card number: ");
+            int cardNumber = getInt();
+            System.out.print("Enter date of the show:");
+            LocalDate date = getShowDate();
             System.out.print("How many tickets do you need?: ");
-        int quant=keyboard.nextInt();
-        System.out.print("Enter customer id: ");
-        int cusNum=keyboard.nextInt();
-        System.out.print("Credit card number: ");
-        int cardNum=keyboard.nextInt();
-        System.out.print("Enter date of the show:");
-        LocalDate date = getShowDate();
+            int quantity = getInt();
 
-        theater.addTicket(Ticket.ADVANCE, quant,cusNum,cardNum,date);
-    }catch (Exception e){
-        System.out.print("Something weng wrong.");
+            theater.addTicket(Ticket.STUDENT_ADVANCE, quantity, customerId, cardNumber, date);
+        } catch (Exception e) {
+        	 System.out.print( e.getMessage() );
+        }
     }
-    }
-
+    /**
+     * 
+     */
     private void sellAdvanceTickets() {
        try {
-           System.out.print("How many tickets do you need?: ");
-           int quant = keyboard.nextInt();
-           System.out.print("Enter customer id: ");
-           int cusNum = keyboard.nextInt();
+    	   System.out.print("Enter customer id: ");
+           int customerId = getInt();
            System.out.print("Credit card number: ");
-           int cardNum = keyboard.nextInt();
+           int cardNumber = getInt();
            System.out.print("Enter date of the show:");
            LocalDate date = getShowDate();
+           System.out.print("How many tickets do you need?: ");
+           int quantity = getInt();
 
-           theater.addTicket(Ticket.STUDENT_ADVANCE, quant, cusNum, cardNum, date);
+           theater.addTicket(Ticket.STUDENT_ADVANCE, quantity, customerId, cardNumber, date);
        }catch (Exception e){
            System.out.print("Something weng wrong.");
        }
     }
 
-    private void printAllTicket() {
+    private void printAllTickets() {
         System.out.print("Enter date of the show:");
         LocalDate date = getShowDate();
         Iterator<Ticket> iterator = theater.getTicketList(date);
@@ -580,11 +645,33 @@ public class Driver {
     }
 
 
-    private void payclient() {
-    	
-        System.out.print("Please enter the Client ID: ");
-        int clientNumber=keyboard.nextInt();
-        theater.getClientBalance(clientNumber);
+    private void payClient() {
+    	int clientNumber = 1;
+    	Client client = null;
+    	while(client == null && clientNumber != 0) {
+        System.out.print("Please enter the Client ID or enter 0 to cancel: ");
+        clientNumber = getInt();
+	        if( theater.hasClient(clientNumber) ) {
+	        	client = theater.getClient(clientNumber);
+	        }
+	        else {
+	        	clientNumber = 0;
+	        }
+    	}
+    	if (clientNumber != 0) {
+    		BigDecimal clientBalance = client.getBalance().setScale(2, RoundingMode.HALF_UP);
+    		BigDecimal payment;
+	        System.out.println("The current balance is: " + clientBalance + ".");
+	        System.out.print("How much do you want to pay?");
+	        payment = getPrice();
+	        if(payment.compareTo(clientBalance) <= 0) {   //  Prevents overpaying
+	        	client.payBalance(payment);
+	        	System.out.println("Client has been paid. Current balance is: " + clientBalance + ".");
+	        }
+	        else {
+	        	System.out.println("Incorrect payment entered. Returning to Menu.");
+	        }
+	    }
     }
 
 
