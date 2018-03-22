@@ -5,7 +5,7 @@ import java.util.*;
 import java.time.*;
 
 /**
- * @version 1.0
+ * @version 2.0
  * 
  * This class represents a schedule of shows for the theater
  * 

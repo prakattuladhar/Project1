@@ -6,7 +6,7 @@ import java.time.*;
 import java.math.*;
 
 /**
- * @version 1.0
+ * @version 2.0
  * 
  * This class represents a show or play that is performed at the theater
  * 
@@ -47,7 +47,7 @@ public class Show implements Serializable {
     }
     /**
      * Gets name of client
-     * @return name		client name
+     * @return name	client name
      */
     public String getName() {
         return name;

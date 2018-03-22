@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 /**
- * @version 1.0
+ * @version 2.0
  * 
  * This class represents a customer
  * 

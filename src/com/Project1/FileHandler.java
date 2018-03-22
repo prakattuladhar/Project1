@@ -6,7 +6,10 @@ import com.Project1.classes.TicketFactory;
 
 import java.io.*;
 /**
- * Class to read and write Theater object to file.
+ * @version 2.0
+ * 
+ * Class to read and write Theater, MemberIdFacotyr, and TicketFactory objects to file:
+ * output.dat
  * 
  * @author Prakat Tuladhar
  *
@@ -14,8 +17,11 @@ import java.io.*;
 public class FileHandler  {
 
 
-    //writes object to file
-    //@params: (Object: Theater)
+    /**
+     * Writes theater/MemberIdFactory/TicketFactory objects to file
+     * @param object theater
+     * @throws IOException
+     */
     public static void writeToFile(Theater object) throws IOException {
         FileOutputStream fileOut = new FileOutputStream("output.dat");//output file name output.dat
         ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
@@ -28,8 +34,14 @@ public class FileHandler  {
 
     }
 
-    //reads object form file
-    //return Theater object
+    /**
+     * Reads theater/MemberIdFactory/TicketFactory from file
+     * @param fileName
+     * @return
+     * @throws FileNotFoundException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public static Theater readFromFile(String fileName) throws FileNotFoundException, IOException, ClassNotFoundException {
         FileInputStream fileIn = new FileInputStream("output.dat");//input file name output.dat
         ObjectInputStream objectIn = new ObjectInputStream(fileIn);

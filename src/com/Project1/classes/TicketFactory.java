@@ -6,20 +6,29 @@ import java.io.Serializable;
 import java.time.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.math.*;
-
+/**
+ * @version 2.0
+ * 
+ * Implements the factory pattern to create tickets of the correct
+ * type and adjusts price based on show's base ticket price
+ * 
+ * @author Colin Quinn
+ *
+ */
 public class TicketFactory implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private AtomicInteger serialNumberGenerator;
 	private static TicketFactory factory;
 	/**
+	 * Supports Singleton Pattern
 	 * Initializes Atomic Integer used to generate ticket serial numbers
 	 */
 	private TicketFactory() {
 		serialNumberGenerator = new AtomicInteger(0);
 	}
 	/**
-	 * 
-	 * @return
+	 * Supports Singelton Pattern
+	 * @return TicketFacotry
 	 */
 	public static TicketFactory instance() {
 		if (factory == null) {
@@ -28,7 +37,7 @@ public class TicketFactory implements Serializable {
 		return factory;
 	}
 	/**
-	 * Creates tickets
+	 * Creates tickets of appropriate type and adjusts price of ticket accordingly
 	 * @param customerId
 	 * @param date
 	 * @param type
