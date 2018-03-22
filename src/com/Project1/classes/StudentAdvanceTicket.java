@@ -3,7 +3,14 @@ package com.Project1.classes;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
-
+/**
+ * @version 2.0
+ * 
+ * This class represents a ticket available to students
+ * 
+ * @author Colin Quinn
+ *
+ */
 public class StudentAdvanceTicket extends Ticket{
 	private static final long serialVersionUID = 1L;
 	/**
@@ -24,7 +31,9 @@ public class StudentAdvanceTicket extends Ticket{
 	public void computePrice(BigDecimal basePrice) {
 		price = basePrice.multiply( new BigDecimal("50.0") ).divide( new BigDecimal("100.0"), 2, RoundingMode.HALF_UP );
 	}
-	
+	/**
+	 * String representation of Student Advance Ticket
+	 */
 	@Override
 	public String toString() {
 		return super.toString() + "\n*Student Advance Ticket";

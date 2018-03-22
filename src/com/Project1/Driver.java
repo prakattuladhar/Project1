@@ -656,7 +656,8 @@ public class Driver {
         }
     }
     /**
-     * 
+     * Sells advance tickets.  Advance tickets must be bought at least
+     * 1 day in advance
      */
     private void sellAdvanceTickets() {
        try {
@@ -697,7 +698,9 @@ public class Driver {
            System.out.print("Something weng wrong.");
        }
     }
-
+    /**
+     * Prints all tickets for a given date
+     */
     private void printAllTickets() {
         System.out.print("Enter date of the show:");
         LocalDate date = getShowDate();
@@ -717,8 +720,10 @@ public class Driver {
         }
         System.out.println("\n---------------------------------------");
     }
-
-
+    /**
+     * Pays the client an amount entered and subracts that amount from the
+     * client's balance
+     */
     private void payClient() {
     	int clientNumber = 1;
     	Client client = null;
@@ -747,7 +752,5 @@ public class Driver {
 	        }
 	    }
     }
-
-
 
 }

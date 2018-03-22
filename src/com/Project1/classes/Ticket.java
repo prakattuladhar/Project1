@@ -4,7 +4,14 @@ import java.io.Serializable;
 import java.util.*;
 import java.time.*;
 import java.math.*;
-
+/**
+ * @verision 2.0
+ * 
+ * This class represents a ticket to a show
+ * 
+ * @author Colin Quinn
+ *
+ */
 public class Ticket implements Serializable {
 	private static final long serialVersionUID = 1L;
 	public static final int REGULAR = 1;
@@ -17,7 +24,13 @@ public class Ticket implements Serializable {
 	protected int type;
 	protected String showName;
 	protected LocalDate date;
-	
+	/**
+	 * Constructor
+	 * @param serialNumber
+	 * @param customerId
+	 * @param showName
+	 * @param date
+	 */
 	public Ticket(int serialNumber, int customerId, String showName, LocalDate date) {
 		this.serialNumber = serialNumber;
 		this.customerId = customerId;
@@ -26,14 +39,24 @@ public class Ticket implements Serializable {
 		this.type = Ticket.REGULAR;
 	}
 	
-	// add get/set methods
+	/**
+	 * Gets date of ticket
+	 * @return date
+	 */
 	public LocalDate getDate() {
 		return date;
 	}
-	
+	/**
+	 * Gets price of ticket
+	 * @return price
+	 */
 	public BigDecimal getPrice() {
 		return price;
 	}
+	/**
+	 * Allows price to be set by ticket factory
+	 * @param basePrice
+	 */
 	public void computePrice(BigDecimal basePrice) {
 		price = basePrice.setScale(2, RoundingMode.HALF_UP);
 	}

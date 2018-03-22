@@ -32,7 +32,9 @@ public class AdvanceTicket extends Ticket {
 	public void computePrice(BigDecimal basePrice) {
 		price = basePrice.multiply( new BigDecimal("70.0") ).divide( new BigDecimal("100.0"), 2, RoundingMode.HALF_UP );
 	}
-	
+	/**
+	 * String representation of advance ticket
+	 */
 	@Override
 	public String toString() {
 		return super.toString() + "\n*Advance Ticket";
